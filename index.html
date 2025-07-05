@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home - The Developing Apologist</title>
+    <meta name="description" content="The Developing Apologist - Equipping Christian software developers to defend their faith through logical, systematic apologetics that bridges faith and reason. (Work in Progress)">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://developingapologist.com/">
+    <meta property="og:title" content="Home - The Developing Apologist">
+    <meta property="og:description" content="The Developing Apologist - Equipping Christian software developers to defend their faith through logical, systematic apologetics that bridges faith and reason. (Work in Progress)">
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://developingapologist.com/">
+    <meta property="twitter:title" content="Home - The Developing Apologist">
+    <meta property="twitter:description" content="The Developing Apologist - Equipping Christian software developers to defend their faith through logical, systematic apologetics that bridges faith and reason. (Work in Progress)">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+    
+    <!-- Styles -->
+    <link rel="stylesheet" href="/css/tailwind.css">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="/assets/favicon.svg">
+</head>
+<body class="min-h-screen bg-vs-bg text-vs-fg">
+    <!-- Navigation -->
+    <nav class="bg-darcula-900 border-b border-darcula-700 sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16">
+                <div class="flex items-center">
+                    <a href="/" class="flex items-center space-x-2">
+                        <div class="w-8 h-8 bg-vs-blue rounded flex items-center justify-center">
+                            <span class="text-white font-bold text-sm">DA</span>
+                        </div>
+                        <span class="text-vs-fg font-semibold text-lg">The Developing Apologist</span>
+                    </a>
+                </div>
+                
+                <!-- Desktop Navigation -->
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="/" class="nav-link active">Home</a>
+                    <a href="https://blog.developingapologist.com" class="nav-link" target="_blank" rel="noopener">Blog</a>
+                    <a href="https://talks.developingapologist.com" class="nav-link" target="_blank" rel="noopener">Presentations</a>
+                    <a href="/about" class="nav-link ">About</a>
+                    <a href="/contact" class="nav-link ">Contact</a>
+                </div>
+                
+                <!-- Mobile menu button -->
+                <div class="md:hidden flex items-center">
+                    <button id="mobile-menu-button" class="text-vs-fg hover:text-vs-blue focus:outline-none">
+                        <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+            
+            <!-- Mobile Navigation -->
+            <div id="mobile-menu" class="hidden md:hidden">
+                <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3 border-t border-darcula-700">
+                    <a href="/" class="block px-3 py-2 nav-link active">Home</a>
+                    <a href="https://blog.developingapologist.com" class="block px-3 py-2 nav-link" target="_blank" rel="noopener">Blog</a>
+                    <a href="https://talks.developingapologist.com" class="block px-3 py-2 nav-link" target="_blank" rel="noopener">Presentations</a>
+                    <a href="/about" class="block px-3 py-2 nav-link ">About</a>
+                    <a href="/contact" class="block px-3 py-2 nav-link ">Contact</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="flex-1">
+        
+<!-- Hero Section -->
+<section class="relative bg-gradient-to-br from-darcula-900 via-darcula-800 to-darcula-900 py-20">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center">
+            <div class="mb-8">
+                <div class="w-24 h-24 bg-vs-blue rounded-full flex items-center justify-center mx-auto mb-6">
+                    <span class="text-white font-bold text-2xl">DA</span>
+                </div>
+                <h1 class="text-4xl md:text-6xl font-bold text-vs-fg mb-4">
+                    The Developing Apologist
+                </h1>
+                <p class="text-xl md:text-2xl text-vs-fg/80 mb-4 max-w-3xl mx-auto">
+                    Equipping Christian software developers to defend their faith through logical, systematic apologetics
+                </p>
+                <div class="bg-vs-orange/20 border border-vs-orange/30 rounded-lg px-4 py-2 inline-block mb-8">
+                    <span class="text-vs-orange font-medium">🚧 Work in Progress 🚧</span>
+                </div>
+                <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                    <a href="/about" class="btn-primary">
+                        Learn More
+                    </a>
+                    <a href="https://blog.developingapologist.com" class="btn-secondary" target="_blank" rel="noopener">
+                        Read the Blog
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Mission Statement Section -->
+<section class="py-16 bg-darcula-800">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="card text-center">
+            <div class="w-16 h-16 bg-vs-blue rounded-full flex items-center justify-center mx-auto mb-6">
+                <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
+                </svg>
+            </div>
+            <h2 class="text-3xl font-bold text-vs-blue mb-6">Our Mission</h2>
+            <p class="text-lg text-vs-fg/90 mb-6">
+                We help Christian software developers bridge the gap between faith and reason by applying the same 
+                logical thinking, systematic analysis, and evidence-based approaches you use in your code to 
+                questions about Christianity.
+            </p>
+            <p class="text-lg text-vs-fg/90">
+                Think of it as <span class="text-vs-blue font-semibold">debugging doubt</span> and 
+                <span class="text-vs-green font-semibold">architecting your spiritual foundation</span>.
+            </p>
+        </div>
+    </div>
+</section>
+
+<!-- Features Section -->
+<section class="py-16 bg-darcula-900">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-12">
+            <h2 class="text-3xl font-bold text-vs-fg mb-4">Why Apologetics for Developers?</h2>
+            <p class="text-vs-fg/80 max-w-2xl mx-auto">
+                As a software engineer, you already think logically and systematically. You debug problems, 
+                trace through execution paths, and build systems that work reliably. These same skills are 
+                incredibly valuable in defending your faith.
+            </p>
+        </div>
+        
+        <div class="grid md:grid-cols-3 gap-8">
+            <div class="card text-center">
+                <div class="w-12 h-12 bg-vs-green rounded-lg flex items-center justify-center mx-auto mb-4">
+                    <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
+                    </svg>
+                </div>
+                <h3 class="text-xl font-semibold text-vs-green mb-2">Logical Thinking</h3>
+                <p class="text-vs-fg/80">
+                    Apply your analytical mindset to faith questions. Just like debugging code, 
+                    we'll trace through evidence and arguments systematically.
+                </p>
+            </div>
+            
+            <div class="card text-center">
+                <div class="w-12 h-12 bg-vs-purple rounded-lg flex items-center justify-center mx-auto mb-4">
+                    <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" />
+                    </svg>
+                </div>
+                <h3 class="text-xl font-semibold text-vs-purple mb-2">Evidence-Based</h3>
+                <p class="text-vs-fg/80">
+                    Test faith claims like you test your code. We'll examine historical evidence, 
+                    logical arguments, and empirical data with the same rigor.
+                </p>
+            </div>
+            
+            <div class="card text-center">
+                <div class="w-12 h-12 bg-vs-orange rounded-lg flex items-center justify-center mx-auto mb-4">
+                    <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8.228 9c.549-1.165 2.03-2 3.772-2 2.21 0 4 1.343 4 3 0 1.4-1.278 2.575-3.006 2.907-.542.104-.994.54-.994 1.093m0 3h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                    </svg>
+                </div>
+                <h3 class="text-xl font-semibold text-vs-orange mb-2">Practical Application</h3>
+                <p class="text-vs-fg/80">
+                    Learn to engage with real questions you'll encounter in the tech industry, 
+                    using language and analogies that resonate with your colleagues.
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Content Preview Section -->
+<section class="py-16 bg-darcula-800">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-12">
+            <h2 class="text-3xl font-bold text-vs-fg mb-4">Developer-Focused Content</h2>
+            <p class="text-vs-fg/80 max-w-2xl mx-auto">
+                We create training content that speaks your language. Think of it as a developer's guide to apologetics.
+            </p>
+        </div>
+        
+        <div class="grid md:grid-cols-2 gap-8">
+            <div class="card">
+                <div class="flex items-center mb-4">
+                    <div class="w-12 h-12 bg-vs-blue rounded-lg flex items-center justify-center mr-4">
+                        <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.746 0 3.332.477 4.5 1.253v13C19.832 18.477 18.246 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
+                        </svg>
+                    </div>
+                    <h3 class="text-2xl font-semibold text-vs-blue">Blog Posts</h3>
+                </div>
+                <p class="text-vs-fg/90 mb-4">
+                    Deep-dive articles that explore apologetic topics using developer analogies, 
+                    logical frameworks, and systematic analysis.
+                </p>
+                <a href="https://blog.developingapologist.com" class="btn-primary" target="_blank" rel="noopener">
+                    Read the Blog
+                </a>
+            </div>
+            
+            <div class="card">
+                <div class="flex items-center mb-4">
+                    <div class="w-12 h-12 bg-vs-green rounded-lg flex items-center justify-center mr-4">
+                        <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z" />
+                        </svg>
+                    </div>
+                    <h3 class="text-2xl font-semibold text-vs-green">Presentations</h3>
+                </div>
+                <p class="text-vs-fg/90 mb-4">
+                    Technical talks and workshops designed for Christian developers, 
+                    covering everything from basic apologetics to advanced topics.
+                </p>
+                <a href="https://talks.developingapologist.com" class="btn-primary" target="_blank" rel="noopener">
+                    Watch Presentations
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Coming Soon Section -->
+<section class="py-16 bg-darcula-900">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <div class="w-16 h-16 bg-vs-orange rounded-full flex items-center justify-center mx-auto mb-6">
+            <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+            </svg>
+        </div>
+        <h2 class="text-3xl font-bold text-vs-orange mb-4">Coming Soon</h2>
+        <p class="text-vs-fg/80 mb-8 max-w-2xl mx-auto">
+            We're currently building out our content and resources. The Developing Apologist is a work in progress, 
+            but we're excited about the direction we're heading. Stay tuned for more developer-focused apologetics content!
+        </p>
+        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+            <a href="/about" class="btn-primary">
+                Learn More About Our Vision
+            </a>
+            <a href="https://blog.developingapologist.com" class="btn-secondary" target="_blank" rel="noopener">
+                Check Out Our Blog
+            </a>
+        </div>
+    </div>
+</section> 
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-darcula-900 border-t border-darcula-700 mt-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="flex items-center space-x-2 mb-4 md:mb-0">
+                    <div class="w-6 h-6 bg-vs-blue rounded flex items-center justify-center">
+                        <span class="text-white font-bold text-xs">DA</span>
+                    </div>
+                    <span class="text-vs-fg">© 2024 The Developing Apologist. Equipping Christian developers to defend their faith.</span>
+                </div>
+                <div class="flex space-x-6">
+                    <a href="/about" class="text-vs-fg hover:text-vs-blue transition-colors">About</a>
+                    <a href="/contact" class="text-vs-fg hover:text-vs-blue transition-colors">Contact</a>
+                    <a href="https://blog.developingapologist.com" class="text-vs-fg hover:text-vs-blue transition-colors" target="_blank" rel="noopener">Blog</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Mobile menu script -->
+    <script>
+        document.getElementById('mobile-menu-button').addEventListener('click', function() {
+            const mobileMenu = document.getElementById('mobile-menu');
+            mobileMenu.classList.toggle('hidden');
+        });
+    </script>
+</body>
+</html> 

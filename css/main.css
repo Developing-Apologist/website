@@ -1,0 +1,57 @@
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+
+/* Custom Darcula theme styles */
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  body {
+    @apply bg-vs-bg text-vs-fg font-sans;
+  }
+  
+  /* Custom scrollbar */
+  ::-webkit-scrollbar {
+    width: 8px;
+  }
+  
+  ::-webkit-scrollbar-track {
+    @apply bg-darcula-900;
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    @apply bg-darcula-600 rounded;
+  }
+  
+  ::-webkit-scrollbar-thumb:hover {
+    @apply bg-darcula-500;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply bg-vs-blue hover:bg-vs-blue/80 text-white font-medium py-2 px-4 rounded transition-colors duration-200;
+  }
+  
+  .btn-secondary {
+    @apply bg-darcula-700 hover:bg-darcula-600 text-vs-fg font-medium py-2 px-4 rounded border border-darcula-600 transition-colors duration-200;
+  }
+  
+  .card {
+    @apply bg-darcula-800 border border-darcula-700 rounded-lg p-6 shadow-lg;
+  }
+  
+  .nav-link {
+    @apply text-vs-fg hover:text-vs-blue transition-colors duration-200;
+  }
+  
+  .nav-link.active {
+    @apply text-vs-blue;
+  }
+  
+  .code-block {
+    @apply bg-darcula-900 border border-darcula-700 rounded p-4 font-mono text-sm;
+  }
+} 
