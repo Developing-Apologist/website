@@ -26,32 +26,30 @@
     <!-- Tailwind CSS (built) -->
     <link rel="stylesheet" href="/css/tailwind.css">
 </head>
-<body class="bg-darcula-900 text-vs-fg min-h-screen">
+<body class="bg-logo-navy text-vs-fg min-h-screen">
     <!-- Navigation -->
-    <nav class="bg-darcula-800 border-b border-darcula-700 sticky top-0 z-50">
+    <nav class="bg-logo-steel border-b border-logo-circuit sticky top-0 z-50">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between items-center h-16">
                 <!-- Logo -->
                 <div class="flex items-center">
                     <a href="/" class="flex items-center space-x-3">
-                        <div class="w-8 h-8 bg-vs-blue rounded flex items-center justify-center">
-                            <span class="text-white font-bold text-sm">DA</span>
-                        </div>
+                        <img src="/assets/developing-apologist-logo-v2.png" alt="The Developing Apologist" class="w-8 h-8">
                         <span class="text-xl font-bold text-vs-fg">The Developing Apologist</span>
                     </a>
                 </div>
                 
                 <!-- Navigation Links -->
                 <div class="hidden md:flex items-center space-x-8">
-                    <a href="/" class="text-vs-fg hover:text-white transition-colors duration-200">Home</a>
-                    <a href="/about" class="text-vs-fg hover:text-white transition-colors duration-200">About</a>
-                    <a href="https://blog.developingapologist.com" class="text-vs-fg hover:text-white transition-colors duration-200" target="_blank" rel="noopener">Blog</a>
-                    <a href="https://talks.developingapologist.com" class="text-vs-fg hover:text-white transition-colors duration-200" target="_blank" rel="noopener">Presentations</a>
+                    <a href="/" class="text-vs-fg hover:text-logo-glow transition-colors duration-200">Home</a>
+                    <a href="/about" class="text-vs-fg hover:text-logo-glow transition-colors duration-200">About</a>
+                    <a href="https://blog.developingapologist.com" class="text-vs-fg hover:text-logo-glow transition-colors duration-200" target="_blank" rel="noopener">Blog</a>
+                    <a href="https://talks.developingapologist.com" class="text-vs-fg hover:text-logo-glow transition-colors duration-200" target="_blank" rel="noopener">Presentations</a>
                 </div>
                 
                 <!-- Mobile menu button -->
                 <div class="md:hidden">
-                    <button type="button" class="text-vs-fg hover:text-white" onclick="toggleMobileMenu()">
+                    <button type="button" class="text-vs-fg hover:text-logo-glow" onclick="toggleMobileMenu()">
                         <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
                         </svg>
@@ -61,11 +59,11 @@
             
             <!-- Mobile menu -->
             <div id="mobile-menu" class="md:hidden hidden">
-                <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3 border-t border-darcula-700">
-                    <a href="/" class="block px-3 py-2 text-vs-fg hover:text-white transition-colors duration-200">Home</a>
-                    <a href="/about" class="block px-3 py-2 text-vs-fg hover:text-white transition-colors duration-200">About</a>
-                    <a href="https://blog.developingapologist.com" class="block px-3 py-2 text-vs-fg hover:text-white transition-colors duration-200" target="_blank" rel="noopener">Blog</a>
-                    <a href="https://talks.developingapologist.com" class="block px-3 py-2 text-vs-fg hover:text-white transition-colors duration-200" target="_blank" rel="noopener">Presentations</a>
+                <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3 border-t border-logo-circuit">
+                    <a href="/" class="block px-3 py-2 text-vs-fg hover:text-logo-glow transition-colors duration-200">Home</a>
+                    <a href="/about" class="block px-3 py-2 text-vs-fg hover:text-logo-glow transition-colors duration-200">About</a>
+                    <a href="https://blog.developingapologist.com" class="block px-3 py-2 text-vs-fg hover:text-logo-glow transition-colors duration-200" target="_blank" rel="noopener">Blog</a>
+                    <a href="https://talks.developingapologist.com" class="block px-3 py-2 text-vs-fg hover:text-logo-glow transition-colors duration-200" target="_blank" rel="noopener">Presentations</a>
                 </div>
             </div>
         </div>
@@ -77,23 +75,21 @@
     </main>
 
     <!-- Footer -->
-    <footer class="bg-darcula-800 border-t border-darcula-700 py-12">
+    <footer class="bg-logo-steel border-t border-logo-circuit py-12">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="grid md:grid-cols-4 gap-8">
                 <!-- Brand -->
                 <div class="md:col-span-2">
                     <div class="flex items-center space-x-3 mb-4">
-                        <div class="w-8 h-8 bg-vs-blue rounded flex items-center justify-center">
-                            <span class="text-white font-bold text-sm">DA</span>
-                        </div>
+                        <img src="/assets/developing-apologist-logo-v2.png" alt="The Developing Apologist" class="w-8 h-8">
                         <span class="text-xl font-bold text-vs-fg">The Developing Apologist</span>
                     </div>
                     <p class="text-vs-fg/80 mb-4">
                         Equipping Christian software developers to defend their faith through logical, 
                         systematic apologetics that bridges faith and reason.
                     </p>
-                    <div class="bg-vs-orange/20 border border-vs-orange/30 rounded-lg px-3 py-2 inline-block">
-                        <span class="text-vs-orange text-sm font-medium">🚧 Work in Progress 🚧</span>
+                    <div class="bg-logo-orange/20 border border-logo-orange/30 rounded-lg px-3 py-2 inline-block">
+                        <span class="text-logo-orange text-sm font-medium">🚧 Work in Progress 🚧</span>
                     </div>
                 </div>
                 
@@ -101,10 +97,10 @@
                 <div>
                     <h3 class="text-lg font-semibold text-vs-fg mb-4">Quick Links</h3>
                     <ul class="space-y-2">
-                        <li><a href="/" class="text-vs-fg/80 hover:text-vs-fg transition-colors duration-200">Home</a></li>
-                        <li><a href="/about" class="text-vs-fg/80 hover:text-vs-fg transition-colors duration-200">About</a></li>
-                        <li><a href="https://blog.developingapologist.com" class="text-vs-fg/80 hover:text-vs-fg transition-colors duration-200" target="_blank" rel="noopener">Blog</a></li>
-                        <li><a href="https://talks.developingapologist.com" class="text-vs-fg/80 hover:text-vs-fg transition-colors duration-200" target="_blank" rel="noopener">Presentations</a></li>
+                        <li><a href="/" class="text-vs-fg/80 hover:text-logo-glow transition-colors duration-200">Home</a></li>
+                        <li><a href="/about" class="text-vs-fg/80 hover:text-logo-glow transition-colors duration-200">About</a></li>
+                        <li><a href="https://blog.developingapologist.com" class="text-vs-fg/80 hover:text-logo-glow transition-colors duration-200" target="_blank" rel="noopener">Blog</a></li>
+                        <li><a href="https://talks.developingapologist.com" class="text-vs-fg/80 hover:text-logo-glow transition-colors duration-200" target="_blank" rel="noopener">Presentations</a></li>
                     </ul>
                 </div>
                 
@@ -112,13 +108,13 @@
                 <div>
                     <h3 class="text-lg font-semibold text-vs-fg mb-4">Resources</h3>
                     <ul class="space-y-2">
-                        <li><a href="https://blog.developingapologist.com" class="text-vs-fg/80 hover:text-vs-fg transition-colors duration-200" target="_blank" rel="noopener">Developer Apologetics Blog</a></li>
-                        <li><a href="https://talks.developingapologist.com" class="text-vs-fg/80 hover:text-vs-fg transition-colors duration-200" target="_blank" rel="noopener">Technical Presentations</a></li>
+                        <li><a href="https://blog.developingapologist.com" class="text-vs-fg/80 hover:text-logo-glow transition-colors duration-200" target="_blank" rel="noopener">Developer Apologetics Blog</a></li>
+                        <li><a href="https://talks.developingapologist.com" class="text-vs-fg/80 hover:text-logo-glow transition-colors duration-200" target="_blank" rel="noopener">Technical Presentations</a></li>
                     </ul>
                 </div>
             </div>
             
-            <div class="border-t border-darcula-700 mt-8 pt-8 text-center">
+            <div class="border-t border-logo-circuit mt-8 pt-8 text-center">
                 <p class="text-vs-fg/60">
                     © 2024 The Developing Apologist. All rights reserved.
                 </p>

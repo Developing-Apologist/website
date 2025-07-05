@@ -1,37 +1,51 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   content: [
-    "./src/**/*.{html,js,njk,md}",
-    "./_includes/**/*.{html,js,njk,md}",
-    "./_layouts/**/*.{html,js,njk,md}"
+    "./src/**/*.{html,js,njk}",
+    "./src/**/*.{njk,html,js}",
+    "./src/_includes/**/*.njk"
   ],
   theme: {
     extend: {
       colors: {
-        // Darcula-inspired color palette
-        darcula: {
-          50: '#f8f9fa',
-          100: '#e9ecef',
-          200: '#dee2e6',
-          300: '#ced4da',
-          400: '#adb5bd',
-          500: '#6c757d',
-          600: '#495057',
-          700: '#343a40',
-          800: '#212529',
-          900: '#1a1a1a',
-          950: '#0d1117'
+        // Primary Logo Colors
+        'logo-blue': '#00BFFF',      // Electric Blue
+        'logo-orange': '#FFA500',    // Amber Orange
+        'logo-orange-dark': '#FF8C00', // Darker Amber
+        'logo-orange-core': '#FF4500', // Burnt Orange
+        
+        // Background Colors
+        'logo-navy': '#0A0F1C',      // Dark Navy
+        'logo-navy-alt': '#0B1D2A',   // Alternative Navy
+        
+        // Accent Colors
+        'logo-circuit': '#124B70',    // Circuit Line Blue
+        'logo-circuit-alt': '#0E4C68', // Alternative Circuit
+        'logo-steel': '#1C2B3A',      // Steel Gray
+        'logo-glow': '#3ECFFF',       // Glow Blue
+        
+        // Legacy Darcula colors (keeping for compatibility)
+        'darcula': {
+          900: '#0A0F1C',  // Updated to logo navy
+          800: '#1C2B3A',  // Updated to steel gray
+          700: '#124B70',  // Updated to circuit blue
+          600: '#0E4C68',  // Updated to alt circuit
+          500: '#3ECFFF',  // Updated to glow blue
+          400: '#00BFFF',  // Updated to logo blue
+          300: '#1DAEFF',  // Alternative blue
+          200: '#FFA500',  // Updated to logo orange
+          100: '#FF8C00'   // Updated to darker orange
         },
-        // VS Code Darcula colors
-        'vs-bg': '#2b2b2b',
-        'vs-fg': '#a9b7c6',
-        'vs-blue': '#6897bb',
-        'vs-green': '#6a8759',
-        'vs-orange': '#cc7832',
-        'vs-red': '#bc3f3c',
-        'vs-purple': '#9876aa',
-        'vs-yellow': '#ffc66d',
-        'vs-cyan': '#6a8759'
+        
+        // Updated VS Code colors to match logo
+        'vs-fg': '#E8F4FD',          // Light blue-tinted text
+        'vs-bg': '#0A0F1C',          // Logo navy background
+        'vs-blue': '#00BFFF',        // Logo electric blue
+        'vs-green': '#00D4AA',       // Teal green for contrast
+        'vs-orange': '#FFA500',      // Logo amber orange
+        'vs-purple': '#8B5CF6',      // Purple for variety
+        'vs-red': '#EF4444',         // Red for alerts
+        'vs-yellow': '#F59E0B'       // Yellow for warnings
       },
       fontFamily: {
         'mono': ['JetBrains Mono', 'Fira Code', 'Consolas', 'Monaco', 'monospace'],
@@ -39,7 +53,5 @@ module.exports = {
       }
     },
   },
-  plugins: [
-    require('@tailwindcss/typography'),
-  ],
+  plugins: []
 } 
