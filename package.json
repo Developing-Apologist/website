@@ -1,7 +1,7 @@
 {
-  "name": "developing-apologist-blog",
+  "name": "developing-apologist-website",
   "version": "1.0.0",
-  "description": "The Developing Apologist Blog - A Markdown-powered blog built with Eleventy",
+  "description": "The Developing Apologist - A static site built with Eleventy",
   "main": "index.js",
   "scripts": {
     "build": "eleventy",
@@ -11,7 +11,7 @@
     "dev": "npx tailwindcss -i ./src/css/main.css -o ./src/css/tailwind.css --watch & eleventy --serve --watch",
     "clean": "rm -rf _site"
   },
-  "keywords": ["eleventy", "blog", "markdown", "apologetics", "christian"],
+  "keywords": ["eleventy", "static-site", "apologetics", "christian"],
   "author": "The Developing Apologist",
   "license": "MIT",
   "devDependencies": {

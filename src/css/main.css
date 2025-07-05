@@ -90,59 +90,6 @@
     font-family: 'JetBrains Mono', 'Fira Code', 'Consolas', 'Monaco', monospace;
     font-size: 0.875rem;
   }
-  
-  /* Blog-specific styles */
-  .blog-post {
-    @apply prose prose-invert max-w-none;
-  }
-  
-  .blog-post h1 {
-    @apply text-vs-fg;
-  }
-  
-  .blog-post h2 {
-    @apply text-vs-fg;
-  }
-  
-  .blog-post h3 {
-    @apply text-vs-fg;
-  }
-  
-  .blog-post p {
-    @apply text-vs-fg;
-  }
-  
-  .blog-post a {
-    @apply text-logo-blue hover:text-logo-glow;
-  }
-  
-  .blog-post code {
-    @apply bg-logo-steel text-logo-blue px-1 py-0.5 rounded text-sm;
-  }
-  
-  .blog-post pre {
-    @apply bg-logo-navy border border-logo-circuit rounded p-4 overflow-x-auto;
-  }
-  
-  .blog-post pre code {
-    @apply bg-transparent p-0;
-  }
-  
-  .blog-post blockquote {
-    @apply border-l-4 border-logo-blue bg-logo-steel p-4 rounded-r;
-  }
-  
-  .blog-post ul {
-    @apply text-vs-fg;
-  }
-  
-  .blog-post ol {
-    @apply text-vs-fg;
-  }
-  
-  .blog-post li {
-    @apply text-vs-fg;
-  }
 }
 
 /* Fallback color utilities in case Tailwind doesn't generate them */
@@ -162,20 +109,4 @@
 .text-vs-orange { color: #FFA500 !important; }
 .text-vs-purple { color: #8B5CF6 !important; }
 
-.border-logo-circuit { border-color: #124B70 !important; }
-
-/* Blog compatibility classes */
-.bg-bg-dark { background: linear-gradient(135deg, #0A0F1C 0%, #0B1D2A 50%, #0A0F1C 100%) !important; }
-.bg-card-bg { background-color: #1C2B3A !important; }
-.bg-border-color { background-color: #124B70 !important; }
-.bg-accent-primary { background-color: #00BFFF !important; }
-.bg-accent-secondary { background-color: #3ECFFF !important; }
-
-.text-text-primary { color: #E8F4FD !important; }
-.text-text-secondary { color: #E8F4FD !important; }
-.text-text-muted { color: #E8F4FD !important; }
-.text-accent-primary { color: #00BFFF !important; }
-.text-accent-secondary { color: #3ECFFF !important; }
-
-.border-border-color { border-color: #124B70 !important; }
-.border-accent-primary { border-color: #00BFFF !important; } 
+.border-logo-circuit { border-color: #124B70 !important; } 
