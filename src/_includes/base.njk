@@ -41,8 +41,8 @@
                 
                 <!-- Navigation Links -->
                 <div class="hidden md:flex items-center space-x-8">
-                    <a href="/" class="text-vs-fg hover:text-logo-glow transition-colors duration-200">Home</a>
-                    <a href="/about" class="text-vs-fg hover:text-logo-glow transition-colors duration-200">About</a>
+                    <a href="/" class="text-vs-fg hover:text-logo-glow transition-colors duration-200 {% if page.url == '/' %}text-logo-blue font-semibold{% endif %}">Home</a>
+                    <a href="/about" class="text-vs-fg hover:text-logo-glow transition-colors duration-200 {% if page.url == '/about/' %}text-logo-blue font-semibold{% endif %}">About</a>
                     <a href="https://blog.developingapologist.com" class="text-vs-fg hover:text-logo-glow transition-colors duration-200" target="_blank" rel="noopener">Blog</a>
                     <a href="https://talks.developingapologist.com" class="text-vs-fg hover:text-logo-glow transition-colors duration-200" target="_blank" rel="noopener">Presentations</a>
                 </div>
@@ -60,8 +60,8 @@
             <!-- Mobile menu -->
             <div id="mobile-menu" class="md:hidden hidden">
                 <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3 border-t border-logo-circuit">
-                    <a href="/" class="block px-3 py-2 text-vs-fg hover:text-logo-glow transition-colors duration-200">Home</a>
-                    <a href="/about" class="block px-3 py-2 text-vs-fg hover:text-logo-glow transition-colors duration-200">About</a>
+                    <a href="/" class="block px-3 py-2 text-vs-fg hover:text-logo-glow transition-colors duration-200 {% if page.url == '/' %}text-logo-blue font-semibold{% endif %}">Home</a>
+                    <a href="/about" class="block px-3 py-2 text-vs-fg hover:text-logo-glow transition-colors duration-200 {% if page.url == '/about/' %}text-logo-blue font-semibold{% endif %}">About</a>
                     <a href="https://blog.developingapologist.com" class="block px-3 py-2 text-vs-fg hover:text-logo-glow transition-colors duration-200" target="_blank" rel="noopener">Blog</a>
                     <a href="https://talks.developingapologist.com" class="block px-3 py-2 text-vs-fg hover:text-logo-glow transition-colors duration-200" target="_blank" rel="noopener">Presentations</a>
                 </div>
