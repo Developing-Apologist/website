@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% if title %}{{ title }} - {% endif %}The Developing Apologist Blog</title>
+    <meta name="description" content="{{ description or 'A blog exploring the intersection of Christian apologetics and software development.' }}">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="{% if page.url == '/' %}website{% else %}article{% endif %}">
+    <meta property="og:url" content="{{ page.url | absoluteUrl }}">
+    <meta property="og:title" content="{% if title %}{{ title }} - {% endif %}The Developing Apologist Blog">
+    <meta property="og:description" content="{{ description or 'A blog exploring the intersection of Christian apologetics and software development.' }}">
+    <meta property="og:image" content="{{ ogImage or '/assets/developing-apologist-logo-v2.png' }}">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="{{ page.url | absoluteUrl }}">
+    <meta property="twitter:title" content="{% if title %}{{ title }} - {% endif %}The Developing Apologist Blog">
+    <meta property="twitter:description" content="{{ description or 'A blog exploring the intersection of Christian apologetics and software development.' }}">
+    <meta property="twitter:image" content="{{ ogImage or '/assets/developing-apologist-logo-v2.png' }}">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    
+    <!-- Tailwind CSS (built) -->
+    <link rel="stylesheet" href="/css/tailwind.css">
+    
+    <!-- RSS Feed -->
+    <link rel="alternate" type="application/rss+xml" title="The Developing Apologist Blog RSS Feed" href="/feed.xml">
+</head>
+<body class="text-text-primary min-h-screen">
+    <!-- Navigation -->
+    <nav class="bg-logo-navy border-b border-logo-circuit sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <!-- Logo -->
+                <div class="flex items-center">
+                    <a href="/" class="flex items-center space-x-3">
+                        <img src="/assets/developing-apologist-logo-v2.png" alt="The Developing Apologist" class="w-8 h-8">
+                        <span class="text-xl font-bold text-vs-fg">The Developing Apologist</span>
+                    </a>
+                </div>
+                
+                <!-- Navigation Links -->
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="https://developingapologist.com/" target="_blank" rel="noopener" class="nav-link">Home</a>
+                    <a href="https://developingapologist.com/about" target="_blank" rel="noopener" class="nav-link">About</a>
+                    <a href="/" class="nav-link {% if page.url == '/' %}active{% endif %}">Blog</a>
+                    <a href="https://talks.developingapologist.com" target="_blank" rel="noopener" class="nav-link">Presentations</a>
+                    <!-- <a href="https://developingapologist.com/contact" target="_blank" rel="noopener" class="nav-link">Contact</a> -->
+                </div>
+                
+                <!-- Mobile menu button -->
+                <div class="md:hidden">
+                    <button type="button" class="text-vs-fg hover:text-logo-blue" onclick="toggleMobileMenu()">
+                        <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+            
+            <!-- Mobile menu -->
+            <div id="mobile-menu" class="md:hidden hidden">
+                <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3 border-t border-logo-circuit">
+                    <a href="https://developingapologist.com/" target="_blank" rel="noopener" class="block px-3 py-2 nav-link">Home</a>
+                    <a href="https://developingapologist.com/about" target="_blank" rel="noopener" class="block px-3 py-2 nav-link">About</a>
+                    <a href="/" class="block px-3 py-2 nav-link {% if page.url == '/' %}active{% endif %}">Blog</a>
+                    <a href="https://talks.developingapologist.com" target="_blank" rel="noopener" class="block px-3 py-2 nav-link">Presentations</a>
+                    <!-- <a href="https://developingapologist.com/contact" target="_blank" rel="noopener" class="block px-3 py-2 nav-link">Contact</a> -->
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main>
+        {{ content | safe }}
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-logo-navy border-t border-logo-circuit py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-4 gap-8">
+                <!-- Brand -->
+                <div class="md:col-span-2">
+                    <div class="flex items-center space-x-3 mb-4">
+                        <img src="/assets/developing-apologist-logo-v2.png" alt="The Developing Apologist" class="w-8 h-8">
+                        <span class="text-xl font-bold text-vs-fg">The Developing Apologist</span>
+                    </div>
+                    <p class="text-vs-fg mb-4">
+                        A blog exploring the intersection of Christian apologetics and software development, 
+                        equipping developers to defend their faith through logical, systematic reasoning.
+                    </p>
+                    <div class="bg-logo-blue/20 border border-logo-blue/30 rounded-lg px-3 py-2 inline-block">
+                        <span class="text-logo-blue text-sm font-medium">📝 Blog</span>
+                    </div>
+                </div>
+                
+                <!-- Quick Links -->
+                <div>
+                    <h3 class="text-lg font-semibold text-vs-fg mb-4">Quick Links</h3>
+                    <ul class="space-y-2">
+                        <li><a href="https://developingapologist.com/" target="_blank" rel="noopener" class="text-vs-fg hover:text-logo-blue transition-colors duration-200">Home</a></li>
+                        <li><a href="https://developingapologist.com/about" target="_blank" rel="noopener" class="text-vs-fg hover:text-logo-blue transition-colors duration-200">About</a></li>
+                        <li><a href="/" class="text-vs-fg hover:text-logo-blue transition-colors duration-200">Blog</a></li>
+                        <li><a href="https://talks.developingapologist.com" target="_blank" rel="noopener" class="text-vs-fg hover:text-logo-blue transition-colors duration-200">Presentations</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Resources -->
+                <div>
+                    <h3 class="text-lg font-semibold text-vs-fg mb-4">Resources</h3>
+                    <ul class="space-y-2">
+                        <li><a href="/feed.xml" class="text-vs-fg hover:text-logo-blue transition-colors duration-200">RSS Feed</a></li>
+                        <li><a href="/tags" class="text-vs-fg hover:text-logo-blue transition-colors duration-200">All Tags</a></li>
+                        <li><a href="/categories" class="text-vs-fg hover:text-logo-blue transition-colors duration-200">Categories</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="border-t border-logo-circuit mt-8 pt-8 text-center">
+                <p class="text-vs-fg">
+                    © 2024 The Developing Apologist. All rights reserved.
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        function toggleMobileMenu() {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('hidden');
+        }
+    </script>
+</body>
+</html> 

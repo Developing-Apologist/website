@@ -1,0 +1,29 @@
+---
+permalink: /feed.xml
+eleventyExcludeFromCollections: true
+---
+
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>The Developing Apologist Blog</title>
+    <description>A blog exploring the intersection of Christian apologetics and software development, equipping developers to defend their faith through logical, systematic reasoning.</description>
+    <link>{{ site.url }}/</link>
+    <atom:link href="{{ site.url }}/feed.xml" rel="self" type="application/rss+xml"/>
+    <language>en-US</language>
+    <lastBuildDate>{{ collections.posts[0].date | dateIso }}</lastBuildDate>
+    
+    {% for post in collections.posts | slice(0, 20) %}
+    <item>
+      <title>{{ post.data.title }}</title>
+      <description>{{ post.data.description or post.templateContent | striptags | truncate(200) }}</description>
+      <link>{{ site.url }}{{ post.url }}</link>
+      <guid>{{ site.url }}{{ post.url }}</guid>
+      <pubDate>{{ post.date | dateIso }}</pubDate>
+      {% if post.data.tags %}
+      <category>{{ post.data.tags | join(', ') }}</category>
+      {% endif %}
+    </item>
+    {% endfor %}
+  </channel>
+</rss> 
