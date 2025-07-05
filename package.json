@@ -1,0 +1,24 @@
+{
+  "name": "developing-apologist-website",
+  "version": "1.0.0",
+  "description": "The Developing Apologist - A static site built with Eleventy",
+  "main": "index.js",
+  "scripts": {
+    "build": "eleventy",
+    "build:css": "npx tailwindcss -i ./src/css/main.css -o ./src/css/tailwind.css --minify",
+    "build:full": "npm run build:css && npm run build",
+    "start": "eleventy --serve",
+    "dev": "npx tailwindcss -i ./src/css/main.css -o ./src/css/tailwind.css --watch & eleventy --serve --watch",
+    "clean": "rm -rf _site"
+  },
+  "keywords": ["eleventy", "static-site", "apologetics", "christian"],
+  "author": "The Developing Apologist",
+  "license": "MIT",
+  "devDependencies": {
+    "@11ty/eleventy": "^2.0.1",
+    "@tailwindcss/typography": "^0.5.10",
+    "autoprefixer": "^10.4.16",
+    "postcss": "^8.4.32",
+    "tailwindcss": "^3.3.6"
+  }
+} 

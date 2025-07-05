@@ -1,0 +1,13 @@
+# Redirects for The Developing Apologist website
+
+# Redirect www to non-www
+https://www.developingapologist.com/* https://developingapologist.com/:splat 301!
+
+# Redirect old blog URLs (if any)
+/blog/* https://blog.developingapologist.com/:splat 301!
+
+# Redirect old talks URLs (if any)
+/talks/* https://talks.developingapologist.com/:splat 301!
+
+# Handle 404s
+/* /404.html 404 
