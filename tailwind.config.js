@@ -1,9 +1,11 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   content: [
-    "./src/**/*.{html,js,njk}",
-    "./src/**/*.{njk,html,js}",
-    "./src/_includes/**/*.njk"
+    "./src/**/*.{html,js,njk,md}",
+    "./src/_includes/**/*.njk",
+    "./src/_layouts/**/*.njk",
+    "./src/_data/**/*.js",
+    "./src/_data/**/*.json"
   ],
   theme: {
     extend: {
@@ -51,7 +53,7 @@ module.exports = {
         'mono': ['JetBrains Mono', 'Fira Code', 'Consolas', 'Monaco', 'monospace'],
         'sans': ['Inter', 'system-ui', 'sans-serif']
       }
-    },
+    }
   },
   plugins: []
 } 

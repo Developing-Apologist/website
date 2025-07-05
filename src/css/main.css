@@ -10,6 +10,8 @@
   
   body {
     @apply bg-logo-navy text-vs-fg font-sans;
+    background-color: #0A0F1C;
+    color: #E8F4FD;
   }
   
   /* Custom scrollbar */
@@ -19,39 +21,92 @@
   
   ::-webkit-scrollbar-track {
     @apply bg-logo-navy;
+    background-color: #0A0F1C;
   }
   
   ::-webkit-scrollbar-thumb {
     @apply bg-logo-circuit rounded;
+    background-color: #124B70;
+    border-radius: 4px;
   }
   
   ::-webkit-scrollbar-thumb:hover {
     @apply bg-logo-circuit-alt;
+    background-color: #0E4C68;
   }
 }
 
 @layer components {
   .btn-primary {
     @apply bg-logo-blue hover:bg-logo-glow text-white font-medium py-2 px-4 rounded transition-colors duration-200;
+    background-color: #00BFFF;
+    color: white;
+  }
+  
+  .btn-primary:hover {
+    background-color: #3ECFFF;
   }
   
   .btn-secondary {
     @apply bg-logo-steel hover:bg-logo-circuit text-vs-fg font-medium py-2 px-4 rounded border border-logo-circuit transition-colors duration-200;
+    background-color: #1C2B3A;
+    color: #E8F4FD;
+    border: 1px solid #124B70;
+  }
+  
+  .btn-secondary:hover {
+    background-color: #124B70;
   }
   
   .card {
     @apply bg-logo-steel border border-logo-circuit rounded-lg p-6 shadow-lg;
+    background-color: #1C2B3A;
+    border: 1px solid #124B70;
+    border-radius: 8px;
+    padding: 1.5rem;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
   }
   
   .nav-link {
     @apply text-vs-fg hover:text-logo-glow transition-colors duration-200;
+    color: #E8F4FD;
+  }
+  
+  .nav-link:hover {
+    color: #3ECFFF;
   }
   
   .nav-link.active {
     @apply text-logo-blue;
+    color: #00BFFF;
   }
   
   .code-block {
     @apply bg-logo-navy border border-logo-circuit rounded p-4 font-mono text-sm;
+    background-color: #0A0F1C;
+    border: 1px solid #124B70;
+    border-radius: 4px;
+    padding: 1rem;
+    font-family: 'JetBrains Mono', 'Fira Code', 'Consolas', 'Monaco', monospace;
+    font-size: 0.875rem;
   }
-} 
+}
+
+/* Fallback color utilities in case Tailwind doesn't generate them */
+.bg-logo-navy { background-color: #0A0F1C !important; }
+.bg-logo-steel { background-color: #1C2B3A !important; }
+.bg-logo-circuit { background-color: #124B70 !important; }
+.bg-logo-blue { background-color: #00BFFF !important; }
+.bg-logo-orange { background-color: #FFA500 !important; }
+.bg-logo-glow { background-color: #3ECFFF !important; }
+
+.text-vs-fg { color: #E8F4FD !important; }
+.text-logo-blue { color: #00BFFF !important; }
+.text-logo-orange { color: #FFA500 !important; }
+.text-logo-glow { color: #3ECFFF !important; }
+.text-vs-blue { color: #00BFFF !important; }
+.text-vs-green { color: #00D4AA !important; }
+.text-vs-orange { color: #FFA500 !important; }
+.text-vs-purple { color: #8B5CF6 !important; }
+
+.border-logo-circuit { border-color: #124B70 !important; } 
