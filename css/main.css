@@ -2,14 +2,14 @@
 @import 'tailwindcss/components';
 @import 'tailwindcss/utilities';
 
-/* Custom Darcula theme styles */
+/* Custom Logo-based theme styles */
 @layer base {
   html {
     scroll-behavior: smooth;
   }
   
   body {
-    @apply bg-vs-bg text-vs-fg font-sans;
+    @apply bg-logo-navy text-vs-fg font-sans;
   }
   
   /* Custom scrollbar */
@@ -18,40 +18,40 @@
   }
   
   ::-webkit-scrollbar-track {
-    @apply bg-darcula-900;
+    @apply bg-logo-navy;
   }
   
   ::-webkit-scrollbar-thumb {
-    @apply bg-darcula-600 rounded;
+    @apply bg-logo-circuit rounded;
   }
   
   ::-webkit-scrollbar-thumb:hover {
-    @apply bg-darcula-500;
+    @apply bg-logo-circuit-alt;
   }
 }
 
 @layer components {
   .btn-primary {
-    @apply bg-vs-blue hover:bg-vs-blue/80 text-white font-medium py-2 px-4 rounded transition-colors duration-200;
+    @apply bg-logo-blue hover:bg-logo-glow text-white font-medium py-2 px-4 rounded transition-colors duration-200;
   }
   
   .btn-secondary {
-    @apply bg-darcula-700 hover:bg-darcula-600 text-vs-fg font-medium py-2 px-4 rounded border border-darcula-600 transition-colors duration-200;
+    @apply bg-logo-steel hover:bg-logo-circuit text-vs-fg font-medium py-2 px-4 rounded border border-logo-circuit transition-colors duration-200;
   }
   
   .card {
-    @apply bg-darcula-800 border border-darcula-700 rounded-lg p-6 shadow-lg;
+    @apply bg-logo-steel border border-logo-circuit rounded-lg p-6 shadow-lg;
   }
   
   .nav-link {
-    @apply text-vs-fg hover:text-vs-blue transition-colors duration-200;
+    @apply text-vs-fg hover:text-logo-glow transition-colors duration-200;
   }
   
   .nav-link.active {
-    @apply text-vs-blue;
+    @apply text-logo-blue;
   }
   
   .code-block {
-    @apply bg-darcula-900 border border-darcula-700 rounded p-4 font-mono text-sm;
+    @apply bg-logo-navy border border-logo-circuit rounded p-4 font-mono text-sm;
   }
 } 
