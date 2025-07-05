@@ -1,0 +1,14 @@
+
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>The Developing Apologist Blog</title>
+    <description>A blog exploring the intersection of Christian apologetics and software development, equipping developers to defend their faith through logical, systematic reasoning.</description>
+    <link>https://blog.developingapologist.com/</link>
+    <atom:link href="https://blog.developingapologist.com/feed.xml" rel="self" type="application/rss+xml"/>
+    <language>en-US</language>
+    <lastBuildDate>2024-01-20T00:00:00.000Z</lastBuildDate>
+    
+    
+  </channel>
+</rss> 
