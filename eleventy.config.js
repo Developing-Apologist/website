@@ -1,9 +1,28 @@
+const { DateTime } = require("luxon");
+
 module.exports = function(eleventyConfig) {
+  // Add Nunjucks date filter
+  eleventyConfig.addNunjucksFilter("date", function(date, format = "yyyy") {
+    // If input is a string 'now', use current date
+    if (date === "now") {
+      return DateTime.now().toFormat(format);
+    }
+    // If input is a Date object
+    if (date instanceof Date) {
+      return DateTime.fromJSDate(date).toFormat(format);
+    }
+    // If input is a string date
+    return DateTime.fromISO(date).toFormat(format);
+  });
+
   // Copy static assets
   eleventyConfig.addPassthroughCopy("src/assets");
   eleventyConfig.addPassthroughCopy("src/css");
   eleventyConfig.addPassthroughCopy("CNAME");
   eleventyConfig.addPassthroughCopy("_redirects");
+  
+  // Add shared layouts to includes path
+  eleventyConfig.addPassthroughCopy("src/_includes/shared/includes");
 
   // Watch CSS files for changes
   eleventyConfig.addWatchTarget("src/css/");
@@ -18,6 +37,13 @@ module.exports = function(eleventyConfig) {
     templateFormats: ["njk", "md", "html"],
     markdownTemplateEngine: "njk",
     htmlTemplateEngine: "njk",
-    dataTemplateEngine: "njk"
+    dataTemplateEngine: "njk",
+    nunjucksOptions: {
+      // Add shared includes to the search path
+      searchPaths: [
+        "src/_includes",
+        "src/_includes/shared/includes"
+      ]
+    }
   };
 }; 

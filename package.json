@@ -11,7 +11,12 @@
     "dev": "npx tailwindcss -i ./src/css/main.css -o ./src/css/tailwind.css --watch & eleventy --serve --watch",
     "clean": "rm -rf _site"
   },
-  "keywords": ["eleventy", "static-site", "apologetics", "christian"],
+  "keywords": [
+    "eleventy",
+    "static-site",
+    "apologetics",
+    "christian"
+  ],
   "author": "The Developing Apologist",
   "license": "MIT",
   "devDependencies": {
@@ -20,5 +25,8 @@
     "autoprefixer": "^10.4.16",
     "postcss": "^8.4.32",
     "tailwindcss": "^3.3.6"
+  },
+  "dependencies": {
+    "luxon": "^3.6.1"
   }
-} 
+}

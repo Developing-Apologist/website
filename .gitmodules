@@ -1,0 +1,3 @@
+[submodule "src/_includes/shared"]
+	path = src/_includes/shared
+	url = https://github.com/developing-apologist/shared-layouts.git
