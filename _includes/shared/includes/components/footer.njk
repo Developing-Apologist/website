@@ -1,0 +1,61 @@
+<!-- Footer -->
+<footer class="bg-logo-steel border-t border-logo-circuit py-12">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid md:grid-cols-4 gap-8">
+            <!-- Brand -->
+            <div class="md:col-span-2">
+                <div class="flex items-center space-x-3 mb-4">
+                    {% if logo_image %}
+                        <img src="{{ logo_image }}" alt="{{ logo_alt | default('Site Logo') }}" class="w-8 h-8">
+                    {% else %}
+                        <!-- Default logo placeholder -->
+                        <svg class="w-8 h-8 text-logo-blue" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                        </svg>
+                    {% endif %}
+                    <span class="text-xl font-bold text-vs-fg">{{ site_title | default('Site Title') }}</span>
+                </div>
+                {% if site_description %}
+                <p class="text-vs-fg/80 mb-4">
+                    {{ site_description }}
+                </p>
+                {% endif %}
+                {% if show_wip_badge %}
+                <div class="bg-logo-orange/20 border border-logo-orange/30 rounded-lg px-3 py-2 inline-block">
+                    <span class="text-logo-orange text-sm font-medium">🚧 Work in Progress 🚧</span>
+                </div>
+                {% endif %}
+            </div>
+            
+            <!-- Quick Links -->
+            {% if nav_links and show_quick_links != false %}
+            <div>
+                <h3 class="text-lg font-semibold text-vs-fg mb-4">{{ quick_links_title | default('Quick Links') }}</h3>
+                <ul class="space-y-2">
+                    {% for link in nav_links %}
+                    <li><a href="{{ link.href }}" class="text-vs-fg/80 hover:text-logo-glow transition-colors duration-200">{{ link.label }}</a></li>
+                    {% endfor %}
+                </ul>
+            </div>
+            {% endif %}
+            
+            <!-- External Resources -->
+            {% if resources and show_resources != false %}
+            <div>
+                <h3 class="text-lg font-semibold text-vs-fg mb-4">{{ resources_title | default('Resources') }}</h3>
+                <ul class="space-y-2">
+                    {% for link in resources %}
+                    <li><a href="{{ link.href }}" class="text-vs-fg/80 hover:text-logo-glow transition-colors duration-200">{{ link.label }}</a></li>
+                    {% endfor %}
+                </ul>
+            </div>
+            {% endif %}
+        </div>
+        
+        <div class="border-t border-logo-circuit mt-8 pt-8 text-center">
+            <p class="text-vs-fg/60">
+                © {{ "now" | date("yyyy") }} {{ copyright_text | default(site_title | default('Site Title')) }}. All rights reserved.
+            </p>
+        </div>
+    </div>
+</footer> 
