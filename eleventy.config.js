@@ -20,9 +20,6 @@ module.exports = function(eleventyConfig) {
   eleventyConfig.addPassthroughCopy("src/css");
   eleventyConfig.addPassthroughCopy("CNAME");
   eleventyConfig.addPassthroughCopy("_redirects");
-  
-  // Add shared layouts to includes path
-  eleventyConfig.addPassthroughCopy("src/_includes/shared/includes");
 
   // Watch CSS files for changes
   eleventyConfig.addWatchTarget("src/css/");

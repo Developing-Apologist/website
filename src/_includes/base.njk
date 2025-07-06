@@ -21,17 +21,18 @@
     <meta property="twitter:image" content="https://developingapologist.com/images/social-preview.jpg">
 
     <!-- Favicon -->
-    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    <link rel="icon" type="image/x-icon" href="/assets/favicon.ico">
     
     <!-- Tailwind CSS (built) -->
     <link rel="stylesheet" href="/css/tailwind.css">
 </head>
 <body class="bg-logo-navy text-vs-fg min-h-screen">
-    <!-- Navigation -->
+    <!-- Navigation and Footer Configuration -->
     {% set site_data = {
         logo_image: "/assets/developing-apologist-logo-v2.png",
         logo_alt: "The Developing Apologist",
         site_title: "The Developing Apologist",
+        site_description: "Equipping Christian software developers to defend their faith through logical, systematic apologetics that bridges faith and reason.",
         show_wip_badge: true,
         nav_links: [
             { href: "/", label: "Home", active: page.url == "/" },
@@ -39,12 +40,13 @@
             { href: "https://blog.developingapologist.com", label: "Blog", active: false },
             { href: "https://talks.developingapologist.com", label: "Presentations", active: false }
         ],
-        site_description: "Equipping Christian software developers to defend their faith through logical, systematic apologetics that bridges faith and reason.",
         quick_links_title: "Quick Links",
+        resources_title: "Resources",
         show_quick_links: true,
         show_resources: false
     } %}
-    
+
+    <!-- Set variables for navbar component -->
     {% set logo_image = site_data.logo_image %}
     {% set logo_alt = site_data.logo_alt %}
     {% set site_title = site_data.site_title %}
@@ -58,7 +60,7 @@
     </main>
 
     <!-- Footer -->
-    <!-- Set variables for components -->
+    <!-- Set variables for footer component -->
     {% set site_description = site_data.site_description %}
     {% set resources = site_data.resources %}
     {% set quick_links_title = site_data.quick_links_title %}
