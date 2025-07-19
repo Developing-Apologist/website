@@ -59,12 +59,18 @@
   }
   
   .card {
-    @apply bg-logo-steel border border-logo-circuit rounded-lg p-6 shadow-lg;
-    background-color: #1C2B3A;
+    @apply border border-logo-circuit rounded-lg p-6 shadow-lg;
+    background-color: #2A3B4A;
     border: 1px solid #124B70;
     border-radius: 8px;
     padding: 1.5rem;
-    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.3), 0 0 0 1px rgba(0, 191, 255, 0.1);
+    transition: all 0.3s ease;
+  }
+  
+  .card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 15px 35px -5px rgba(0, 0, 0, 0.4), 0 0 0 1px rgba(0, 191, 255, 0.2);
   }
   
   .nav-link {
@@ -109,4 +115,204 @@
 .text-vs-orange { color: #FFA500 !important; }
 .text-vs-purple { color: #8B5CF6 !important; }
 
-.border-logo-circuit { border-color: #124B70 !important; } 
+.border-logo-circuit { border-color: #124B70 !important; }
+
+/* Kit Form Styling - Target the actual Kit form structure */
+.formkit-form[data-uid="05480979b6"] {
+  background-color: #2A3B4A !important;
+  border: 1px solid #124B70 !important;
+  border-radius: 8px !important;
+  padding: 0 24px 24px 24px !important;
+  margin: 0 !important;
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.3) !important;
+  transition: all 0.3s ease !important;
+  width: 100% !important;
+  max-width: 100% !important;
+  box-sizing: border-box !important;
+}
+
+.formkit-form[data-uid="05480979b6"]:hover {
+  transform: translateY(-2px) !important;
+  box-shadow: 0 15px 35px -5px rgba(0, 0, 0, 0.4) !important;
+}
+
+/* Override Tailwind CSS padding with higher specificity */
+.formkit-form[data-uid="05480979b6"].formkit-form {
+  padding: 0 24px 24px 24px !important;
+}
+
+/* Remove borders from Kit form input fields to eliminate double borders */
+.formkit-form[data-uid="05480979b6"] .formkit-input {
+  border: none !important;
+  border-color: transparent !important;
+  background-color: #0A0F1C !important;
+  color: #E8F4FD !important;
+  border-radius: 6px !important;
+  padding: 14px 16px !important;
+  font-size: 16px !important;
+  transition: all 0.2s ease !important;
+  margin-bottom: 16px !important;
+  width: 100% !important;
+  box-sizing: border-box !important;
+}
+
+.formkit-form[data-uid="05480979b6"] .formkit-input:focus {
+  outline: none !important;
+  border: 1px solid #00BFFF !important;
+  box-shadow: 0 0 0 3px rgba(0, 191, 255, 0.1) !important;
+  transform: translateY(-1px) !important;
+}
+
+.formkit-form[data-uid="05480979b6"] .formkit-input::-webkit-input-placeholder {
+  color: #8B9CA8 !important;
+  opacity: 1 !important;
+}
+
+.formkit-form[data-uid="05480979b6"] .formkit-input::-moz-placeholder {
+  color: #8B9CA8 !important;
+  opacity: 1 !important;
+}
+
+.formkit-form[data-uid="05480979b6"] .formkit-input:-ms-input-placeholder {
+  color: #8B9CA8 !important;
+  opacity: 1 !important;
+}
+
+.formkit-form[data-uid="05480979b6"] .formkit-input::placeholder {
+  color: #8B9CA8 !important;
+  opacity: 1 !important;
+}
+
+/* Target the form container */
+.kit-form-container {
+  width: 100% !important;
+  max-width: 100% !important;
+  background: transparent !important;
+  border: none !important;
+  padding: 0 !important;
+  margin: 0 !important;
+}
+
+/* Remove any extra borders from Kit's internal structure */
+.formkit-form[data-uid="05480979b6"] * {
+  border-color: transparent !important;
+}
+
+/* Ensure the form background matches our card design */
+.formkit-form[data-uid="05480979b6"] [data-style="minimal"] {
+  background-color: #2A3B4A !important;
+  border: none !important;
+  border-radius: 8px !important;
+  padding: 8px 24px 24px 24px !important;
+}
+
+/* Override Tailwind CSS for the inner div with higher specificity */
+.formkit-form[data-uid="05480979b6"] [data-style="minimal"].formkit-form {
+  padding: 8px 24px 24px 24px !important;
+}
+
+/* Override any white borders */
+.formkit-form[data-uid="05480979b6"] {
+  border: 1px solid #124B70 !important;
+  border-color: #124B70 !important;
+}
+
+/* Button styling - This should make the button pop more */
+.kit-form button[type="submit"],
+.kit-form input[type="submit"] {
+  background-color: #00BFFF !important;
+  color: #FFFFFF !important;
+  border: none !important;
+  border-radius: 6px !important;
+  padding: 14px 32px !important;
+  font-size: 16px !important;
+  font-weight: 700 !important;
+  cursor: pointer !important;
+  transition: all 0.2s ease !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.5px !important;
+  box-shadow: 0 4px 12px rgba(0, 191, 255, 0.3) !important;
+  width: 100% !important;
+  margin-top: 8px !important;
+}
+
+.kit-form button[type="submit"]:hover,
+.kit-form input[type="submit"]:hover {
+  background-color: #3ECFFF !important;
+  transform: translateY(-2px) !important;
+  box-shadow: 0 6px 16px rgba(0, 191, 255, 0.4) !important;
+}
+
+.kit-form button[type="submit"]:active,
+.kit-form input[type="submit"]:active {
+  transform: translateY(0) !important;
+  box-shadow: 0 2px 8px rgba(0, 191, 255, 0.3) !important;
+}
+
+/* Input field styling - Dark theme integration */
+.kit-form input[type="email"],
+.kit-form input[type="text"],
+.kit-form input[type="name"] {
+  background-color: #0A0F1C !important;
+  color: #E8F4FD !important;
+  border: 1px solid #124B70 !important;
+  border-radius: 6px !important;
+  padding: 14px 16px !important;
+  font-size: 16px !important;
+  transition: all 0.2s ease !important;
+  margin-bottom: 16px !important;
+  width: 100% !important;
+  box-sizing: border-box !important;
+}
+
+.kit-form input[type="email"]:focus,
+.kit-form input[type="text"]:focus,
+.kit-form input[type="name"]:focus {
+  outline: none !important;
+  border-color: #00BFFF !important;
+  box-shadow: 0 0 0 3px rgba(0, 191, 255, 0.1) !important;
+  transform: translateY(-1px) !important;
+}
+
+/* Placeholder text styling */
+.kit-form input[type="email"]::placeholder,
+.kit-form input[type="text"]::placeholder,
+.kit-form input[type="name"]::placeholder {
+  color: #8B9CA8 !important;
+  opacity: 1 !important;
+}
+
+/* Better spacing for form elements */
+.kit-form > * {
+  margin-bottom: 16px !important;
+}
+
+.kit-form > *:last-child {
+  margin-bottom: 0 !important;
+}
+
+/* Form text styling */
+.kit-form h1,
+.kit-form h2,
+.kit-form h3,
+.kit-form p,
+.kit-form label {
+  color: #E8F4FD !important;
+}
+
+/* Form heading improvements */
+.kit-form h1,
+.kit-form h2 {
+  color: #E8F4FD !important;
+  font-weight: 600 !important;
+  margin-bottom: 20px !important;
+  font-size: 24px !important;
+}
+
+/* Form description text */
+.kit-form p {
+  color: #E8F4FD !important;
+  opacity: 0.9 !important;
+  margin-bottom: 24px !important;
+  line-height: 1.6 !important;
+}
