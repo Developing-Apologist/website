@@ -5,10 +5,10 @@
   "main": "index.js",
   "scripts": {
     "build": "eleventy",
-    "build:css": "npx tailwindcss -i ./src/css/main.css -o ./src/css/main.css --minify",
+    "build:css": "npx tailwindcss -i ./src/css/main.css -o ./src/css/tailwind.css --minify",
     "build:full": "npm run build:css && npm run build",
     "start": "eleventy --serve",
-    "dev": "npx tailwindcss -i ./src/css/main.css -o ./src/css/main.css --watch & eleventy --serve --watch",
+    "dev": "npx tailwindcss -i ./src/css/main.css -o ./src/css/tailwind.css --watch & eleventy --serve --watch",
     "clean": "rm -rf _site"
   },
   "keywords": [
