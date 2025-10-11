@@ -76,17 +76,17 @@ This task list guides the consolidation of four separate repositories (main webs
   - [x] 3.9 Verify Nunjucks search paths in `eleventy.config.js` include both `src/_includes` and `src/_includes/shared/includes`
   - [x] 3.10 Test that components like navbar and footer can be included without errors
 
-- [ ] 4.0 Merge Tailwind CSS Configurations
-  - [ ] 4.1 Review the blog's `tailwind.config.js` (has extensive logo color palette)
-  - [ ] 4.2 Review the talks' `tailwind.config.js` (references shared config)
-  - [ ] 4.3 Review the shared `tailwind.config.js` in shared-layouts
-  - [ ] 4.4 Merge all color definitions into the main website `tailwind.config.js`, preserving all logo colors (logo-blue, logo-orange, logo-navy, logo-steel, logo-circuit, logo-glow, darcula palette, vs-code colors)
-  - [ ] 4.5 Update content paths in `tailwind.config.js` to include all template directories: `"./src/**/*.{html,js,njk,md}"`, `"./src/_includes/**/*.njk"`, `"./src/_data/**/*.js"`
-  - [ ] 4.6 Add `@tailwindcss/typography` plugin if not already present
-  - [ ] 4.7 Ensure fontFamily includes both mono (JetBrains Mono, Fira Code) and sans (Inter) fonts
-  - [ ] 4.8 Create or update `src/css/main.css` to import shared styles: `@import '../_includes/shared/developing-apologist.css';`
-  - [ ] 4.9 Run `npm run build:css` to verify all Tailwind styles compile without errors
-  - [ ] 4.10 Verify generated CSS file at `src/css/tailwind.css` contains all expected styles
+- [x] 4.0 Merge Tailwind CSS Configurations
+  - [x] 4.1 Review the blog's `tailwind.config.js` (has extensive logo color palette)
+  - [x] 4.2 Review the talks' `tailwind.config.js` (references shared config)
+  - [x] 4.3 Review the shared `tailwind.config.js` in shared-layouts
+  - [x] 4.4 Merge all color definitions into the main website `tailwind.config.js`, preserving all logo colors (logo-blue, logo-orange, logo-navy, logo-steel, logo-circuit, logo-glow, darcula palette, vs-code colors)
+  - [x] 4.5 Update content paths in `tailwind.config.js` to include all template directories: `"./src/**/*.{html,js,njk,md}"`, `"./src/_includes/**/*.njk"`, `"./src/_data/**/*.js"`
+  - [x] 4.6 Add `@tailwindcss/typography` plugin if not already present
+  - [x] 4.7 Ensure fontFamily includes both mono (JetBrains Mono, Fira Code) and sans (Inter) fonts
+  - [x] 4.8 Create or update `src/css/main.css` to import shared styles (NOTE: Removed import as website has its own complete CSS)
+  - [x] 4.9 Run `npm run build:css` to verify all Tailwind styles compile without errors
+  - [x] 4.10 Verify generated CSS file at `src/css/tailwind.css` contains all expected styles
 
 - [ ] 5.0 Configure URL Structure, Collections, and Permalinks
   - [ ] 5.1 Configure the `posts` collection to read from `src/posts/**/*.md` (already done in task 1.8)
