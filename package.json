@@ -9,7 +9,9 @@
     "build:full": "npm run build:css && npm run build",
     "start": "eleventy --serve",
     "dev": "npx tailwindcss -i ./src/css/main.css -o ./src/css/tailwind.css --watch & eleventy --serve --watch",
-    "clean": "rm -rf _site"
+    "clean": "rm -rf _site",
+    "schedule": "node scripts/schedule-posts.js schedule",
+    "publish": "node scripts/schedule-posts.js publish"
   },
   "keywords": [
     "eleventy",
