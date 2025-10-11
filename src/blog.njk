@@ -1,0 +1,501 @@
+---
+layout: base.njk
+title: Blog Home
+description: "The Developing Apologist Blog - Equipping Christian software developers to defend their faith through logical, systematic apologetics. Read our latest articles and insights."
+---
+
+<!-- Hero Section -->
+<section class="relative bg-gradient-to-br from-logo-navy via-logo-steel to-logo-navy py-16">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center">
+            <div class="mb-10">
+                <h1 class="text-4xl md:text-6xl font-bold text-vs-fg mb-4">
+                    The Developing Apologist <span class="text-logo-blue">Blog</span>
+                </h1>
+                <p class="text-xl md:text-2xl text-vs-fg/80 mb-4 max-w-3xl mx-auto">
+                    Equipping Christian software developers to defend their faith through logical, systematic apologetics
+                </p>
+                <p class="text-lg text-vs-fg/90 mb-10 max-w-2xl mx-auto">
+                    Welcome to our blog! Here you'll find deep-dive articles that explore apologetic topics using developer analogies, 
+                    logical frameworks, and systematic analysis.
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Pinned Articles Section -->
+{% set pinnedPosts = [] %}
+{% for post in collections.posts %}
+  {% if post.data.pinned %}
+    {% set _ = pinnedPosts.push(post) %}
+  {% endif %}
+{% endfor %}
+{% set pinnedPosts = pinnedPosts | sort(false, false, "data.order") %}
+{% if pinnedPosts.length > 0 %}
+<section class="py-12 bg-logo-navy mt-12">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-12">
+            <h2 class="text-2xl md:text-3xl font-bold text-vs-orange mb-2">📌 Pinned Articles</h2>
+            <p class="text-vs-fg/80 max-w-2xl mx-auto">Featured or important posts, hand-picked for you.</p>
+        </div>
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mt-8">
+            {% for post in pinnedPosts %}
+            <article class="card hover:shadow-2xl transition-all duration-300 post-card p-8 bg-gradient-to-br from-darcula-900/80 to-darcula-800/80 border border-logo-circuit/30 backdrop-blur-sm pinned-duplicate" 
+                     data-tags="{{ post.data.tags | join(',') }}" 
+                     data-category="{{ post.data.category | default('general') }}"
+                     data-title="{{ post.data.title | lower }}"
+                     data-description="{{ post.data.description | lower }}"
+                     data-pinned="true"
+                     data-original-url="{{ post.url }}">
+                <div class="mb-4">
+                    <h2 class="text-xl font-bold text-logo-blue/90 mb-3 hover:text-logo-glow transition-colors duration-200">
+                        <a href="{{ post.url }}">
+                            {{ post.data.title }}
+                        </a>
+                    </h2>
+                    {% if post.data.description %}
+                    <p class="text-text-secondary mb-4 line-clamp-3">
+                        {{ post.data.description }}
+                    </p>
+                    {% endif %}
+                </div>
+                <div class="flex items-center justify-between text-sm text-text-muted mb-4">
+                    <time datetime="{{ post.date | dateIso }}">
+                        {{ post.date | dateReadable }}
+                    </time>
+                    {% if post.data.readingTime %}
+                    <span>{{ post.data.readingTime }} min read</span>
+                    {% endif %}
+                </div>
+
+                <!-- Tags section with divider for pinned posts -->
+                {% if post.data.tags %}
+                <div class="border-t border-logo-circuit/30 pt-4">
+                    <div class="flex flex-wrap gap-2">
+                        {% for tag in post.data.tags %}
+                            {% if loop.index <= 3 %}
+                            <button type="button" class="tag-filter-btn bg-logo-blue/20 text-logo-blue px-3 py-1.5 rounded-full text-xs font-medium border border-logo-blue/30 hover:bg-logo-blue/30 hover:border-logo-blue/50 transition-all duration-200 cursor-pointer" data-tag="{{ tag }}">
+                                {{ tag }}
+                            </button>
+                            {% else %}
+                            <button type="button" class="tag-filter-btn bg-logo-blue/20 text-logo-blue px-3 py-1.5 rounded-full text-xs font-medium border border-logo-blue/30 hover:bg-logo-blue/30 hover:border-logo-blue/50 transition-all duration-200 cursor-pointer hidden-tag" data-tag="{{ tag }}">
+                                {{ tag }}
+                            </button>
+                            {% endif %}
+                        {% endfor %}
+                        {% if post.data.tags.length > 3 %}
+                        <button type="button" class="expand-tags-btn text-logo-glow hover:text-logo-blue text-xs px-2 py-1 rounded transition-colors duration-200" data-post-id="{{ post.url | slug }}">
+                            +{{ post.data.tags.length - 3 }} more
+                        </button>
+                        {% endif %}
+                    </div>
+                </div>
+                {% endif %}
+            </article>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+{% endif %}
+
+<!-- Blog Topic Filter and Posts Grid -->
+<section class="py-16 bg-logo-steel">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-6">
+            <h2 class="text-3xl font-bold text-vs-fg mb-3">Latest Articles</h2>
+            <p class="text-vs-fg/80 max-w-2xl mx-auto">
+                Filter by topic to find content that matches your interests and current questions about faith and apologetics.
+            </p>
+        </div>
+
+        <!-- Content Discovery -->
+        <div class="mb-8 mt-4">
+            <!-- Search Bar -->
+            <div class="max-w-2xl mx-auto mb-4">
+                {% include "shared/includes/components/search-input.njk" %}
+            </div>
+
+        <!-- Category Filter -->
+        <div class="max-w-5xl mx-auto px-4 py-3">
+            <div class="flex flex-wrap gap-4 justify-center">
+                <button type="button" class="category-btn active" data-category="all">
+                    <span class="category-icon">📚</span>
+                    <span class="category-label">All Posts</span>
+                </button>
+                <button type="button" class="category-btn" data-category="series">
+                    <span class="category-icon">📖</span>
+                    <span class="category-label">Series</span>
+                </button>
+                <button type="button" class="category-btn" data-category="foundation">
+                    <span class="category-icon">🏗️</span>
+                    <span class="category-label">Foundation</span>
+                </button>
+            </div>
+        </div>
+
+        <!-- Active Tag Filter Indicator -->
+        <div id="active-tag-filter" class="max-w-5xl mx-auto px-4 py-2" style="display: none;">
+            <div class="flex items-center justify-center gap-3">
+                <span class="text-sm text-gray-400">Filtering by tag:</span>
+                <span id="active-tag-name" class="bg-blue-500/30 text-blue-300 px-3 py-1.5 rounded-full text-sm font-medium border border-blue-500/50"></span>
+                <button type="button" id="clear-tag-filter" class="text-gray-400 hover:text-white transition-colors duration-200 p-1 rounded-full hover:bg-gray-600/20" title="Clear tag filter">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        </div>
+
+        <!-- Posts Grid -->
+        <div id="posts-grid" class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-8 pt-4">
+            {% for post in collections.latestPosts %}
+                {% set isPinned = false %}
+                {% for pinned in pinnedPosts %}
+                    {% if post.url == pinned.url %}
+                        {% set isPinned = true %}
+                    {% endif %}
+                {% endfor %}
+                <article class="card hover:shadow-2xl transition-all duration-300 post-card bg-gradient-to-br from-darcula-900/80 to-darcula-800/80 border border-logo-circuit/30 backdrop-blur-sm" 
+                         data-tags="{{ post.data.tags | join(',') }}" 
+                         data-category="{{ post.data.category | default('general') }}"
+                         data-title="{{ post.data.title | lower }}"
+                         data-description="{{ post.data.description | lower }}"
+                         data-pinned="{{ isPinned }}">
+                    <div class="mb-4">
+                        <h2 class="text-xl font-bold text-logo-blue/90 mb-3 hover:text-logo-glow transition-colors duration-200">
+                            <a href="{{ post.url }}">
+                                {{ post.data.title }}
+                            </a>
+                        </h2>
+                        
+                        {% if post.data.description %}
+                        <p class="text-text-secondary mb-4 line-clamp-3">
+                            {{ post.data.description }}
+                        </p>
+                        {% endif %}
+                    </div>
+
+                    <div class="flex items-center justify-between text-sm text-text-muted mb-4">
+                        <time datetime="{{ post.date | dateIso }}">
+                            {{ post.date | dateReadable }}
+                        </time>
+                        <div class="flex items-center gap-3">
+                                {% if post.data.category %}
+                                <span class="text-xs font-medium text-logo-orange bg-logo-orange/10 px-2 py-1 rounded">
+                                    {{ post.data.category }}
+                                </span>
+                                {% endif %}
+                            {% if post.data.readingTime %}
+                            <span>{{ post.data.readingTime }} min read</span>
+                            {% endif %}
+                        </div>
+                    </div>
+
+                    <!-- Tags section with divider -->
+                    {% if post.data.tags %}
+                    <div class="border-t border-logo-circuit/30 pt-4">
+                        <div class="flex flex-wrap gap-2">
+                            {% for tag in post.data.tags %}
+                                {% if loop.index <= 3 %}
+                                <button type="button" class="tag-filter-btn bg-logo-blue/20 text-logo-blue px-3 py-1.5 rounded-full text-xs font-medium border border-logo-blue/30 hover:bg-logo-blue/30 hover:border-logo-blue/50 transition-all duration-200 cursor-pointer" data-tag="{{ tag }}">
+                                    {{ tag }}
+                                </button>
+                                {% else %}
+                                <button type="button" class="tag-filter-btn bg-logo-blue/20 text-logo-blue px-3 py-1.5 rounded-full text-xs font-medium border border-logo-blue/30 hover:bg-logo-blue/30 hover:border-logo-blue/50 transition-all duration-200 cursor-pointer hidden-tag" data-tag="{{ tag }}">
+                                    {{ tag }}
+                                </button>
+                                {% endif %}
+                            {% endfor %}
+                            {% if post.data.tags.length > 3 %}
+                            <button type="button" class="expand-tags-btn text-logo-glow hover:text-logo-blue text-xs px-2 py-1 rounded transition-colors duration-200" data-post-id="{{ post.url | slug }}">
+                                +{{ post.data.tags.length - 3 }} more
+                            </button>
+                            {% endif %}
+                        </div>
+                    </div>
+                    {% endif %}
+                </article>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+
+<!-- Call to Action -->
+<section class="bg-logo-circuit py-16 px-4 sm:px-6 lg:px-8">
+    <div class="max-w-4xl mx-auto text-center">
+        <h2 class="text-3xl font-bold text-text-primary mb-4">Ready to Deepen Your Faith?</h2>
+        <p class="text-xl text-gray-300 mb-8">
+            Explore more resources and join the conversation on our main site.
+        </p>
+        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+            <a href="https://developingapologist.com" class="btn-primary">
+                Visit Main Site
+            </a>
+            <a href="https://talks.developingapologist.com" class="btn-secondary">
+                Watch Our Presentations
+            </a>
+        </div>
+    </div>
+</section>
+
+<script>
+// Enhanced content discovery system - wrapped to prevent redeclaration errors
+(function() {
+  'use strict';
+  
+  // Check if already initialized to prevent duplicate execution
+  if (window.blogFilterInitialized) {
+    return;
+  }
+  window.blogFilterInitialized = true;
+  
+  const searchInput = document.getElementById('search-input');
+  const categoryBtns = document.querySelectorAll('.category-btn');
+  const postCards = document.querySelectorAll('.post-card');
+  const tagFilterBtns = document.querySelectorAll('.tag-filter-btn');
+  const expandTagsBtns = document.querySelectorAll('.expand-tags-btn');
+  const activeTagFilter = document.getElementById('active-tag-filter');
+  const activeTagName = document.getElementById('active-tag-name');
+  const clearTagFilter = document.getElementById('clear-tag-filter');
+
+  let currentCategory = 'all';
+  let currentSearch = '';
+  let currentTag = '';
+
+  // Category filtering
+  categoryBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      // Update active state
+      categoryBtns.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      
+      // Update current category
+      currentCategory = btn.getAttribute('data-category');
+      
+      // Apply filters
+      filterPosts();
+    });
+  });
+
+  // Tag filtering
+  tagFilterBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      const tag = btn.getAttribute('data-tag');
+      
+      // Toggle tag filter
+      if (currentTag === tag) {
+        // If clicking the same tag, clear it
+        console.log('Clearing tag filter');
+        currentTag = '';
+        hideActiveTagFilter();
+      } else {
+        // Set new tag filter
+        console.log('Setting tag filter to:', tag);
+        currentTag = tag;
+        showActiveTagFilter(tag);
+      }
+      
+      // Update tag button states
+      updateTagButtonStates();
+      
+      // Apply filters
+      filterPosts();
+    });
+  });
+
+  // Clear tag filter
+  if (clearTagFilter) {
+    clearTagFilter.addEventListener('click', (e) => {
+      e.preventDefault();
+      e.stopPropagation();
+      console.log('Clear tag filter clicked');
+      currentTag = '';
+      hideActiveTagFilter();
+      updateTagButtonStates();
+      filterPosts();
+    });
+  }
+
+  // Expand tags functionality
+  expandTagsBtns.forEach(btn => {
+    btn.addEventListener('click', (e) => {
+      e.preventDefault();
+      e.stopPropagation();
+      console.log('Expand tags clicked');
+      
+      const postCard = btn.closest('.post-card');
+      console.log('Post card found:', postCard);
+      
+      if (postCard) {
+        const hiddenTags = postCard.querySelectorAll('.hidden-tag');
+        console.log('Hidden tags found:', hiddenTags.length);
+        
+        if (hiddenTags.length > 0) {
+          // Show hidden tags
+          hiddenTags.forEach(tag => {
+            tag.classList.remove('hidden-tag');
+            tag.style.display = 'inline-flex';
+          });
+          
+          // Hide the expand button
+          btn.style.display = 'none';
+          console.log('Tags expanded successfully');
+        }
+      }
+    });
+  });
+
+  // Debounced search for better performance
+  let searchTimeout;
+  if (searchInput) {
+    searchInput.addEventListener('input', (e) => {
+      clearTimeout(searchTimeout);
+      searchTimeout = setTimeout(() => {
+        currentSearch = e.target.value.toLowerCase().trim();
+        filterPosts();
+      }, 150);
+    });
+  }
+
+  function filterPosts() {
+    let visibleCount = 0;
+    
+    postCards.forEach(card => {
+      // Skip pinned duplicates - they should always be visible
+      if (card.classList.contains('pinned-duplicate')) {
+        return;
+      }
+      
+      const category = card.getAttribute('data-category') || '';
+      const title = card.getAttribute('data-title') || '';
+      const description = card.getAttribute('data-description') || '';
+      const tags = (card.getAttribute('data-tags') || '').toLowerCase();
+      
+      // Apply all filters to all posts in Latest Articles section
+      const categoryMatch = currentCategory === 'all' || category === currentCategory;
+      const tagMatch = currentTag === '' || tags.includes(currentTag.toLowerCase());
+      const searchMatch = currentSearch === '' || 
+        title.includes(currentSearch) || 
+        description.includes(currentSearch) || 
+        tags.includes(currentSearch);
+      
+      if (categoryMatch && tagMatch && searchMatch) {
+        card.classList.remove('hidden');
+        visibleCount++;
+        
+        // Auto-expand tags if current tag filter is hidden
+        if (currentTag !== '') {
+          autoExpandTagIfHidden(card, currentTag);
+        }
+      } else {
+        card.classList.add('hidden');
+      }
+    });
+    
+    // Update results count and show feedback
+    updateResultsCount(visibleCount);
+  }
+
+  function updateResultsCount(visibleCount) {
+    const totalCards = document.querySelectorAll('.post-card');
+    
+    // Create or update results counter
+    let resultsCounter = document.getElementById('results-counter');
+    if (!resultsCounter) {
+      resultsCounter = document.createElement('div');
+      resultsCounter.id = 'results-counter';
+      resultsCounter.className = 'text-center text-sm text-gray-400 mb-4';
+      document.getElementById('posts-grid').parentNode.insertBefore(resultsCounter, document.getElementById('posts-grid'));
+    }
+    
+    // Update counter text
+    if (currentSearch || currentCategory !== 'all' || currentTag !== '') {
+      resultsCounter.textContent = `Showing ${visibleCount} of ${totalCards.length} posts`;
+      resultsCounter.style.display = 'block';
+    } else {
+      resultsCounter.style.display = 'none';
+    }
+    
+    console.log(`Showing ${visibleCount} of ${totalCards.length} posts`);
+  }
+
+  function showActiveTagFilter(tag) {
+    console.log('Showing active tag filter for:', tag);
+    
+    // Only show if we have a valid tag
+    if (tag && tag.trim() !== '') {
+      if (activeTagName) {
+        activeTagName.textContent = tag;
+      }
+      if (activeTagFilter) {
+        activeTagFilter.classList.add('show');
+        console.log('Active tag filter should now be visible');
+      }
+    } else {
+      // Hide if no valid tag
+      hideActiveTagFilter();
+    }
+  }
+
+  function hideActiveTagFilter() {
+    if (activeTagFilter) {
+      activeTagFilter.classList.remove('show');
+    }
+  }
+
+  function updateTagButtonStates() {
+    tagFilterBtns.forEach(btn => {
+      const tag = btn.getAttribute('data-tag');
+      if (currentTag === tag) {
+        btn.classList.add('active-tag');
+        btn.style.background = 'linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%)';
+        btn.style.borderColor = '#60a5fa';
+        btn.style.color = '#ffffff';
+      } else {
+        btn.classList.remove('active-tag');
+        btn.style.background = '';
+        btn.style.borderColor = '';
+        btn.style.color = '';
+      }
+    });
+  }
+
+  function autoExpandTagIfHidden(card, targetTag) {
+    const hiddenTags = card.querySelectorAll('.hidden-tag');
+    const expandBtn = card.querySelector('.expand-tags-btn');
+    
+    // Check if the target tag is among the hidden tags
+    let targetTagFound = false;
+    hiddenTags.forEach(tag => {
+      if (tag.getAttribute('data-tag') === targetTag) {
+        targetTagFound = true;
+      }
+    });
+    
+    // If the target tag is hidden, expand all tags
+    if (targetTagFound && hiddenTags.length > 0) {
+      console.log('Auto-expanding tags for filtered tag:', targetTag);
+      
+      // Show all hidden tags
+      hiddenTags.forEach(tag => {
+        tag.classList.remove('hidden-tag');
+        tag.style.display = 'inline-flex';
+      });
+      
+      // Hide the expand button
+      if (expandBtn) {
+        expandBtn.style.display = 'none';
+      }
+    }
+  }
+
+  // Initialize
+  hideActiveTagFilter(); // Ensure filter indicator is hidden initially
+  filterPosts();
+})(); // End of IIFE
+</script>
+
+<!-- Include reusable search script -->
+{% include "shared/includes/components/search-script.njk" %}

@@ -1,0 +1,332 @@
+---
+layout: base.njk
+title: Christian Apologetics Talks
+description: Equipping Believers with Reasoned Faith — One Talk at a Time.
+---
+
+<!-- Hero Section -->
+<section class="relative bg-gradient-to-br from-logo-navy via-logo-steel to-logo-navy py-20">
+    <div class="max-w-7xl mx-auto text-center">
+        <div class="mb-8">
+            <h1 class="text-4xl md:text-6xl font-bold text-text-primary mb-6">
+                The Developing Apologist
+                <span class="text-logo-blue">Talks</span>
+            </h1>
+            <p class="text-xl md:text-2xl text-gray-300 max-w-3xl mx-auto leading-relaxed">
+                Equipping Believers with Reasoned Faith — One Talk at a Time.
+            </p>
+        </div>
+        
+        <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
+            <div class="flex items-center space-x-2 text-logo-glow">
+                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                </svg>
+                <span class="text-sm font-medium">{{ talks.length }} Presentations Available</span>
+            </div>
+            <div class="flex items-center space-x-2 text-logo-orange">
+                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-12a1 1 0 10-2 0v4a1 1 0 00.293.707l2.828 2.829a1 1 0 101.415-1.415L11 9.586V6z" clip-rule="evenodd"></path>
+                </svg>
+                <span class="text-sm font-medium">Free Resources</span>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Talks Filter and Search Section -->
+<section class="py-16 bg-logo-navy">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-6">
+            <h2 class="text-3xl font-bold text-text-primary mb-3">All Presentations</h2>
+            <p class="text-text-secondary max-w-2xl mx-auto">
+                Browse our collection of Christian apologetics talks and filter by content type or series.
+            </p>
+        </div>
+
+        <!-- Content Discovery -->
+        <div class="mb-8 mt-4">
+            <!-- Search Bar -->
+            <div class="max-w-2xl mx-auto mb-4">
+                {% set placeholder = "Search presentations..." %}
+                {% set inputId = "talks-search-input" %}
+                {% set searchTarget = ".talk-card" %}
+                {% include "shared/includes/components/search-input.njk" %}
+            </div>
+
+            <!-- Category Filter -->
+            <div class="max-w-5xl mx-auto px-4 py-3">
+                <div class="flex flex-wrap gap-4 justify-center">
+                    <button type="button" class="category-btn active" data-category="all">
+                        <span class="category-icon">📚</span>
+                        <span class="category-label">All Content</span>
+                    </button>
+                    <button type="button" class="category-btn" data-category="blog">
+                        <span class="category-icon">📖</span>
+                        <span class="category-label">Blog Videos</span>
+                    </button>
+                    <button type="button" class="category-btn" data-category="events">
+                        <span class="category-icon">🎤</span>
+                        <span class="category-label">Events</span>
+                    </button>
+                    <button type="button" class="category-btn" data-category="other">
+                        <span class="category-icon">📋</span>
+                        <span class="category-label">Other</span>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Series Filter -->
+            <div class="max-w-5xl mx-auto px-4 py-3">
+                <div class="flex flex-wrap gap-4 justify-center">
+                    <button type="button" class="category-btn active" data-series="all">
+                        <span class="category-icon">📚</span>
+                        <span class="category-label">All Series</span>
+                    </button>
+                    <button type="button" class="category-btn" data-series="Hello, World Series">
+                        <span class="category-icon">🌍</span>
+                        <span class="category-label">Hello, World</span>
+                    </button>
+                    <button type="button" class="category-btn" data-series="Faith Isn't a Syntax Error Series">
+                        <span class="category-icon">💭</span>
+                        <span class="category-label">Faith & Logic</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Talks Grid -->
+<section class="py-12 px-4 sm:px-6 lg:px-8 bg-logo-steel">
+    <div class="max-w-7xl mx-auto">
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-8 pt-4" id="talks-grid">
+            {% for talk in talks %}
+            <article class="card hover:shadow-2xl transition-all duration-300 post-card bg-gradient-to-br from-logo-navy to-logo-steel border border-logo-circuit/30 backdrop-blur-sm" 
+                     data-difficulty="{{ talk.difficulty }}" 
+                     data-category="{{ talk.category }}" 
+                     data-content-type="{{ talk.content_type }}"
+                     data-tags="{{ talk.tags | join(',') }}"
+                     data-title="{{ talk.title }}"
+                     data-description="{{ talk.description }}">
+                <div class="mb-4">
+                    <h2 class="text-xl font-bold text-logo-blue mb-3 hover:text-logo-glow transition-colors duration-200">
+                        {{ talk.title }}
+                    </h2>
+                    
+                    {% if talk.description %}
+                    <p class="text-text-secondary mb-4 line-clamp-3">
+                        {{ talk.description }}
+                    </p>
+                    {% endif %}
+                </div>
+
+                <div class="flex items-center justify-between text-sm text-text-muted mb-4">
+                    <time datetime="{{ talk.date }}">
+                        {{ talk.date | dateFilter }}
+                    </time>
+                    <div class="flex items-center gap-3">
+                        {% if talk.category %}
+                        <span class="text-xs font-medium text-text-muted">
+                            {{ talk.category }}
+                        </span>
+                        {% endif %}
+                        {% if talk.duration %}
+                        <span>{{ talk.duration }}</span>
+                        {% endif %}
+                    </div>
+                </div>
+
+                <!-- YouTube Embed or Coming Soon Placeholder -->
+                {% if talk.status == "coming-soon" %}
+                <div class="mb-4">
+                    <div class="youtube-embed bg-gradient-to-br from-logo-navy to-logo-steel flex items-center justify-center border-2 border-dashed border-logo-orange">
+                        <div class="text-center text-logo-orange">
+                            <svg class="w-16 h-16 mx-auto mb-3" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-12a1 1 0 10-2 0v4a1 1 0 00.293.707l2.828 2.829a1 1 0 101.415-1.415L11 9.586V6z" clip-rule="evenodd"></path>
+                            </svg>
+                            <p class="text-lg font-semibold mb-1">Coming Soon</p>
+                            <p class="text-sm opacity-75">This talk is in development</p>
+                        </div>
+                    </div>
+                </div>
+                {% elif talk.youtube %}
+                <div class="mb-4">
+                    <iframe 
+                        class="youtube-embed" 
+                        data-src="{{ talk.youtube }}"
+                        title="{{ talk.title }}"
+                        frameborder="0" 
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                        allowfullscreen>
+                    </iframe>
+                </div>
+                {% else %}
+                <div class="mb-4">
+                    <div class="youtube-embed bg-logo-navy flex items-center justify-center">
+                        <div class="text-center text-gray-400">
+                            <svg class="w-12 h-12 mx-auto mb-2" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M4 3a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V5a2 2 0 00-2-2H4zm12 12H4l4-8 3 6 2-4 3 6z" clip-rule="evenodd"></path>
+                            </svg>
+                            <p class="text-sm">Video Coming Soon</p>
+                        </div>
+                    </div>
+                </div>
+                {% endif %}
+
+                <!-- Action Links -->
+                <div class="flex items-center gap-3 mb-4">
+                    {% if talk.slides %}
+                    <a href="{{ talk.slides }}" class="bg-logo-blue hover:bg-logo-glow text-white font-medium py-2 px-4 rounded transition-colors duration-200">
+                        <svg class="w-4 h-4 mr-1 inline" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" d="M3 4a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm0 4a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm0 4a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm0 4a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z" clip-rule="evenodd"></path>
+                        </svg>
+                        View Slides
+                    </a>
+                    {% endif %}
+                    
+                    {% if talk.blog %}
+                    <a href="{{ talk.blog }}" class="bg-logo-steel hover:bg-logo-circuit text-text-primary font-medium py-2 px-4 rounded border border-logo-circuit transition-colors duration-200">
+                        <svg class="w-4 h-4 mr-1 inline" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" d="M4 4a2 2 0 012-2h4.586A2 2 0 0112 2.586L15.414 6A2 2 0 0116 7.414V16a2 2 0 01-2 2H6a2 2 0 01-2-2V4zm2 6a1 1 0 011-1h6a1 1 0 110 2H7a1 1 0 01-1-1zm1 3a1 1 0 100 2h6a1 1 0 100-2H7z" clip-rule="evenodd"></path>
+                        </svg>
+                        Read Blog
+                    </a>
+                    {% endif %}
+                </div>
+
+                <!-- Tags section with divider -->
+                {% if talk.tags %}
+                <div class="border-t border-gray-700/30 pt-4">
+                    <div class="flex flex-wrap gap-2">
+                        {% for tag in talk.tags %}
+                            {% if loop.index <= 3 %}
+                            <button type="button" class="tag-filter-btn bg-blue-500/20 text-blue-300 px-3 py-1.5 rounded-full text-xs font-medium border border-blue-500/30 hover:bg-blue-500/30 hover:border-blue-500/50 transition-all duration-200 cursor-pointer" data-tag="{{ tag }}">
+                                {{ tag }}
+                            </button>
+                            {% else %}
+                            <button type="button" class="tag-filter-btn bg-blue-500/20 text-blue-300 px-3 py-1.5 rounded-full text-xs font-medium border border-blue-500/30 hover:bg-blue-500/30 hover:border-blue-500/50 transition-all duration-200 cursor-pointer hidden-tag" data-tag="{{ tag }}">
+                                {{ tag }}
+                            </button>
+                            {% endif %}
+                        {% endfor %}
+                        {% if talk.tags.length > 3 %}
+                        <button type="button" class="expand-tags-btn text-text-muted hover:text-accent-primary text-xs px-2 py-1 rounded transition-colors duration-200" data-post-id="{{ talk.id }}">
+                            +{{ talk.tags.length - 3 }} more
+                        </button>
+                        {% endif %}
+                    </div>
+                </div>
+                {% endif %}
+            </article>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+
+<!-- Call to Action -->
+<section class="bg-logo-circuit py-16 px-4 sm:px-6 lg:px-8">
+    <div class="max-w-4xl mx-auto text-center">
+        <h2 class="text-3xl font-bold text-text-primary mb-4">Ready to Deepen Your Faith?</h2>
+        <p class="text-xl text-gray-300 mb-8">
+            Explore more resources and join the conversation on our main site.
+        </p>
+        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+            <a href="https://developingapologist.com" class="btn-primary">
+                Visit Main Site
+            </a>
+            <a href="https://blog.developingapologist.com" class="btn-secondary">
+                Read Our Blog
+            </a>
+        </div>
+    </div>
+</section>
+
+<!-- Include search script -->
+{% include "shared/includes/components/search-script.njk" %}
+
+<script>
+// Advanced filter functionality
+document.addEventListener('DOMContentLoaded', function() {
+    const categoryBtns = document.querySelectorAll('.category-btn');
+    const talkCards = document.querySelectorAll('.talk-card');
+    
+    // Track active filters
+    let activeFilters = {
+        category: 'all',
+        series: 'all'
+    };
+    
+    function updateActiveButtons() {
+        // Reset all category buttons
+        categoryBtns.forEach(btn => {
+            btn.classList.remove('active');
+        });
+        
+        // Set active buttons based on current filters
+        Object.entries(activeFilters).forEach(([type, value]) => {
+            const activeBtn = document.querySelector(`[data-${type}="${value}"]`);
+            if (activeBtn) {
+                activeBtn.classList.add('active');
+            }
+        });
+    }
+    
+    function filterCards() {
+        talkCards.forEach(card => {
+            const cardContentType = card.dataset.contentType;
+            const cardCategory = card.dataset.category;
+            
+            let showCard = true;
+            
+            // Check content type filter
+            if (activeFilters.category !== 'all' && cardContentType !== activeFilters.category) {
+                showCard = false;
+            }
+            
+            // Check series filter
+            if (activeFilters.series !== 'all' && cardCategory !== activeFilters.series) {
+                showCard = false;
+            }
+            
+            // Show/hide card based on filters
+            if (showCard) {
+                card.classList.remove('hidden');
+            } else {
+                card.classList.add('hidden');
+            }
+        });
+    }
+    
+    // Add click handlers to category buttons
+    categoryBtns.forEach(btn => {
+        btn.addEventListener('click', function() {
+            const filterType = this.dataset.category ? 'category' : 'series';
+            const filterValue = this.dataset.category || this.dataset.series;
+            
+            // Update active filters
+            activeFilters[filterType] = filterValue;
+            
+            // Update button states and filter cards
+            updateActiveButtons();
+            filterCards();
+        });
+    });
+    
+    // Initialize search with custom options
+    initializeSearch({
+        inputId: 'talks-search-input',
+        searchTarget: '.talk-card',
+        titleAttribute: 'data-title',
+        descriptionAttribute: 'data-description',
+        tagsAttribute: 'data-tags',
+        onSearch: function(visibleCount, totalCount) {
+            console.log(`Showing ${visibleCount} of ${totalCount} talks`);
+        }
+    });
+    
+    // Set initial active state
+    updateActiveButtons();
+    filterCards(); // Initial filter to apply search if any
+});
+</script> 

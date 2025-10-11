@@ -89,17 +89,17 @@ This task list guides the consolidation of four separate repositories (main webs
   - [x] 4.10 Verify generated CSS file at `src/css/tailwind.css` contains all expected styles
 
 - [ ] 5.0 Configure URL Structure, Collections, and Permalinks
-  - [ ] 5.1 Configure the `posts` collection to read from `src/posts/**/*.md` (already done in task 1.8)
+  - [x] 5.1 Configure the `posts` collection to read from `src/posts/**/*.md` (already done in task 1.8)
   - [ ] 5.2 Set up permalinks for blog posts to use `/blog/{{ page.fileSlug }}/` or similar path structure
   - [ ] 5.3 Create blog post layout template at `src/_includes/post.njk` or `src/_includes/layouts/post.njk` (will copy from blog repo in task 6)
   - [ ] 5.4 Configure the `talks` collection to read from appropriate talks content location
   - [ ] 5.5 Set up permalinks for talks to use `/talks/{{ page.fileSlug }}/` or similar path structure
   - [ ] 5.6 Create talks layout template at `src/_includes/talk.njk` or `src/_includes/layouts/talk.njk` (will copy from talks repo in task 6)
-  - [ ] 5.7 Create `src/blog.njk` as the blog index/listing page with layout and pagination
-  - [ ] 5.8 Create `src/talks.njk` as the talks index/listing page with layout
-  - [ ] 5.9 Update blog index page to iterate over `collections.posts` and display post cards
-  - [ ] 5.10 Update talks index page to iterate over `collections.talks` or talks data and display talk cards
-  - [ ] 5.11 Test that visiting `/blog/` shows the blog index and `/talks/` shows the talks index
+  - [x] 5.7 Create `src/blog.njk` as the blog index/listing page with layout and pagination
+  - [x] 5.8 Create `src/talks.njk` as the talks index/listing page with layout
+  - [x] 5.9 Update blog index page to iterate over `collections.posts` and display post cards
+  - [x] 5.10 Update talks index page to iterate over `collections.talks` or talks data and display talk cards
+  - [x] 5.11 Test that visiting `/blog/` shows the blog index and `/talks/` shows the talks index
 
 - [ ] 6.0 Migrate Content from Blog and Talks Repositories
   - [ ] 6.1 Copy all markdown files from `/blog/src/posts/` to `/website/src/posts/`
