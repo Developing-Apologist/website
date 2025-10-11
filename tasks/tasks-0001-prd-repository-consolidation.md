@@ -64,17 +64,17 @@ This task list guides the consolidation of four separate repositories (main webs
   - [x] 2.9 Create a test commit to a branch and verify the build workflow runs successfully on GitHub Actions
   - [x] 2.10 If build succeeds, merge to main and verify deployment to GitHub Pages works correctly
 
-- [ ] 3.0 Consolidate Repository Structure and Absorb Shared Layouts
-  - [ ] 3.1 Create `src/posts/` directory for blog markdown files
-  - [ ] 3.2 Create `src/talks/` directory for talks content (or verify talks structure from talks repo)
-  - [ ] 3.3 Copy all files from `/shared-layouts/includes/components/` to `src/_includes/shared/includes/components/`
-  - [ ] 3.4 Copy all files from `/shared-layouts/includes/layouts/` to `src/_includes/shared/includes/layouts/`
-  - [ ] 3.5 Copy `shared-layouts/includes/developing-apologist.css` to `src/_includes/shared/developing-apologist.css`
-  - [ ] 3.6 Copy `shared-layouts/includes/tailwind.config.js` to `src/_includes/shared/tailwind.config.js`
-  - [ ] 3.7 Remove git submodule references from `.gitmodules` file (if exists)
-  - [ ] 3.8 Remove `.git` directory from `src/_includes/shared/` to convert from submodule to regular directory
-  - [ ] 3.9 Verify Nunjucks search paths in `eleventy.config.js` include both `src/_includes` and `src/_includes/shared/includes`
-  - [ ] 3.10 Test that components like navbar and footer can be included without errors
+- [x] 3.0 Consolidate Repository Structure and Absorb Shared Layouts
+  - [x] 3.1 Create `src/posts/` directory for blog markdown files
+  - [x] 3.2 Create `src/talks/` directory for talks content (or verify talks structure from talks repo)
+  - [x] 3.3 Copy all files from `/shared-layouts/includes/components/` to `src/_includes/shared/includes/components/`
+  - [x] 3.4 Copy all files from `/shared-layouts/includes/layouts/` to `src/_includes/shared/includes/layouts/`
+  - [x] 3.5 Copy `shared-layouts/includes/developing-apologist.css` to `src/_includes/shared/developing-apologist.css`
+  - [x] 3.6 Copy `shared-layouts/includes/tailwind.config.js` to `src/_includes/shared/tailwind.config.js`
+  - [x] 3.7 Remove git submodule references from `.gitmodules` file (if exists)
+  - [x] 3.8 Remove `.git` directory from `src/_includes/shared/` to convert from submodule to regular directory
+  - [x] 3.9 Verify Nunjucks search paths in `eleventy.config.js` include both `src/_includes` and `src/_includes/shared/includes`
+  - [x] 3.10 Test that components like navbar and footer can be included without errors
 
 - [ ] 4.0 Merge Tailwind CSS Configurations
   - [ ] 4.1 Review the blog's `tailwind.config.js` (has extensive logo color palette)
