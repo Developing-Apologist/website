@@ -22,6 +22,8 @@ This task list guides the consolidation of four separate repositories (main webs
 - `/Users/jamesjackson/tsally/developing-apologist/shared-layouts/` - Shared layouts to be absorbed
 
 ### Directory Structure (To Be Created/Modified)
+- `src/_includes/layouts/` - Layout templates directory (CREATED: Moved base.njk here)
+- `src/_includes/layouts/base.njk` - Base layout template (MOVED from src/_includes/)
 - `src/posts/` - Blog post markdown files (from blog repo)
 - `src/talks/` - Talks markdown files (from talks repo)
 - `src/_includes/post.njk` - Blog post layout template (from blog)
@@ -50,17 +52,17 @@ This task list guides the consolidation of four separate repositories (main webs
   - [x] 1.10 Update layouts directory path to support both `_includes` and `_includes/layouts` for compatibility
   - [x] 1.11 Verify passthrough copy includes all necessary directories (assets, css, CNAME, _redirects)
 
-- [ ] 2.0 Validate Development Workflow and Test Deployment Pipeline
-  - [ ] 2.1 Run `npm install` and verify all dependencies install successfully without errors or warnings
-  - [ ] 2.2 Run `npm run build:css` to verify Tailwind CSS compilation works
-  - [ ] 2.3 Run `npm run build` to verify Eleventy builds successfully (even if content is missing)
-  - [ ] 2.4 Run `npm run dev` and verify the development server starts on the correct port (8080 or configured)
-  - [ ] 2.5 Test hot-reloading by making a change to an existing page and verifying the browser auto-refreshes
-  - [ ] 2.6 Review `.github/workflows/deploy.yml` and update if needed for consolidated structure
-  - [ ] 2.7 Verify the workflow includes `submodules: true` in checkout step (will be removed later after submodule absorption)
-  - [ ] 2.8 Update workflow build command to use `npm run build:full` if not already configured
-  - [ ] 2.9 Create a test commit to a branch and verify the build workflow runs successfully on GitHub Actions
-  - [ ] 2.10 If build succeeds, merge to main and verify deployment to GitHub Pages works correctly
+- [x] 2.0 Validate Development Workflow and Test Deployment Pipeline
+  - [x] 2.1 Run `npm install` and verify all dependencies install successfully without errors or warnings
+  - [x] 2.2 Run `npm run build:css` to verify Tailwind CSS compilation works
+  - [x] 2.3 Run `npm run build` to verify Eleventy builds successfully (even if content is missing)
+  - [x] 2.4 Run `npm run dev` and verify the development server starts on the correct port (8080 or configured)
+  - [x] 2.5 Test hot-reloading by making a change to an existing page and verifying the browser auto-refreshes
+  - [x] 2.6 Review `.github/workflows/deploy.yml` and update if needed for consolidated structure
+  - [x] 2.7 Verify the workflow includes `submodules: true` in checkout step (will be removed later after submodule absorption)
+  - [x] 2.8 Update workflow build command to use `npm run build:full` if not already configured
+  - [x] 2.9 Create a test commit to a branch and verify the build workflow runs successfully on GitHub Actions
+  - [x] 2.10 If build succeeds, merge to main and verify deployment to GitHub Pages works correctly
 
 - [ ] 3.0 Consolidate Repository Structure and Absorb Shared Layouts
   - [ ] 3.1 Create `src/posts/` directory for blog markdown files
