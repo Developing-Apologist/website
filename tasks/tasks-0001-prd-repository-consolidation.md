@@ -128,16 +128,16 @@ This task list guides the consolidation of four separate repositories (main webs
   - [x] 7.10 Test search functionality on talks index - verify it filters talks correctly (dev server running for manual testing)
   - [x] 7.11 Verify search results link to correct URLs with new path structure (URLs verified: /blog/[slug]/ paths building correctly)
 
-- [ ] 8.0 Configure RSS Feed Generation
-  - [ ] 8.1 Copy the RSS feed template from `/blog/src/feed.xml.njk` to `/website/src/feed.xml.njk` or `/website/src/blog/feed.xml.njk`
-  - [ ] 8.2 Update the RSS feed template to use the new `absoluteUrl` filter with correct domain (developingapologist.com)
-  - [ ] 8.3 Update feed URLs to use path-based structure: `{{ post.url | absoluteUrl }}` should generate `https://developingapologist.com/blog/post-slug/`
-  - [ ] 8.4 Update the `absoluteUrl` filter in `eleventy.config.js` to use `https://developingapologist.com` instead of `https://blog.developingapologist.com`
-  - [ ] 8.5 Configure the feed to be generated at `/blog/feed.xml` (or `/feed.xml` if covering entire site)
-  - [ ] 8.6 Test RSS feed generation by building the site and verifying the feed file exists
-  - [ ] 8.7 Validate RSS feed XML using an RSS validator tool or feed reader
-  - [ ] 8.8 Verify all feed entries have correct titles, descriptions, URLs, and dates
-  - [ ] 8.9 Add link to RSS feed in blog index page or footer for discoverability
+- [x] 8.0 Configure RSS Feed Generation
+  - [x] 8.1 Copy the RSS feed template from `/blog/src/feed.xml.njk` to `/website/src/feed.xml.njk` or `/website/src/blog/feed.xml.njk`
+  - [x] 8.2 Update the RSS feed template to use the new `absoluteUrl` filter with correct domain (developingapologist.com)
+  - [x] 8.3 Update feed URLs to use path-based structure: `{{ post.url | absoluteUrl }}` should generate `https://developingapologist.com/blog/post-slug/`
+  - [x] 8.4 Update the `absoluteUrl` filter in `eleventy.config.js` to use `https://developingapologist.com` instead of `https://blog.developingapologist.com`
+  - [x] 8.5 Configure the feed to be generated at `/blog/feed.xml` (or `/feed.xml` if covering entire site)
+  - [x] 8.6 Test RSS feed generation by building the site and verifying the feed file exists
+  - [x] 8.7 Validate RSS feed XML using an RSS validator tool or feed reader
+  - [x] 8.8 Verify all feed entries have correct titles, descriptions, URLs, and dates
+  - [x] 8.9 Add link to RSS feed in blog index page or footer for discoverability
 
 - [ ] 9.0 Integrate Discord Comments on Blog Posts
   - [ ] 9.1 Verify `discord-comments.njk` component is in `src/_includes/shared/includes/components/` (copied in task 3)
