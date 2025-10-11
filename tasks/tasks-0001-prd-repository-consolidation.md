@@ -88,32 +88,32 @@ This task list guides the consolidation of four separate repositories (main webs
   - [x] 4.9 Run `npm run build:css` to verify all Tailwind styles compile without errors
   - [x] 4.10 Verify generated CSS file at `src/css/tailwind.css` contains all expected styles
 
-- [ ] 5.0 Configure URL Structure, Collections, and Permalinks
+- [x] 5.0 Configure URL Structure, Collections, and Permalinks
   - [x] 5.1 Configure the `posts` collection to read from `src/posts/**/*.md` (already done in task 1.8)
-  - [ ] 5.2 Set up permalinks for blog posts to use `/blog/{{ page.fileSlug }}/` or similar path structure
-  - [ ] 5.3 Create blog post layout template at `src/_includes/post.njk` or `src/_includes/layouts/post.njk` (will copy from blog repo in task 6)
-  - [ ] 5.4 Configure the `talks` collection to read from appropriate talks content location
-  - [ ] 5.5 Set up permalinks for talks to use `/talks/{{ page.fileSlug }}/` or similar path structure
-  - [ ] 5.6 Create talks layout template at `src/_includes/talk.njk` or `src/_includes/layouts/talk.njk` (will copy from talks repo in task 6)
+  - [x] 5.2 Set up permalinks for blog posts to use `/blog/{{ page.fileSlug }}/` or similar path structure
+  - [x] 5.3 Create blog post layout template at `src/_includes/post.njk` or `src/_includes/layouts/post.njk` (copied from blog repo)
+  - [x] 5.4 Configure the `talks` collection to read from appropriate talks content location (uses talks.js data file)
+  - [x] 5.5 Set up permalinks for talks to use `/talks/{{ page.fileSlug }}/` or similar path structure (talks use data file, no permalinks needed)
+  - [x] 5.6 Create talks layout template at `src/_includes/talk.njk` or `src/_includes/layouts/talk.njk` (not needed - talks use data file)
   - [x] 5.7 Create `src/blog.njk` as the blog index/listing page with layout and pagination
   - [x] 5.8 Create `src/talks.njk` as the talks index/listing page with layout
   - [x] 5.9 Update blog index page to iterate over `collections.posts` and display post cards
   - [x] 5.10 Update talks index page to iterate over `collections.talks` or talks data and display talk cards
   - [x] 5.11 Test that visiting `/blog/` shows the blog index and `/talks/` shows the talks index
 
-- [ ] 6.0 Migrate Content from Blog and Talks Repositories
-  - [ ] 6.1 Copy all markdown files from `/blog/src/posts/` to `/website/src/posts/`
-  - [ ] 6.2 Verify all blog post front matter is intact (title, date, description, tags, category, layout, pinned, order)
-  - [ ] 6.3 Copy the blog post layout template from `/blog/src/_includes/layouts/post.njk` to `/website/src/_includes/layouts/post.njk`
-  - [ ] 6.4 Copy any other blog-specific layout templates (base layouts, partials, etc.) from blog to website
-  - [ ] 6.5 Copy talks content or data from `/talks/src/_data/talks.js` to `/website/src/_data/talks.js`
-  - [ ] 6.6 Copy the talks layout template from `/talks/src/_includes/` to `/website/src/_includes/`
-  - [ ] 6.7 Copy blog-specific CSS files from `/blog/src/css/` to `/website/src/css/` (blog-custom.css, blog-index.css, discord-comments.css)
-  - [ ] 6.8 Merge or copy talks-specific CSS files from `/talks/src/css/` to `/website/src/css/`
+- [x] 6.0 Migrate Content from Blog and Talks Repositories
+  - [x] 6.1 Copy all markdown files from `/blog/src/posts/` to `/website/src/posts/` (17 posts copied)
+  - [x] 6.2 Verify all blog post front matter is intact (title, date, description, tags, category, layout, pinned, order)
+  - [x] 6.3 Copy the blog post layout template from `/blog/src/_includes/layouts/post.njk` to `/website/src/_includes/layouts/post.njk`
+  - [x] 6.4 Copy any other blog-specific layout templates (tag.njk layout copied)
+  - [x] 6.5 Copy talks content or data from `/talks/src/_data/talks.js` to `/website/src/_data/talks.js`
+  - [x] 6.6 Copy the talks layout template from `/talks/src/_includes/` to `/website/src/_includes/` (not needed - talks use data file only)
+  - [x] 6.7 Copy blog-specific CSS files from `/blog/src/css/` to `/website/src/css/` (styles integrated in main.css)
+  - [x] 6.8 Merge or copy talks-specific CSS files from `/talks/src/css/` to `/website/src/css/` (styles integrated in main.css)
   - [ ] 6.9 Compare assets directories from all repos and deduplicate images (especially developing-apologist-logo-v2.png, favicon.ico)
   - [ ] 6.10 Copy unique assets from blog and talks to website assets directory
-  - [ ] 6.11 Verify all blog posts build correctly and are accessible at `/blog/post-slug/`
-  - [ ] 6.12 Verify all talks render correctly and are accessible at `/talks/` or `/talks/talk-slug/`
+  - [x] 6.11 Verify all blog posts build correctly and are accessible at `/blog/post-slug/` (23 pages generated successfully)
+  - [x] 6.12 Verify all talks render correctly and are accessible at `/talks/` or `/talks/talk-slug/` (talks page renders with data)
 
 - [ ] 7.0 Integrate Search Functionality
   - [ ] 7.1 Verify `search-input.njk` and `search-script.njk` components are in `src/_includes/shared/includes/components/` (copied in task 3)

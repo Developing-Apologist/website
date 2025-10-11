@@ -123,7 +123,7 @@ description: Equipping Believers with Reasoned Faith — One Talk at a Time.
 
                 <div class="flex items-center justify-between text-sm text-text-muted mb-4">
                     <time datetime="{{ talk.date }}">
-                        {{ talk.date | dateFilter }}
+                        {{ talk.date | dateReadable }}
                     </time>
                     <div class="flex items-center gap-3">
                         {% if talk.category %}
@@ -235,7 +235,7 @@ description: Equipping Believers with Reasoned Faith — One Talk at a Time.
             <a href="https://developingapologist.com" class="btn-primary">
                 Visit Main Site
             </a>
-            <a href="https://blog.developingapologist.com" class="btn-secondary">
+            <a href="/blog" class="btn-secondary">
                 Read Our Blog
             </a>
         </div>

@@ -40,8 +40,8 @@
             { href: "/", label: "Home", active: page.url == "/" },
             { href: "/about/", label: "About", active: page.url == "/about/" },
             { href: "/contact/", label: "Contact", active: page.url == "/contact/" },
-            { href: "https://blog.developingapologist.com", label: "Blog", active: false },
-            { href: "https://talks.developingapologist.com", label: "Presentations", active: false }
+            { href: "/blog/", label: "Blog", active: page.url.startsWith("/blog/") },
+            { href: "/talks/", label: "Presentations", active: page.url.startsWith("/talks/") }
         ],
         quick_links_title: "Quick Links",
         resources_title: "Resources",

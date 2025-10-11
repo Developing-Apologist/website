@@ -1,0 +1,80 @@
+---
+layout: base.njk
+---
+
+<article class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+    <!-- Tag Header -->
+    <header class="mb-12">
+        <div class="mb-6">
+            <a href="/" class="text-accent-primary hover:text-accent-secondary transition-colors duration-200">
+                ← Back to Blog
+            </a>
+        </div>
+        
+        <h1 class="text-4xl md:text-5xl font-bold text-text-primary mb-4">
+            Posts tagged with "{{ tag }}"
+        </h1>
+        
+        <p class="text-xl text-text-secondary leading-relaxed">
+            {% set tagPosts = collections.posts | postsByTag(tag) %}
+            {{ tagPosts.length }} post{% if tagPosts.length !== 1 %}s{% endif %} found
+        </p>
+    </header>
+    
+    <!-- Posts List -->
+    <div class="space-y-8">
+        {% for post in tagPosts %}
+        <article class="card hover:shadow-2xl transition-all duration-300 bg-gradient-to-br from-darcula-900/80 to-darcula-800/80 border border-logo-circuit/30 backdrop-blur-sm">
+            <div class="mb-4">
+                <h2 class="text-2xl font-bold text-text-primary mb-3 hover:text-accent-primary transition-colors duration-200">
+                    <a href="{{ post.url }}">
+                        {{ post.data.title }}
+                    </a>
+                </h2>
+                
+                {% if post.data.description %}
+                <p class="text-text-secondary mb-4 line-clamp-3">
+                    {{ post.data.description }}
+                </p>
+                {% endif %}
+            </div>
+
+            <div class="flex items-center justify-between text-sm text-text-muted mb-4">
+                <time datetime="{{ post.date | dateIso }}">
+                    {{ post.date | dateReadable }}
+                </time>
+                {% if post.data.readingTime %}
+                <span>{{ post.data.readingTime }} min read</span>
+                {% endif %}
+            </div>
+
+            <!-- Tags -->
+            {% if post.data.tags %}
+            <div class="flex flex-wrap gap-2">
+                {% for postTag in post.data.tags %}
+                {% if postTag === tag %}
+                <span class="px-3 py-1 rounded-full bg-accent-primary/30 text-accent-primary text-xs font-medium border border-accent-primary/50">
+                    {{ postTag }}
+                </span>
+                {% else %}
+                <a href="/tags/{{ postTag | slug }}" class="px-3 py-1 rounded-full bg-accent-primary/20 text-accent-primary text-xs font-medium hover:bg-accent-primary/30 transition-colors duration-200">
+                    {{ postTag }}
+                </a>
+                {% endif %}
+                {% endfor %}
+            </div>
+            {% endif %}
+        </article>
+        {% endfor %}
+    </div>
+    
+    <!-- No Posts Message -->
+    {% if tagPosts.length === 0 %}
+    <div class="text-center py-12">
+        <p class="text-text-muted text-lg">No posts found with this tag.</p>
+        <a href="/" class="text-accent-primary hover:text-accent-secondary transition-colors duration-200 mt-4 inline-block">
+            ← Back to all posts
+        </a>
+    </div>
+    {% endif %}
+</article>
