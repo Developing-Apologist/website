@@ -26,7 +26,8 @@ jobs:
       run: npm ci
       
     - name: Run Cypress tests
-      run: npx cypress run
+      run: |
+        npx cypress run || npx --node-options="--import tsx/register" cypress run
 
     - name: Build site
       run: npm run build:full
