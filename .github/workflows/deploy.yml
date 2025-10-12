@@ -29,7 +29,7 @@ jobs:
       run: npm install tsx --no-save
 
     - name: Run Cypress tests
-      run: npx --node-options="--import tsx/register" cypress run
+      run: npx --node-options="--import tsx/esm" cypress run
 
     - name: Build site
       run: npm run build:full
