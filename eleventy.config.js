@@ -183,7 +183,10 @@ module.exports = function(eleventyConfig) {
       searchPaths: [
         "src/_includes",
         "src/_includes/shared/includes",
-        "src/_includes/shared/includes/components"
+        "src/_includes/shared/includes/components",
+        "_includes",
+        "_includes/shared/includes",
+        "_includes/shared/includes/components"
       ]
     }
   };
