@@ -139,16 +139,16 @@ This task list guides the consolidation of four separate repositories (main webs
   - [x] 8.8 Verify all feed entries have correct titles, descriptions, URLs, and dates
   - [x] 8.9 Add link to RSS feed in blog index page or footer for discoverability
 
-- [ ] 9.0 Integrate Discord Comments on Blog Posts
-  - [ ] 9.1 Verify `discord-comments.njk` component is in `src/_includes/shared/includes/components/` (copied in task 3)
-  - [ ] 9.2 Review any Discord configuration from blog repository (check `src/_data/discord.json` if exists)
-  - [ ] 9.3 Copy Discord configuration file from `/blog/src/_data/discord.json` to `/website/src/_data/discord.json`
-  - [ ] 9.4 Open the blog post layout template (`src/_includes/layouts/post.njk`)
-  - [ ] 9.5 Add `{% include "shared/includes/components/discord-comments.njk" %}` at the bottom of the post content area
-  - [ ] 9.6 Verify Discord comments component is NOT included in talks layout or main page layouts
-  - [ ] 9.7 Copy discord-comments CSS from `/blog/src/css/discord-comments.css` if not already copied
-  - [ ] 9.8 Test a blog post page to verify Discord comments section renders correctly
-  - [ ] 9.9 Verify Discord comments do not appear on non-blog pages (talks, main site pages)
+- [x] 9.0 Integrate Discord Comments on Blog Posts
+  - [x] 9.1 Verify `discord-comments.njk` component is in `src/_includes/shared/includes/components/` (copied in task 3)
+  - [x] 9.2 Review any Discord configuration from blog repository (check `src/_data/discord.json` if exists)
+  - [x] 9.3 Copy Discord configuration file from `/blog/src/_data/discord.json` to `/website/src/_data/discord.json`
+  - [x] 9.4 Open the blog post layout template (`src/_includes/layouts/post.njk`)
+  - [x] 9.5 Add `{% include "shared/includes/components/discord-comments.njk" %}` at the bottom of the post content area
+  - [x] 9.6 Verify Discord comments component is NOT included in talks layout or main page layouts
+  - [x] 9.7 Copy discord-comments CSS from `/blog/src/css/discord-comments.css` if not already copied
+  - [x] 9.8 Test a blog post page to verify Discord comments section renders correctly
+  - [x] 9.9 Verify Discord comments do not appear on non-blog pages (talks, main site pages)
 
 - [ ] 10.0 Update Navigation for Path-Based Routing
   - [ ] 10.1 Open the navbar component at `src/_includes/shared/includes/components/navbar.njk`
