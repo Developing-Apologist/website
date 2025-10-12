@@ -1,0 +1,607 @@
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+
+/* ========================================
+   THE DEVELOPING APOLOGIST - CUSTOM STYLES
+   ======================================== */
+
+/* Base Theme - Dark Navy with Electric Blue Accents */
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  body {
+    @apply bg-logo-navy text-vs-fg font-sans;
+    background-color: #0A0F1C;
+    color: #E8F4FD;
+  }
+  
+  /* Custom scrollbar to match theme */
+  ::-webkit-scrollbar {
+    width: 8px;
+  }
+  
+  ::-webkit-scrollbar-track {
+    @apply bg-logo-navy;
+    background-color: #0A0F1C;
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    @apply bg-logo-circuit rounded;
+    background-color: #124B70;
+    border-radius: 4px;
+  }
+  
+  ::-webkit-scrollbar-thumb:hover {
+    @apply bg-logo-circuit-alt;
+    background-color: #0E4C68;
+  }
+}
+
+/* ========================================
+   COMPONENT STYLES
+   ======================================== */
+
+@layer components {
+  /* ===== SEARCH INPUT COMPONENT ===== */
+  .search-container {
+    max-width: 5xl;
+    margin: 0 auto;
+    padding: 0.5rem 1rem;
+    text-align: center;
+  }
+
+  .search-input {
+    width: 100%;
+    max-width: 32rem;
+    padding: 0.75rem 1rem;
+    border-radius: 0.5rem;
+    border: 1px solid rgba(0, 191, 255, 0.3);
+    background-color: rgba(0, 0, 0, 0.2);
+    color: rgb(232, 244, 253);
+    font-size: 1rem;
+    transition: all 0.2s ease;
+    box-sizing: border-box;
+    backdrop-filter: blur(10px);
+  }
+
+  .search-input:focus {
+    outline: none;
+    border-color: rgb(0, 191, 255);
+    box-shadow: 0 0 0 2px rgba(0, 191, 255, 0.2);
+    background-color: rgba(0, 0, 0, 0.3);
+  }
+
+  .search-input:hover {
+    border-color: rgba(0, 191, 255, 0.5);
+    background-color: rgba(0, 0, 0, 0.25);
+  }
+
+  .search-input::placeholder {
+    color: rgba(232, 244, 253, 0.6);
+  }
+
+  /* Enhanced search input with glow effects */
+  .search-input-enhanced {
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 0 12px 25px rgba(0, 191, 255, 0.15), 0 6px 12px rgba(0, 191, 255, 0.1);
+    position: relative;
+    background: linear-gradient(135deg, rgba(28, 43, 58, 0.95) 0%, rgba(11, 29, 42, 0.95) 100%);
+    border: 1px solid rgba(0, 191, 255, 0.6);
+    backdrop-filter: blur(10px);
+    border-radius: 16px;
+    padding: 16px 24px;
+    font-size: 16px;
+    font-weight: 400;
+    color: #E8F4FD;
+    text-align: center;
+    line-height: 1.5;
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  .search-input-enhanced:focus {
+    box-shadow: 0 16px 35px rgba(0, 191, 255, 0.25), 0 8px 16px rgba(0, 191, 255, 0.15);
+    transform: translateY(-2px);
+    border-color: rgba(0, 191, 255, 0.8);
+    background: linear-gradient(135deg, rgba(28, 43, 58, 0.98) 0%, rgba(11, 29, 42, 0.98) 100%);
+    outline: none;
+  }
+
+  .search-input-enhanced:hover {
+    box-shadow: 0 14px 30px rgba(0, 191, 255, 0.2), 0 7px 14px rgba(0, 191, 255, 0.12);
+    transform: translateY(-1px);
+    border-color: rgba(0, 191, 255, 0.7);
+  }
+
+  .search-input-enhanced::placeholder {
+    color: rgba(232, 244, 253, 0.7);
+    font-weight: 300;
+    letter-spacing: 0.5px;
+  }
+
+  /* ===== CATEGORY BUTTONS ===== */
+  .category-btn {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 14px 24px;
+    background: linear-gradient(135deg, #2D3748 0%, #1A202C 100%);
+    border: 2px solid #4A5568;
+    border-radius: 16px;
+    color: #E2E8F0;
+    font-size: 15px;
+    font-weight: 600;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    cursor: pointer;
+    min-width: 140px;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+    backdrop-filter: blur(10px);
+  }
+
+  .category-btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.1), transparent);
+    transition: left 0.5s;
+  }
+
+  .category-btn:hover::before {
+    left: 100%;
+  }
+
+  .category-btn:hover {
+    background: linear-gradient(135deg, #4A5568 0%, #2D3748 100%);
+    border-color: #718096;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+  }
+
+  .category-btn.active {
+    background: linear-gradient(135deg, #3730a3 0%, #1e1b4b 100%);
+    border-color: #6366f1;
+    color: #ffffff;
+    box-shadow: 0 8px 25px rgba(55, 48, 163, 0.4);
+    transform: translateY(-2px);
+  }
+
+  .category-btn.active::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, rgba(99, 102, 241, 0.1) 0%, rgba(55, 48, 163, 0.1) 100%);
+    border-radius: 14px;
+    pointer-events: none;
+  }
+
+  .category-icon {
+    font-size: 18px;
+    line-height: 1;
+  }
+
+  .category-label {
+    font-weight: 600;
+    letter-spacing: 0.025em;
+  }
+
+  /* ===== RESPONSIVE ADJUSTMENTS ===== */
+  @media (max-width: 768px) {
+    .category-btn {
+      min-width: 120px;
+      padding: 12px 20px;
+      font-size: 14px;
+    }
+
+    .post-card:hover {
+      transform: translateY(-2px);
+    }
+  }
+
+  @media (max-width: 640px) {
+    .category-btn {
+      min-width: 100px;
+      padding: 10px 16px;
+      font-size: 13px;
+    }
+    
+    .category-icon {
+      font-size: 16px;
+    }
+  }
+
+  /* ===== TAG FILTER BUTTONS ===== */
+  .tag-filter-btn {
+    display: inline-flex;
+    align-items: center;
+    background-color: rgba(0, 191, 255, 0.2);
+    color: #00bfff;
+    border: 1px solid rgba(0, 191, 255, 0.3);
+    border-radius: 9999px;
+    padding: 0.375rem 0.75rem;
+    font-size: 0.75rem;
+    font-weight: 500;
+    text-decoration: none;
+    transition: all 0.2s;
+    cursor: pointer;
+  }
+
+  .tag-filter-btn:hover {
+    background-color: rgba(0, 191, 255, 0.3);
+    border-color: rgba(0, 191, 255, 0.5);
+  }
+
+  /* Enhanced tag filter buttons with shimmer effect */
+  .tag-filter-btn-enhanced {
+    display: inline-flex;
+    align-items: center;
+    background-color: rgba(0, 191, 255, 0.2);
+    color: #00bfff;
+    border: 1px solid rgba(0, 191, 255, 0.3);
+    border-radius: 9999px;
+    padding: 0.375rem 0.75rem;
+    font-size: 0.75rem;
+    font-weight: 500;
+    text-decoration: none;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+  }
+
+  .tag-filter-btn-enhanced::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(0, 191, 255, 0.2), transparent);
+    transition: left 0.4s;
+  }
+
+  .tag-filter-btn-enhanced:hover::before {
+    left: 100%;
+  }
+
+  .tag-filter-btn-enhanced:hover {
+    background-color: rgba(0, 191, 255, 0.3);
+    border-color: rgba(0, 191, 255, 0.5);
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(0, 191, 255, 0.3);
+  }
+
+  /* ===== POST CARD STYLES ===== */
+  .post-card .flex.flex-wrap,
+  .post-card .tag-filter-btn {
+    overflow: hidden;
+    max-width: 100%;
+  }
+
+  .post-card .tag-filter-btn {
+    flex-shrink: 1;
+    min-width: 0;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+  }
+
+  .post-card .border-t {
+    padding-top: 1rem;
+  }
+
+  /* Post cards with shimmer effect */
+  .post-card {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .post-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(0, 191, 255, 0.1), transparent);
+    transition: left 0.6s;
+    pointer-events: none;
+  }
+
+  .post-card:hover::before {
+    left: 100%;
+  }
+
+  .post-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3), 0 8px 16px rgba(0, 191, 255, 0.1);
+    border-color: rgba(0, 191, 255, 0.3);
+  }
+
+  .post-card:hover .post-title {
+    color: rgb(0, 191, 255);
+  }
+
+  .post-card:hover .post-description {
+    color: rgba(232, 244, 253, 0.9);
+  }
+
+  /* Enhanced post cards with shimmer effect */
+  .post-card-enhanced {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .post-card-enhanced::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(0, 191, 255, 0.1), transparent);
+    transition: left 0.6s;
+    pointer-events: none;
+  }
+
+  .post-card-enhanced:hover::before {
+    left: 100%;
+  }
+
+  .post-card-enhanced:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3), 0 8px 16px rgba(0, 191, 255, 0.1);
+    border-color: rgba(0, 191, 255, 0.3);
+  }
+
+  .post-card-enhanced:hover .post-title {
+    color: rgb(0, 191, 255);
+  }
+
+  .post-card-enhanced:hover .post-description {
+    color: rgba(232, 244, 253, 0.9);
+  }
+
+  /* ===== UTILITY CLASSES ===== */
+  .flex.flex-wrap {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+  /* Primary Button - Electric Blue */
+  .btn-primary {
+    @apply bg-logo-blue hover:bg-logo-glow text-white font-medium py-2 px-4 rounded transition-colors duration-200;
+    background-color: #00BFFF;
+    color: white;
+  }
+  
+  .btn-primary:hover {
+    background-color: #3ECFFF;
+  }
+  
+  /* Secondary Button - Steel Gray */
+  .btn-secondary {
+    @apply bg-logo-steel hover:bg-logo-circuit text-vs-fg font-medium py-2 px-4 rounded border border-logo-circuit transition-colors duration-200;
+    background-color: #1C2B3A;
+    color: #E8F4FD;
+    border: 1px solid #124B70;
+  }
+  
+  .btn-secondary:hover {
+    background-color: #124B70;
+  }
+  
+  /* Card Component - Dark theme with glow effect */
+  .card {
+    @apply border border-logo-circuit rounded-lg p-6 shadow-lg;
+    background-color: #2A3B4A;
+    border: 1px solid #124B70;
+    border-radius: 8px;
+    padding: 1.5rem;
+    box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.3), 0 0 0 1px rgba(0, 191, 255, 0.1);
+    transition: all 0.3s ease;
+  }
+  
+  .card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 15px 35px -5px rgba(0, 0, 0, 0.4), 0 0 0 1px rgba(0, 191, 255, 0.2);
+  }
+
+  /* Enhanced Card Component - Interactive with shimmer effect */
+  .card-enhanced {
+    @apply border border-logo-circuit rounded-lg p-6 shadow-lg;
+    background-color: #2A3B4A;
+    border: 1px solid #124B70;
+    border-radius: 8px;
+    padding: 1.5rem;
+    box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.3), 0 0 0 1px rgba(0, 191, 255, 0.1);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .card-enhanced::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(0, 191, 255, 0.1), transparent);
+    transition: left 0.6s;
+    pointer-events: none;
+  }
+
+  .card-enhanced:hover::before {
+    left: 100%;
+  }
+
+  .card-enhanced:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3), 0 8px 16px rgba(0, 191, 255, 0.1);
+    border-color: rgba(0, 191, 255, 0.3);
+  }
+
+  .card-enhanced:hover .card-title {
+    color: rgb(0, 191, 255);
+  }
+
+  .card-enhanced:hover .card-description {
+    color: rgba(232, 244, 253, 0.9);
+  }
+  
+  /* Navigation Links */
+  .nav-link {
+    @apply text-vs-fg hover:text-logo-glow transition-colors duration-200;
+    color: #E8F4FD;
+  }
+  
+  .nav-link:hover {
+    color: #3ECFFF;
+  }
+  
+  .nav-link.active {
+    @apply text-logo-blue;
+    color: #00BFFF;
+  }
+  
+  /* Code blocks for technical content */
+  .code-block {
+    @apply bg-logo-navy border border-logo-circuit rounded p-4 font-mono text-sm;
+    background-color: #0A0F1C;
+    border: 1px solid #124B70;
+    border-radius: 4px;
+    padding: 1rem;
+    font-family: 'JetBrains Mono', 'Fira Code', 'Consolas', 'Monaco', monospace;
+    font-size: 0.875rem;
+  }
+}
+
+/* ========================================
+   FORM STYLING - NEWSLETTER SIGNUP
+   ======================================== */
+
+/* FormKit Form Styling - Newsletter signup forms */
+.formkit-form[data-uid="05480979b6"] {
+  background-color: #2A3B4A !important;
+  border: 1px solid #124B70 !important;
+  border-radius: 8px !important;
+  padding: 0 24px 24px 24px !important;
+  margin: 0 !important;
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.3) !important;
+  transition: all 0.3s ease !important;
+  width: 100% !important;
+  max-width: 100% !important;
+  box-sizing: border-box !important;
+}
+
+.formkit-form[data-uid="05480979b6"]:hover {
+  transform: translateY(-2px) !important;
+  box-shadow: 0 15px 35px -5px rgba(0, 0, 0, 0.4) !important;
+}
+
+/* Form inputs - Dark theme */
+.formkit-form[data-uid="05480979b6"] .formkit-input {
+  border: none !important;
+  border-color: transparent !important;
+  background-color: #0A0F1C !important;
+  color: #E8F4FD !important;
+  border-radius: 6px !important;
+  padding: 14px 16px !important;
+  font-size: 16px !important;
+  transition: all 0.2s ease !important;
+  margin-bottom: 16px !important;
+  width: 100% !important;
+  box-sizing: border-box !important;
+}
+
+.formkit-form[data-uid="05480979b6"] .formkit-input:focus {
+  outline: none !important;
+  border: 1px solid #00BFFF !important;
+  box-shadow: 0 0 0 3px rgba(0, 191, 255, 0.1) !important;
+  transform: translateY(-1px) !important;
+}
+
+/* Placeholder text styling */
+.formkit-form[data-uid="05480979b6"] .formkit-input::placeholder {
+  color: #8B9CA8 !important;
+  opacity: 1 !important;
+}
+
+/* Submit button styling */
+.kit-form button[type="submit"],
+.kit-form input[type="submit"] {
+  background-color: #00BFFF !important;
+  color: #FFFFFF !important;
+  border: none !important;
+  border-radius: 6px !important;
+  padding: 14px 32px !important;
+  font-size: 16px !important;
+  font-weight: 700 !important;
+  cursor: pointer !important;
+  transition: all 0.2s ease !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.5px !important;
+  box-shadow: 0 4px 12px rgba(0, 191, 255, 0.3) !important;
+  width: 100% !important;
+  margin-top: 8px !important;
+}
+
+.kit-form button[type="submit"]:hover,
+.kit-form input[type="submit"]:hover {
+  background-color: #3ECFFF !important;
+  transform: translateY(-2px) !important;
+  box-shadow: 0 6px 16px rgba(0, 191, 255, 0.4) !important;
+}
+
+/* ========================================
+   FALLBACK COLOR UTILITIES
+   ======================================== */
+
+/* These ensure colors work even if Tailwind doesn't generate them */
+.bg-logo-navy { background-color: #0A0F1C !important; }
+.bg-logo-steel { background-color: #1C2B3A !important; }
+
+/* Darker versions for card gradients */
+.bg-logo-navy-dark { background-color: #020408 !important; }
+.bg-logo-steel-dark { background-color: #080B0F !important; }
+.bg-logo-circuit { background-color: #124B70 !important; }
+.bg-logo-blue { background-color: #00BFFF !important; }
+.bg-logo-orange { background-color: #FFA500 !important; }
+.bg-logo-glow { background-color: #3ECFFF !important; }
+
+/* Darcula color scheme for cards and backgrounds */
+.bg-darcula-900 { background-color: #2B2B2B !important; }
+.bg-darcula-800 { background-color: #3C3F41 !important; }
+.bg-darcula-700 { background-color: #4E5254 !important; }
+
+.text-vs-fg { color: #E8F4FD !important; }
+.text-vs-fg\/80 { color: rgba(232, 244, 253, 0.8) !important; }
+.text-vs-fg\/60 { color: rgba(232, 244, 253, 0.6) !important; }
+.text-logo-blue { color: #00BFFF !important; }
+.text-logo-orange { color: #FFA500 !important; }
+.text-logo-glow { color: #3ECFFF !important; }
+.text-vs-blue { color: #00BFFF !important; }
+.text-vs-green { color: #00D4AA !important; }
+.text-vs-orange { color: #FFA500 !important; }
+.text-vs-purple { color: #8B5CF6 !important; }
+
+/* Custom text color utilities for content hierarchy */
+.text-text-primary { color: #E8F4FD !important; }
+.text-text-secondary { color: rgba(232, 244, 253, 0.8) !important; }
+.text-text-muted { color: rgba(232, 244, 253, 0.6) !important; }
+.text-accent-primary { color: #00BFFF !important; }
+.text-accent-secondary { color: #3ECFFF !important; }
+
+.border-logo-circuit { border-color: #124B70 !important; }

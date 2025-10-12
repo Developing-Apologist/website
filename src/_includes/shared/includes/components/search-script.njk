@@ -1,0 +1,80 @@
+<script>
+// Reusable Search Function
+function initializeSearch(options = {}) {
+    const {
+        inputId = 'search-input',
+        searchTarget = '.post-card',
+        titleAttribute = 'data-title',
+        descriptionAttribute = 'data-description',
+        tagsAttribute = 'data-tags',
+        onSearch = null
+    } = options;
+
+    const searchInput = document.getElementById(inputId);
+    if (!searchInput) return;
+
+    let searchTimeout;
+
+    const normalize = (value = '') => {
+        if (!value) return '';
+        return value
+            .toLowerCase()
+            .normalize('NFKD')
+            .replace(/[\u2014\u2013]/g, '-')
+            .replace(/[^a-z0-9\s-]/g, ' ')
+            .replace(/['’]/g, '')
+            .replace(/\s+/g, ' ')
+            .trim();
+    };
+
+    searchInput.addEventListener('input', function() {
+        clearTimeout(searchTimeout);
+        searchTimeout = setTimeout(() => {
+            const searchTermRaw = this.value.toLowerCase();
+            const searchTermNormalized = normalize(this.value);
+            const cards = document.querySelectorAll(searchTarget);
+            let visibleCount = 0;
+
+            cards.forEach(card => {
+                const title = card.getAttribute(titleAttribute) || '';
+                const description = card.getAttribute(descriptionAttribute) || '';
+                const tags = card.getAttribute(tagsAttribute) || '';
+                const normalizedAttr = card.getAttribute('data-normalized-text') || '';
+
+                const titleRaw = title.toLowerCase();
+                const descriptionRaw = description.toLowerCase();
+                const tagsRaw = tags.toLowerCase();
+
+                const combinedNormalized = [title, description, tags, normalizedAttr]
+                    .map(normalize)
+                    .join(' ');
+
+                const hasSearchTerm = searchTermRaw === '' ||
+                    titleRaw.includes(searchTermRaw) ||
+                    descriptionRaw.includes(searchTermRaw) ||
+                    tagsRaw.includes(searchTermRaw) ||
+                    (searchTermNormalized !== '' && combinedNormalized.includes(searchTermNormalized));
+
+                if (hasSearchTerm) {
+                    card.classList.remove('hidden');
+                    visibleCount++;
+                } else {
+                    card.classList.add('hidden');
+                }
+            });
+
+            // Call custom callback if provided
+            if (onSearch && typeof onSearch === 'function') {
+                onSearch(visibleCount, cards.length);
+            }
+        }, 150);
+    });
+}
+
+// Auto-initialize if search input exists
+document.addEventListener('DOMContentLoaded', function() {
+    if (document.getElementById('search-input')) {
+        initializeSearch();
+    }
+});
+</script>

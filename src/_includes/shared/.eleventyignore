@@ -1,0 +1,22 @@
+# Git files
+.git/
+.gitignore
+
+# Documentation
+README.md
+*.md
+
+# Development files
+node_modules/
+package*.json
+*.log
+
+# IDE files
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS files
+.DS_Store
+Thumbs.db 

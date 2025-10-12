@@ -1,0 +1,10 @@
+<!-- Reusable Search Input Component -->
+<div class="search-container">
+    <input 
+        type="text" 
+        class="search-input search-input-enhanced" 
+        placeholder="{{ placeholder | default('Search articles...') }}" 
+        id="{{ inputId | default('search-input') }}"
+        data-search-target="{{ searchTarget | default('.post-card') }}"
+    />
+</div>
