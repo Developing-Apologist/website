@@ -150,20 +150,20 @@ This task list guides the consolidation of four separate repositories (main webs
   - [x] 9.8 Test a blog post page to verify Discord comments section renders correctly
   - [x] 9.9 Verify Discord comments do not appear on non-blog pages (talks, main site pages)
 
-- [ ] 10.0 Update Navigation for Path-Based Routing
-  - [ ] 10.1 Open the navbar component at `src/_includes/shared/includes/components/navbar.njk`
-  - [ ] 10.2 Review current navigation link structure and active state detection logic
-  - [ ] 10.3 Update navigation links from subdomain URLs to path-based URLs:
+- [x] 10.0 Update Navigation for Path-Based Routing
+  - [x] 10.1 Open the navbar component at `src/_includes/shared/includes/components/navbar.njk`
+  - [x] 10.2 Review current navigation link structure and active state detection logic
+  - [x] 10.3 Update navigation links from subdomain URLs to path-based URLs:
     - Change `https://blog.developingapologist.com` to `/blog/`
     - Change `https://talks.developingapologist.com` to `/talks/`
-  - [ ] 10.4 Update active state detection for blog link to check if `page.url.startsWith("/blog")`
-  - [ ] 10.5 Update active state detection for talks link to check if `page.url.startsWith("/talks")`
-  - [ ] 10.6 Update any base layout templates that define navigation data (e.g., `base.njk`) with new nav_links
-  - [ ] 10.7 Test navigation on homepage - verify all links point to correct paths
-  - [ ] 10.8 Test navigation on blog index - verify "Blog" link has active state
-  - [ ] 10.9 Test navigation on blog post - verify "Blog" link has active state
-  - [ ] 10.10 Test navigation on talks index - verify "Talks" link has active state
-  - [ ] 10.11 Update footer links if they reference blog or talks subdomains
+  - [x] 10.4 Update active state detection for blog link to check if `page.url.startsWith("/blog")`
+  - [x] 10.5 Update active state detection for talks link to check if `page.url.startsWith("/talks")`
+  - [x] 10.6 Update any base layout templates that define navigation data (e.g., `base.njk`) with new nav_links
+  - [x] 10.7 Test navigation on homepage - verify all links point to correct paths
+  - [x] 10.8 Test navigation on blog index - verify "Blog" link has active state
+  - [x] 10.9 Test navigation on blog post - verify "Blog" link has active state
+  - [x] 10.10 Test navigation on talks index - verify "Talks" link has active state
+  - [x] 10.11 Update footer links if they reference blog or talks subdomains
 
 - [ ] 11.0 Final Testing, Validation, and Cleanup
   - [ ] 11.1 Run `npm run clean` to remove the `_site` directory
