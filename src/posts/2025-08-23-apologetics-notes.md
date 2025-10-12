@@ -17,11 +17,11 @@ Apologetics is both an **art** and a **discipline**. Like writing good code, it 
 
 The discipline comes from study, preparation, and practice. The art comes from wisdom, discernment, and love for the person you're talking with.
 
-## Your "Hello, World!" Moment
+## Your "Hello World" Moment
 
-Your "Hello, World!" of faith may feel simple now — but it's the beginning of a beautiful build. Don't underestimate the power of a simple, honest response to someone's question about your faith. Sometimes the most profound conversations start with the most basic questions.
+Your "Hello World" of faith may feel simple now — but it's the beginning of a beautiful build. Don't underestimate the power of a simple, honest response to someone's question about your faith. Sometimes the most profound conversations start with the most basic questions.
 
-Just like a developer's first "Hello, World" program, your first apologetics conversations might feel awkward or incomplete. That's normal. Every expert was once a beginner. The key is to start, to practice, and to keep growing.
+Just like a developer's first "Hello World" program, your first apologetics conversations might feel awkward or incomplete. That's normal. Every expert was once a beginner. The key is to start, to practice, and to keep growing.
 
 ## Understanding the Word "Apologetics"
 
@@ -69,4 +69,4 @@ Remember: apologetics is about representing Christ well, not about winning argum
 
 ---
 
-*This is part of our "Hello, World" series on the foundations of Christian apologetics. [Read the series introduction]({{ '/posts/2025-07-12-hello-world-series/' | url }}) to understand how apologetics works like a developer's first program.*
+*This is part of our "Hello World" series on the foundations of Christian apologetics. [Read the series introduction]({{ '/posts/2025-07-12-hello-world-series/' | url }}) to understand how apologetics works like a developer's first program.*

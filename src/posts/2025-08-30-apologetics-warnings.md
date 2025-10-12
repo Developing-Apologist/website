@@ -102,4 +102,4 @@ Remember: the goal isn't to be perfect — it's to be faithful. When you make mi
 
 ---
 
-*This is part of our "Hello, World" series on the foundations of Christian apologetics. [Read the series introduction]({{ '/posts/2025-07-12-hello-world-series/' | url }}) to understand how apologetics works like a developer's first program.*
+*This is part of our "Hello World" series on the foundations of Christian apologetics. [Read the series introduction]({{ '/posts/2025-07-12-hello-world-series/' | url }}) to understand how apologetics works like a developer's first program.*

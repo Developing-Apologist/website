@@ -37,8 +37,8 @@ description: Equipping Believers with Reasoned Faith — One Talk at a Time.
 <!-- Talks Filter and Search Section -->
 <section class="py-16 bg-logo-navy">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="text-center mb-6">
-            <h2 class="text-3xl font-bold text-text-primary mb-3">All Presentations</h2>
+            <div class="text-center mb-6">
+            <h2 class="text-3xl font-bold text-text-primary mb-3" data-normalized-text="all presentations">All Presentations</h2>
             <p class="text-text-secondary max-w-2xl mx-auto">
                 Browse our collection of Christian apologetics talks and filter by content type or series.
             </p>
@@ -83,9 +83,9 @@ description: Equipping Believers with Reasoned Faith — One Talk at a Time.
                         <span class="category-icon">📚</span>
                         <span class="category-label">All Series</span>
                     </button>
-                    <button type="button" class="category-btn" data-series="Hello, World Series">
+                    <button type="button" class="category-btn" data-series="Hello World Series">
                         <span class="category-icon">🌍</span>
-                        <span class="category-label">Hello, World</span>
+                        <span class="category-label">Hello World</span>
                     </button>
                     <button type="button" class="category-btn" data-series="Faith Isn't a Syntax Error Series">
                         <span class="category-icon">💭</span>
@@ -110,7 +110,7 @@ description: Equipping Believers with Reasoned Faith — One Talk at a Time.
                      data-title="{{ talk.title }}"
                      data-description="{{ talk.description }}">
                 <div class="mb-4">
-                    <h2 class="text-xl font-bold text-logo-blue mb-3 hover:text-logo-glow transition-colors duration-200">
+                    <h2 class="text-xl font-bold text-logo-blue mb-3 hover:text-logo-glow transition-colors duration-200" data-normalized-text="{{ talk.title | replace(',', '') | lower }}">
                         {{ talk.title }}
                     </h2>
                     
