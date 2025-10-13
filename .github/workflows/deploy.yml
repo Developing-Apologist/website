@@ -10,6 +10,7 @@ jobs:
   build-and-deploy:
     permissions:
       contents: write
+      checks: write
     runs-on: ubuntu-latest
     
     steps:
@@ -19,7 +20,7 @@ jobs:
     - name: Setup Node.js
       uses: actions/setup-node@v4
       with:
-        node-version: '18'
+        node-version: '20'
         cache: 'npm'
         
     - name: Install dependencies
@@ -27,9 +28,29 @@ jobs:
       
     - name: Run Cypress tests
       run: |
-        export NODE_OPTIONS="--import=tsx/register"
-        npx cypress run
+        mkdir -p cypress/results
+        npx cypress run --reporter junit --reporter-options "mochaFile=cypress/results/results-[hash].xml,toConsole=true"
 
+    - name: Publish Test Results
+      if: always()
+      uses: dorny/test-reporter@v1
+      with:
+        name: Cypress Test Results
+        path: 'cypress/results/*.xml'
+        reporter: java-junit
+        fail-on-error: false
+
+    - name: Upload Cypress artifacts
+      if: always()
+      uses: actions/upload-artifact@v4
+      with:
+        name: cypress-artifacts-${{ github.run_id }}
+        path: |
+          cypress/results
+          cypress/screenshots
+          cypress/videos
+        if-no-files-found: ignore
+      
     - name: Build site
       run: npm run build:full
       

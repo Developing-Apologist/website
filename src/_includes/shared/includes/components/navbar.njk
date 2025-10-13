@@ -1,0 +1,103 @@
+<!-- Navigation -->
+<nav class="bg-logo-steel border-b border-logo-circuit sticky top-0 z-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex justify-between items-center h-16">
+            <!-- Logo -->
+            <div class="flex items-center">
+                <a href="https://developingapologist.com" class="flex items-center space-x-3">
+                    {% if logo_image %}
+                        <img src="{{ logo_image }}" alt="{{ logo_alt | default('Site Logo') }}" class="w-8 h-8">
+                    {% else %}
+                        <!-- Default logo placeholder -->
+                        <svg class="w-8 h-8 text-logo-blue" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                        </svg>
+                    {% endif %}
+                    <span class="text-xl font-bold text-vs-fg">{{ site_title | default('Site Title') }}</span>
+                </a>
+            </div>
+            
+            <!-- Work in Progress Badge - Center -->
+            {% if show_wip_badge %}
+            <div class="hidden md:flex items-center">
+                <div class="bg-logo-orange/20 border border-logo-orange/30 rounded-lg px-3 py-2">
+                    <span class="text-logo-orange text-sm font-medium">🚧 Work in Progress 🚧</span>
+                </div>
+            </div>
+            {% endif %}
+            
+            <!-- Navigation Links -->
+            <div class="hidden md:flex items-center space-x-8">
+                {% for link in nav_links %}
+                    <a href="{{ link.href }}" 
+                       class="hover:text-logo-glow transition-colors duration-200 {% if link.active %}text-logo-blue font-semibold{% else %}text-vs-fg{% endif %}">
+                        {{ link.label }}
+                    </a>
+                {% endfor %}
+            </div>
+            
+            <!-- Mobile menu button -->
+            <div class="md:hidden">
+                <button type="button" 
+                        class="mobile-menu-button text-vs-fg hover:text-logo-glow focus:outline-none focus:ring-2 focus:ring-inset focus:ring-logo-blue"
+                        aria-controls="mobile-menu" 
+                        aria-expanded="false">
+                    <span class="sr-only">Open main menu</span>
+                    <!-- Icon when menu is closed -->
+                    <svg class="block h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                    </svg>
+                    <!-- Icon when menu is open -->
+                    <svg class="hidden h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                    </svg>
+                </button>
+            </div>
+        </div>
+        
+        <!-- Mobile menu -->
+        <div id="mobile-menu" class="md:hidden hidden">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3 border-t border-logo-circuit">
+                <!-- Work in Progress Badge - Mobile -->
+                {% if show_wip_badge %}
+                <div class="px-3 py-2">
+                    <div class="bg-logo-orange/20 border border-logo-orange/30 rounded-lg px-3 py-2 inline-block">
+                        <span class="text-logo-orange text-sm font-medium">🚧 Work in Progress 🚧</span>
+                    </div>
+                </div>
+                {% endif %}
+                
+                {% for link in nav_links %}
+                    <a href="{{ link.href }}" 
+                       class="block px-3 py-2 hover:text-logo-glow transition-colors duration-200 {% if link.active %}text-logo-blue font-semibold{% else %}text-vs-fg{% endif %}">
+                        {{ link.label }}
+                    </a>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</nav>
+
+<script>
+  // Mobile menu toggle functionality
+  document.addEventListener('DOMContentLoaded', function() {
+    const mobileMenuButton = document.querySelector('.mobile-menu-button');
+    const mobileMenu = document.getElementById('mobile-menu');
+    
+    if (mobileMenuButton && mobileMenu) {
+      mobileMenuButton.addEventListener('click', function() {
+        const isExpanded = mobileMenuButton.getAttribute('aria-expanded') === 'true';
+        
+        // Toggle menu visibility
+        mobileMenu.classList.toggle('hidden');
+        
+        // Update button state
+        mobileMenuButton.setAttribute('aria-expanded', !isExpanded);
+        
+        // Toggle icon
+        const icons = mobileMenuButton.querySelectorAll('svg');
+        icons.forEach(icon => icon.classList.toggle('hidden'));
+      });
+    }
+  });
+</script> 
