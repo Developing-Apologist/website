@@ -34,9 +34,10 @@ describe('Talks page functionality', () => {
   it('navigates to linked blog posts from talks data', () => {
     cy.get('#talks-grid article a[href^="/blog/"]')
       .first()
+      .should('be.visible')
       .then(($link) => {
         const href = $link.attr('href');
-        cy.wrap($link).scrollIntoView().click();
+        cy.wrap($link).scrollIntoView().should('be.visible').click({ force: true });
         cy.location('pathname').should('eq', href);
       });
   });
