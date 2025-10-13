@@ -10,6 +10,7 @@ jobs:
   build-and-deploy:
     permissions:
       contents: write
+      checks: write
     runs-on: ubuntu-latest
     
     steps:
@@ -25,22 +26,19 @@ jobs:
     - name: Install dependencies
       run: npm ci
       
-    - name: Prepare directory structure for Eleventy
-      run: |
-        # Create a clean directory structure without Git submodule artifacts
-        mkdir -p _includes/shared/includes/components
-        cp -r src/_includes/shared/includes/components/* _includes/shared/includes/components/
-        
-        # Debug directory structure
-        echo "Listing directory structure:"
-        find src/_includes -type d | sort
-        echo "Listing component files:"
-        find src/_includes -name "*.njk" | sort
-      
     - name: Run Cypress tests
       run: |
         mkdir -p cypress/results
         npx cypress run --reporter junit --reporter-options "mochaFile=cypress/results/results-[hash].xml,toConsole=true"
+
+    - name: Publish Test Results
+      if: always()
+      uses: dorny/test-reporter@v1
+      with:
+        name: Cypress Test Results
+        path: 'cypress/results/*.xml'
+        reporter: java-junit
+        fail-on-error: false
 
     - name: Upload Cypress artifacts
       if: always()
