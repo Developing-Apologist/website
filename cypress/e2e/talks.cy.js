@@ -36,7 +36,7 @@ describe('Talks page functionality', () => {
       .first()
       .then(($link) => {
         const href = $link.attr('href');
-        cy.wrap($link).click();
+        cy.wrap($link).scrollIntoView().click();
         cy.location('pathname').should('eq', href);
       });
   });
