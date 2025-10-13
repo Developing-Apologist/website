@@ -1,0 +1,687 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Debugging Common Objections - The Developing Apologist</title>
+    <meta name="description" content="Learn to identify and fix the most common logical bugs and theological flaws when discussing faith and reason with others.">
+
+    <script defer data-domain="developingapologist.com" src="https://plausible.io/js/script.outbound-links.js"></script>
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://developingapologist.com/">
+    <meta property="og:title" content="Debugging Common Objections - The Developing Apologist">
+    <meta property="og:description" content="Learn to identify and fix the most common logical bugs and theological flaws when discussing faith and reason with others.">
+    <meta property="og:image" content="https://developingapologist.com/images/social-preview.jpg">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://developingapologist.com/">
+    <meta property="twitter:title" content="Debugging Common Objections - The Developing Apologist">
+    <meta property="twitter:description" content="Learn to identify and fix the most common logical bugs and theological flaws when discussing faith and reason with others.">
+    <meta property="twitter:image" content="https://developingapologist.com/images/social-preview.jpg">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="/assets/favicon.ico">
+    
+    <!-- Tailwind CSS (built) -->
+    <link rel="stylesheet" href="/css/tailwind.css">
+</head>
+<body class="bg-logo-navy text-vs-fg min-h-screen">
+    <!-- Navigation and Footer Configuration -->
+    
+
+    <!-- Set variables for navbar component -->
+    
+    
+    
+    
+    
+    <!-- Navigation -->
+<nav class="bg-logo-steel border-b border-logo-circuit sticky top-0 z-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex justify-between items-center h-16">
+            <!-- Logo -->
+            <div class="flex items-center">
+                <a href="https://developingapologist.com" class="flex items-center space-x-3">
+                    
+                        <img src="/assets/developing-apologist-logo-v2.png" alt="The Developing Apologist" class="w-8 h-8">
+                    
+                    <span class="text-xl font-bold text-vs-fg">The Developing Apologist</span>
+                </a>
+            </div>
+            
+            <!-- Work in Progress Badge - Center -->
+            
+            
+            <!-- Navigation Links -->
+            <div class="hidden md:flex items-center space-x-8">
+                
+                    <a href="/" 
+                       class="hover:text-logo-glow transition-colors duration-200 text-vs-fg">
+                        Home
+                    </a>
+                
+                    <a href="/about/" 
+                       class="hover:text-logo-glow transition-colors duration-200 text-vs-fg">
+                        About
+                    </a>
+                
+                    <a href="/contact/" 
+                       class="hover:text-logo-glow transition-colors duration-200 text-vs-fg">
+                        Contact
+                    </a>
+                
+                    <a href="/blog/" 
+                       class="hover:text-logo-glow transition-colors duration-200 text-logo-blue font-semibold">
+                        Blog
+                    </a>
+                
+                    <a href="/talks/" 
+                       class="hover:text-logo-glow transition-colors duration-200 text-vs-fg">
+                        Presentations
+                    </a>
+                
+            </div>
+            
+            <!-- Mobile menu button -->
+            <div class="md:hidden">
+                <button type="button" 
+                        class="mobile-menu-button text-vs-fg hover:text-logo-glow focus:outline-none focus:ring-2 focus:ring-inset focus:ring-logo-blue"
+                        aria-controls="mobile-menu" 
+                        aria-expanded="false">
+                    <span class="sr-only">Open main menu</span>
+                    <!-- Icon when menu is closed -->
+                    <svg class="block h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                    </svg>
+                    <!-- Icon when menu is open -->
+                    <svg class="hidden h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                    </svg>
+                </button>
+            </div>
+        </div>
+        
+        <!-- Mobile menu -->
+        <div id="mobile-menu" class="md:hidden hidden">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3 border-t border-logo-circuit">
+                <!-- Work in Progress Badge - Mobile -->
+                
+                
+                
+                    <a href="/" 
+                       class="block px-3 py-2 hover:text-logo-glow transition-colors duration-200 text-vs-fg">
+                        Home
+                    </a>
+                
+                    <a href="/about/" 
+                       class="block px-3 py-2 hover:text-logo-glow transition-colors duration-200 text-vs-fg">
+                        About
+                    </a>
+                
+                    <a href="/contact/" 
+                       class="block px-3 py-2 hover:text-logo-glow transition-colors duration-200 text-vs-fg">
+                        Contact
+                    </a>
+                
+                    <a href="/blog/" 
+                       class="block px-3 py-2 hover:text-logo-glow transition-colors duration-200 text-logo-blue font-semibold">
+                        Blog
+                    </a>
+                
+                    <a href="/talks/" 
+                       class="block px-3 py-2 hover:text-logo-glow transition-colors duration-200 text-vs-fg">
+                        Presentations
+                    </a>
+                
+            </div>
+        </div>
+    </div>
+</nav>
+
+<script>
+  // Mobile menu toggle functionality
+  document.addEventListener('DOMContentLoaded', function() {
+    const mobileMenuButton = document.querySelector('.mobile-menu-button');
+    const mobileMenu = document.getElementById('mobile-menu');
+    
+    if (mobileMenuButton && mobileMenu) {
+      mobileMenuButton.addEventListener('click', function() {
+        const isExpanded = mobileMenuButton.getAttribute('aria-expanded') === 'true';
+        
+        // Toggle menu visibility
+        mobileMenu.classList.toggle('hidden');
+        
+        // Update button state
+        mobileMenuButton.setAttribute('aria-expanded', !isExpanded);
+        
+        // Toggle icon
+        const icons = mobileMenuButton.querySelectorAll('svg');
+        icons.forEach(icon => icon.classList.toggle('hidden'));
+      });
+    }
+  });
+</script> 
+
+    <!-- Main Content -->
+    <main>
+        
+<article class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+    <!-- Post Header -->
+    <header class="mb-12">
+        <div class="mb-6">
+            <a href="/" class="text-accent-primary hover:text-accent-secondary transition-colors duration-200">
+                ← Back to Blog
+            </a>
+        </div>
+        
+        <!-- Only show the H1 from markdown content, so remove this title: -->
+        
+        
+        <!-- Modern horizontal date layout, no icons -->
+        <div class="flex flex-wrap items-center gap-3 text-text-muted mb-6">
+            <span class="text-sm">October 17, 2025</span>
+        </div>
+        
+        
+        
+    </header>
+    
+    <!-- Post Content -->
+    <div class="blog-post prose prose-invert max-w-none">
+        <h1>Debugging Common Objections</h1>
+<p><em>This is Part 4 of our series &quot;Faith Isn't a Syntax Error - A Developer's Guide to Faith and Reason.&quot; <a href="/posts/2025-09-26-faith-isnt-syntax-error-series/">Read the series introduction here</a>.</em></p>
+<p>Just like debugging code, identifying and fixing errors in thinking about faith and reason is crucial for effective apologetics. Let's examine the most common logical bugs and theological flaws, along with how to fix them.</p>
+<h2>Logical Bugs (Common Misconceptions)</h2>
+<h3>Bug 1: &quot;Faith is just blind belief without evidence&quot;</h3>
+<p><strong>Real-world example</strong>: A coworker says, <em>&quot;I don't need faith—I believe in science. Faith is what people use when they can't prove something.&quot;</em></p>
+<p><strong>The Problem</strong>: This assumes that faith is inherently irrational and evidence-free. It's like saying &quot;deployment is just pushing code without testing.&quot;</p>
+<p><strong>The Fix</strong>: Faith in Scripture is grounded in reality and evidence. The resurrection accounts, fulfilled prophecy, and historical witness all demonstrate that Christian faith is built on solid foundations. As Spurgeon said, faith begins with knowledge—it is not a leap into fantasy.</p>
+<p><strong>How to respond</strong>: &quot;I understand why you might think that, but biblical faith is actually grounded in evidence. For example, the resurrection of Jesus is supported by multiple independent sources, early testimony, and the transformation of the disciples. It's not blind belief—it's confident trust based on historical evidence.&quot;</p>
+<h3>Bug 2: &quot;Reason and faith are opposites—you can't hold both&quot;</h3>
+<p><strong>Real-world example</strong>: In an online forum, someone writes, <em>&quot;You can either be rational, or you can have faith—but you can't have both. They're contradictions.&quot;</em></p>
+<p><strong>The Problem</strong>: This creates a false dichotomy. It's like saying &quot;you can either test your code or deploy it, but not both.&quot;</p>
+<p><strong>The Fix</strong>: Reason and faith are not enemies but allies. Reason tests the claims; faith lives them out. Like tests and deployment, the two work together. Augustine's maxim still holds: &quot;I believe in order to understand, and I understand, the better to believe.&quot;</p>
+<p><strong>How to respond</strong>: &quot;Actually, reason and faith work together. Reason helps us evaluate evidence and test claims, while faith is what happens when we act on what we've learned to be true. It's like testing and deploying—both are necessary parts of the same process.&quot;</p>
+<h3>Bug 3: &quot;You don't need reason—just believe&quot;</h3>
+<p><strong>Real-world example</strong>: A well-meaning friend tells you, <em>&quot;Don't overthink it. Just believe. The Bible says it, I believe it, and that settles it.&quot;</em></p>
+<p><strong>The Problem</strong>: This dismisses the role of reason in faith, which goes against Scripture's call to love God with our minds.</p>
+<p><strong>The Fix</strong>: Scripture itself invites reasoning (Isaiah 1:18) and commands us to love God with our mind (Matthew 22:37). Paul reasoned with Jews and Greeks in the synagogues (Acts 18:4). Faith without reason drifts into sentimentality; reason strengthens and clarifies faith.</p>
+<p><strong>How to respond</strong>: &quot;I appreciate your heart, but Scripture actually calls us to love God with our minds too. Jesus said to love God with all our heart, soul, and mind. Paul reasoned with people from Scripture. God invites us to 'reason together' with Him. Reason doesn't replace faith—it strengthens it.&quot;</p>
+<h2>Theological Flaws (Deeper Issues)</h2>
+<h3>Flaw 1: Treating faith as a work that earns salvation</h3>
+<p><strong>Real-world example</strong>: Someone says, <em>&quot;I just need to have enough faith, and then God will save me.&quot;</em></p>
+<p><strong>The Problem</strong>: This misunderstands the nature of salvation and faith. It treats faith as a human achievement rather than a gift.</p>
+<p><strong>The Fix</strong>: Salvation is a gift of grace, not a product of human achievement (Ephesians 2:8–9). Faith is the open hand that receives God's gift, not the labor that earns it.</p>
+<p><strong>How to respond</strong>: &quot;Actually, salvation is a gift from God, not something we earn. Faith isn't a work we do to get saved—it's the way we receive the salvation God offers. It's like receiving a gift with an open hand rather than trying to earn it with our own effort.&quot;</p>
+<h3>Flaw 2: Reducing faith to mere intellectual agreement</h3>
+<p><strong>Real-world example</strong>: Someone says, <em>&quot;I believe all the right doctrines, so I'm saved.&quot;</em></p>
+<p><strong>The Problem</strong>: This reduces faith to mere intellectual assent, missing the relational and transformative aspects.</p>
+<p><strong>The Fix</strong>: Christianity is not just about accepting propositions as true but about trusting a Person—Jesus Christ. Reason supports faith, but faith ultimately rests in a relationship, not a formula.</p>
+<p><strong>How to respond</strong>: &quot;Believing the right things is important, but faith is ultimately about trusting a Person—Jesus Christ. It's not just intellectual agreement; it's relational trust. Like how you might believe your spouse loves you, but faith is what happens when you trust them with your heart.&quot;</p>
+<h2>Debugging Strategies</h2>
+<h3>1. Ask Clarifying Questions</h3>
+<p>Before responding to an objection, make sure you understand what the person is actually saying:</p>
+<ul>
+<li>&quot;What do you mean by 'faith'?&quot;</li>
+<li>&quot;Can you give me an example of what you're talking about?&quot;</li>
+<li>&quot;Help me understand your perspective better.&quot;</li>
+</ul>
+<h3>2. Find Common Ground</h3>
+<p>Look for areas of agreement before addressing differences:</p>
+<ul>
+<li>&quot;I agree that blind faith would be problematic.&quot;</li>
+<li>&quot;You're right that we should test our beliefs.&quot;</li>
+<li>&quot;I appreciate your concern about evidence.&quot;</li>
+</ul>
+<h3>3. Use Analogies</h3>
+<p>Draw parallels to familiar concepts:</p>
+<ul>
+<li>&quot;It's like the difference between deploying untested code and deploying well-tested code.&quot;</li>
+<li>&quot;It's similar to how you trust your car's brakes even though you can't see the internal mechanisms.&quot;</li>
+<li>&quot;It's like the difference between guessing and making an educated decision.&quot;</li>
+</ul>
+<h3>4. Provide Evidence</h3>
+<p>When appropriate, share specific evidence:</p>
+<ul>
+<li>&quot;The resurrection is supported by multiple independent sources.&quot;</li>
+<li>&quot;Fulfilled prophecy provides objective evidence for God's existence.&quot;</li>
+<li>&quot;The transformation of the disciples is historically documented.&quot;</li>
+</ul>
+<h2>Warning Signs to Avoid</h2>
+<h3>1. Don't Overpromise Certainty</h3>
+<p>Evidence and logic provide strong grounds for belief, but they don't remove every question or doubt. Faith always involves trust—like deploying tested code, you still commit it to run in the real world.</p>
+<h3>2. Don't Weaponize Reason</h3>
+<p>Some believers may not articulate the role of evidence and logic clearly, yet their faith is still genuine. Use reason to strengthen and encourage, not to divide.</p>
+<h3>3. Don't Argue to Win</h3>
+<p>The aim of apologetics is not to &quot;debug&quot; a skeptic into submission but to point them toward Christ with both clarity and humility.</p>
+<h3>4. Don't Let Evidence Replace Faith</h3>
+<p>Rational arguments are valuable, but they are not the source of salvation. Even the best apologetic case cannot substitute for trust in Christ Himself.</p>
+<h2>The Bottom Line</h2>
+<p>Debugging errors in thinking about faith and reason is like debugging code—it requires patience, precision, and a systematic approach. The goal isn't to win arguments but to help people see the truth more clearly.</p>
+<p>Remember: most people aren't trying to be difficult; they're genuinely confused or misinformed. Approach them with the same patience and clarity you'd use when helping a junior developer understand a complex concept.</p>
+<p>The best debugging often happens through questions, not statements. Help people think through their assumptions, test their logic, and see where their reasoning might be flawed. And always do it with humility, knowing that you're not perfect either.</p>
+<hr>
+<p><em>What errors have you encountered when discussing faith and reason? How do you approach debugging someone's thinking without being confrontational? Share your experiences in the comments below.</em></p>
+
+    </div>
+    
+        <!-- Post Footer -->
+        <footer class="mt-12 pt-8 border-t border-border-color">
+            <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
+                <div class="text-text-muted text-sm">
+                    <p>Published on October 17, 2025</p>
+                    
+                </div>
+                
+                <div class="flex gap-4">
+                    <a href="https://twitter.com/intent/tweet?text=Debugging%20Common%20Objections&url=https://developingapologist.com/blog/debugging-common-objections/" 
+                       class="text-text-muted hover:text-accent-primary transition-colors duration-200">
+                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z"/>
+                        </svg>
+                    </a>
+                    
+                    <a href="https://www.linkedin.com/sharing/share-offsite/?url=https://developingapologist.com/blog/debugging-common-objections/" 
+                       class="text-text-muted hover:text-accent-primary transition-colors duration-200">
+                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+            
+            <!-- Tags Section -->
+            
+            <div class="mt-6 pt-6 border-t border-border-color">
+                <div class="flex flex-wrap gap-2">
+                    
+                    <a href="/tags/common-errors" class="px-3 py-1 rounded-full bg-accent-primary/20 text-accent-primary text-xs font-medium hover:bg-accent-primary/30 transition-colors duration-200">
+                        common-errors
+                    </a>
+                    
+                    <a href="/tags/faith-isnt-syntax-error" class="px-3 py-1 rounded-full bg-accent-primary/20 text-accent-primary text-xs font-medium hover:bg-accent-primary/30 transition-colors duration-200">
+                        faith-isnt-syntax-error
+                    </a>
+                    
+                </div>
+            </div>
+            
+        </footer>
+
+    <!-- Comments Section -->
+    <style>
+  /* Discord Comments Component */
+  .discord-comments-container {
+    margin-top: 3rem;
+    padding-top: 2rem;
+    border-top: 1px solid var(--border-color, #374151);
+  }
+
+  .discord-comments-header h3 {
+    font-size: 1.75rem;
+    font-weight: 700;
+    color: var(--text-primary, #fff);
+    margin-bottom: 0.5rem;
+  }
+
+  .discord-comments-header p {
+    margin-bottom: 1.5rem;
+    color: var(--text-secondary, #d1d5db);
+  }
+
+  .comment-form-section {
+    margin-bottom: 2rem;
+  }
+
+  .comment-form-section h4 {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: var(--text-primary, #fff);
+    margin-bottom: 1rem;
+  }
+
+  .comment-form-section label {
+    display: block;
+    font-weight: 500;
+    margin-bottom: 0.5rem;
+    color: var(--text-secondary, #d1d5db);
+  }
+
+  .comment-form-section input[type="text"],
+  .comment-form-section textarea {
+    width: 100%;
+    background-color: var(--card-bg, #1f2937);
+    border: 1px solid var(--border-color, #374151);
+    border-radius: 0.375rem;
+    padding: 0.75rem 1rem;
+    color: var(--text-primary, #fff);
+    transition: all 0.2s ease;
+  }
+
+  .comment-form-section input[type="text"]:focus,
+  .comment-form-section textarea:focus {
+    outline: none;
+    border-color: var(--accent-primary, #3b82f6);
+    box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.4);
+  }
+
+  .comment-form-section button[type="submit"] {
+    background-color: var(--accent-primary, #3b82f6);
+    color: #fff;
+    font-weight: 600;
+    padding: 0.75rem 1.5rem;
+    border-radius: 0.375rem;
+    transition: all 0.2s ease;
+  }
+
+  .comment-form-section button[type="submit"]:hover {
+    background-color: var(--accent-secondary, #60a5fa);
+  }
+
+  .discord-join-section {
+    padding: 1rem 1.25rem;
+    margin-bottom: 1.5rem;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    flex-wrap: wrap;
+    background-color: var(--card-bg, #1f2937);
+    border: 1px solid var(--border-color, #374151);
+    border-radius: 0.5rem;
+  }
+
+  .discord-join-section > div {
+    font-weight: 600;
+    font-size: 1.1rem;
+    color: #fff;
+  }
+
+  .discord-join-btn {
+    min-width: 180px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    white-space: nowrap;
+  }
+
+  .discord-comment {
+    display: flex;
+    gap: 1rem;
+    padding: 1rem 0;
+    border-bottom: 1px solid var(--border-color, #374151);
+  }
+
+  .discord-comment .avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: var(--accent-primary, #3b82f6);
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 600;
+    font-size: 1.25rem;
+  }
+
+  .discord-comment .text {
+    color: var(--text-secondary, #d1d5db);
+    line-height: 1.6;
+  }
+</style>
+
+<!-- Discord Comments -->
+<div class="discord-comments-container">
+    <div class="discord-comments-header">
+        <h3>Comments</h3>
+        <p>Join the discussion on Discord</p>
+    </div>
+    
+    <!-- Comment Form -->
+    <div class="comment-form-section">
+        <h4>Leave a Comment</h4>
+        <form id="discord-comment-form">
+            <div id="comment-message" style="display:none;"></div>
+            <div>
+                <label for="comment-author">Name</label>
+                <input type="text" id="comment-author" name="author" required placeholder="Your name">
+            </div>
+            <div>
+                <label for="comment-content">Comment</label>
+                <textarea id="comment-content" name="content" required rows="4" placeholder="Share your thoughts..."></textarea>
+            </div>
+            <p>Your comment will be posted to our Discord server</p>
+            <div>
+                <button type="submit">Post Comment</button>
+            </div>
+        </form>
+    </div>
+    
+    <!-- Discord Join Button -->
+    <div class="discord-join-section">
+        <div>Join the Developing Apologist Community</div>
+        <a href="https://discord.gg/KWvQ222Vhx" 
+           target="_blank" 
+           rel="noopener noreferrer"
+           class="discord-join-btn">
+            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M20.317 4.37a19.791 19.791 0 0 0-4.885-1.515a.074.074 0 0 0-.079.037c-.21.375-.444.864-.608 1.25a18.27 18.27 0 0 0-5.487 0a12.64 12.64 0 0 0-.617-1.25a.077.077 0 0 0-.079-.037A19.736 19.736 0 0 0 3.677 4.37a.07.07 0 0 0-.032.027C.533 9.046-.32 13.58.099 18.057a.082.082 0 0 0 .031.057a19.9 19.9 0 0 0 5.993 3.03a.078.078 0 0 0 .084-.028a14.09 14.09 0 0 0 1.226-1.994a.076.076 0 0 0-.041-.106a13.107 13.107 0 0 1-1.872-.892a.077.077 0 0 1-.008-.128a10.2 10.2 0 0 0 .372-.292a.074.074 0 0 1 .077-.01c3.928 1.793 8.18 1.793 12.062 0a.074.074 0 0 1 .078.01c.12.098.246.198.373.292a.077.077 0 0 1-.006.127a12.299 12.299 0 0 1-1.873.892a.077.077 0 0 0-.041.107c.36.698.772 1.362 1.225 1.993a.076.076 0 0 0 .084.028a19.839 19.839 0 0 0 6.002-3.03a.077.077 0 0 0 .032-.054c.5-5.177-.838-9.674-3.549-13.66a.061.061 0 0 0-.031-.03zM8.02 15.33c-1.183 0-2.157-1.085-2.157-2.419c0-1.333.956-2.419 2.157-2.419c1.21 0 2.176 1.096 2.157 2.42c0 1.333-.956 2.418-2.157 2.418zm7.975 0c-1.183 0-2.157-1.085-2.157-2.419c0-1.333.955-2.419 2.157-2.419c1.21 0 2.176 1.096 2.157 2.42c0 1.333-.946 2.418-2.157 2.418z"/>
+            </svg>
+            <span>Join Discord</span>
+        </a>
+    </div>
+    
+    <!-- Comments Display Area -->
+    <div id="discord-comments" class="discord-comments-list">
+        <!-- Comments will be rendered here -->
+    </div>
+</div>
+
+<script>
+// Discord Comments System
+class DiscordComments {
+    constructor() {
+        this.webhookUrl = 'https://discord.com/api/webhooks/1393569049488658452/upemZr2JuVIBh1-dwRs46--qHHFjfeAFXqtp7lGnJxgCnJMAtacTuWMbUdzjtxKierdp';
+        this.currentPage = '/blog/debugging-common-objections/';
+        this.currentTitle = 'Debugging Common Objections';
+        this.commentsContainer = document.getElementById('discord-comments');
+        this.commentForm = document.getElementById('discord-comment-form');
+        this.init();
+    }
+
+    init() {
+        // Set up form submission
+        this.commentForm.addEventListener('submit', (e) => this.handleCommentSubmit(e));
+        
+        // Load existing comments (optional - could fetch from Discord API)
+        this.loadComments();
+    }
+
+    async handleCommentSubmit(e) {
+        e.preventDefault();
+        const formData = new FormData(this.commentForm);
+        const author = formData.get('author')?.trim();
+        const content = formData.get('content')?.trim();
+        const postUrl = window.location.origin + window.location.pathname;
+        const postTitle = document.title;
+        const messageDiv = document.getElementById('comment-message');
+        messageDiv.style.display = 'none';
+        messageDiv.innerHTML = '';
+        if (!author || !content) {
+            this.showBanner('Please fill in all fields (name and comment).', 'error');
+            return;
+        }
+        const submitBtn = this.commentForm.querySelector('button[type="submit"]');
+        const originalText = submitBtn.textContent;
+        submitBtn.textContent = 'Posting...';
+        submitBtn.disabled = true;
+        try {
+            const response = await fetch('https://blog-discord-integration.azurewebsites.net/api/PostComment', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({
+                    author,
+                    content,
+                    postUrl,
+                    postTitle
+                })
+            });
+            const data = await response.json();
+            if (response.ok && data.success) {
+                this.commentForm.reset();
+                this.showBanner('✅ Comment posted successfully!', 'success');
+                this.loadComments();
+            } else if (response.status === 429) {
+                this.showBanner(data.message || 'Rate limit exceeded. Please try again later.', 'error');
+            } else if (response.status === 400) {
+                this.showBanner(data.message || 'Invalid request. Please check your input.', 'error');
+            } else {
+                this.showBanner(data.message || 'Failed to post comment. Please try again.', 'error');
+            }
+        } catch (error) {
+            this.showBanner('Failed to post comment. Please try again. Error: ' + error.message, 'error');
+        } finally {
+            submitBtn.textContent = originalText;
+            submitBtn.disabled = false;
+        }
+    }
+
+    showBanner(message, type) {
+        const messageDiv = document.getElementById('comment-message');
+        messageDiv.style.display = 'block';
+        messageDiv.innerHTML = `
+            <div class="comment-banner ${type === 'success' ? 'success' : 'error'}">
+                <span>${message}</span>
+                <button onclick="this.parentElement.style.display='none'">&times;</button>
+            </div>
+        `;
+    }
+
+    async loadComments() {
+        try {
+            const postUrl = window.location.origin + window.location.pathname;
+            const response = await fetch(`https://blog-discord-integration.azurewebsites.net/api/GetComments?postUrl=${encodeURIComponent(postUrl)}&limit=50`);
+            const data = await response.json();
+            if (response.ok && data.success) {
+                this.displayComments(data.comments || []);
+            } else {
+                this.displayComments([]);
+            }
+        } catch (error) {
+            this.displayComments([]);
+        }
+    }
+
+    displayComments(comments) {
+        if (!comments || comments.length === 0) {
+            this.commentsContainer.innerHTML = `
+                <div class="text-center py-8 text-vs-fg/60">
+                    <div class="mb-4">
+                        <svg class="w-12 h-12 mx-auto text-vs-fg/60" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M20.317 4.37a19.791 19.791 0 0 0-4.885-1.515a.074.074 0 0 0-.079.037c-.21.375-.444.864-.608 1.25a18.27 18.27 0 0 0-5.487 0a12.64 12.64 0 0 0-.617-1.25a.077.077 0 0 0-.079-.037A19.736 19.736 0 0 0 3.677 4.37a.07.07 0 0 0-.032.027C.533 9.046-.32 13.58.099 18.057a.082.082 0 0 0 .031.057a19.9 19.9 0 0 0 5.993 3.03a.078.078 0 0 0 .084-.028a14.09 14.09 0 0 0 1.226-1.994a.076.076 0 0 0-.041-.106a13.107 13.107 0 0 1-1.872-.892a.077.077 0 0 1-.008-.128a10.2 10.2 0 0 0 .372-.292a.074.074 0 0 1 .077-.01c3.928 1.793 8.18 1.793 12.062 0a.074.074 0 0 1 .078.01c.12.098.246.198.373.292a.077.077 0 0 1-.006.127a12.299 12.299 0 0 1-1.873.892a.077.077 0 0 0-.041.107c.36.698.772 1.362 1.225 1.993a.076.076 0 0 0 .084.028a19.839 19.839 0 0 0 6.002-3.03a.077.077 0 0 0 .032-.054c.5-5.177-.838-9.674-3.549-13.66a.061.061 0 0 0-.031-.03zM8.02 15.33c-1.183 0-2.157-1.085-2.157-2.419c0-1.333.956-2.419 2.157-2.419c1.21 0 2.176 1.096 2.157 2.42c0 1.333-.956 2.418-2.157 2.418zm7.975 0c-1.183 0-2.157-1.085-2.157-2.419c0-1.333.955-2.419 2.157-2.419c1.21 0 2.176 1.096 2.157 2.42c0 1.333-.946 2.418-2.157 2.418z"/>
+                        </svg>
+                    </div>
+                    <p class="text-lg font-medium mb-2">No comments yet</p>
+                    <p class="text-sm">Be the first to share your thoughts!</p>
+                </div>
+            `;
+            return;
+        }
+        // Newest first
+        const sorted = comments.slice().sort((a, b) => new Date(b.timestamp) - new Date(a.timestamp));
+        const commentsHTML = sorted.map(comment => `
+            <div class="discord-comment">
+                <div class="avatar">
+                    ${comment.author.charAt(0).toUpperCase()}
+                </div>
+                <div class="content">
+                    <div class="author-row">
+                        <span class="author">${comment.author}</span>
+                        <span class="timestamp">${new Date(comment.timestamp).toLocaleDateString()}</span>
+                        ${comment.discordMessageUrl ? `<a href="${comment.discordMessageUrl}" target="_blank" rel="noopener noreferrer" class="discord-view-link">View on Discord</a>` : ''}
+                    </div>
+                    <div><p class="text">${comment.content}</p></div>
+                </div>
+            </div>
+        `).join('');
+        this.commentsContainer.innerHTML = commentsHTML;
+    }
+}
+
+// Initialize Discord comments when page loads
+document.addEventListener('DOMContentLoaded', () => {
+    new DiscordComments();
+});
+</script> 
+</article> 
+    </main>
+
+    <!-- Footer -->
+    <!-- Set variables for footer component -->
+    
+    
+    
+    
+    
+    
+    <!-- Footer -->
+<footer class="bg-logo-steel border-t border-logo-circuit py-12">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid md:grid-cols-4 gap-8">
+            <!-- Brand -->
+            <div class="md:col-span-2">
+                <div class="flex items-center space-x-3 mb-4">
+                    
+                        <img src="/assets/developing-apologist-logo-v2.png" alt="The Developing Apologist" class="w-8 h-8">
+                    
+                    <span class="text-xl font-bold text-vs-fg">The Developing Apologist</span>
+                </div>
+                
+                <p class="text-vs-fg/80 mb-4">
+                    Equipping Christian software developers to defend their faith through logical, systematic apologetics that bridges faith and reason.
+                </p>
+                
+                
+            </div>
+            
+            <!-- Quick Links -->
+            
+            <div>
+                <h3 class="text-lg font-semibold text-vs-fg mb-4">Quick Links</h3>
+                <ul class="space-y-2">
+                    
+                    <li><a href="/" class="text-vs-fg/80 hover:text-logo-glow transition-colors duration-200">Home</a></li>
+                    
+                    <li><a href="/about/" class="text-vs-fg/80 hover:text-logo-glow transition-colors duration-200">About</a></li>
+                    
+                    <li><a href="/contact/" class="text-vs-fg/80 hover:text-logo-glow transition-colors duration-200">Contact</a></li>
+                    
+                    <li><a href="/blog/" class="text-vs-fg/80 hover:text-logo-glow transition-colors duration-200">Blog</a></li>
+                    
+                    <li><a href="/talks/" class="text-vs-fg/80 hover:text-logo-glow transition-colors duration-200">Presentations</a></li>
+                    
+                    <li><a href="/feed.xml" class="text-vs-fg/80 hover:text-logo-glow transition-colors duration-200">RSS Feed</a></li>
+                </ul>
+            </div>
+            
+            
+            <!-- External Resources -->
+            
+        </div>
+        
+        <div class="border-t border-logo-circuit mt-8 pt-8 text-center">
+            <p class="text-vs-fg/60">
+                © 2025 The Developing Apologist. All rights reserved.
+            </p>
+        </div>
+    </div>
+</footer> 
+
+</body>
+</html> 

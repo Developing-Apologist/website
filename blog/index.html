@@ -1,0 +1,1739 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog Home - The Developing Apologist</title>
+    <meta name="description" content="The Developing Apologist Blog - Equipping Christian software developers to defend their faith through logical, systematic apologetics. Read our latest articles and insights.">
+
+    <script defer data-domain="developingapologist.com" src="https://plausible.io/js/script.outbound-links.js"></script>
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://developingapologist.com/">
+    <meta property="og:title" content="Blog Home - The Developing Apologist">
+    <meta property="og:description" content="The Developing Apologist Blog - Equipping Christian software developers to defend their faith through logical, systematic apologetics. Read our latest articles and insights.">
+    <meta property="og:image" content="https://developingapologist.com/images/social-preview.jpg">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://developingapologist.com/">
+    <meta property="twitter:title" content="Blog Home - The Developing Apologist">
+    <meta property="twitter:description" content="The Developing Apologist Blog - Equipping Christian software developers to defend their faith through logical, systematic apologetics. Read our latest articles and insights.">
+    <meta property="twitter:image" content="https://developingapologist.com/images/social-preview.jpg">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="/assets/favicon.ico">
+    
+    <!-- Tailwind CSS (built) -->
+    <link rel="stylesheet" href="/css/tailwind.css">
+</head>
+<body class="bg-logo-navy text-vs-fg min-h-screen">
+    <!-- Navigation and Footer Configuration -->
+    
+
+    <!-- Set variables for navbar component -->
+    
+    
+    
+    
+    
+    <!-- Navigation -->
+<nav class="bg-logo-steel border-b border-logo-circuit sticky top-0 z-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex justify-between items-center h-16">
+            <!-- Logo -->
+            <div class="flex items-center">
+                <a href="https://developingapologist.com" class="flex items-center space-x-3">
+                    
+                        <img src="/assets/developing-apologist-logo-v2.png" alt="The Developing Apologist" class="w-8 h-8">
+                    
+                    <span class="text-xl font-bold text-vs-fg">The Developing Apologist</span>
+                </a>
+            </div>
+            
+            <!-- Work in Progress Badge - Center -->
+            
+            
+            <!-- Navigation Links -->
+            <div class="hidden md:flex items-center space-x-8">
+                
+                    <a href="/" 
+                       class="hover:text-logo-glow transition-colors duration-200 text-vs-fg">
+                        Home
+                    </a>
+                
+                    <a href="/about/" 
+                       class="hover:text-logo-glow transition-colors duration-200 text-vs-fg">
+                        About
+                    </a>
+                
+                    <a href="/contact/" 
+                       class="hover:text-logo-glow transition-colors duration-200 text-vs-fg">
+                        Contact
+                    </a>
+                
+                    <a href="/blog/" 
+                       class="hover:text-logo-glow transition-colors duration-200 text-logo-blue font-semibold">
+                        Blog
+                    </a>
+                
+                    <a href="/talks/" 
+                       class="hover:text-logo-glow transition-colors duration-200 text-vs-fg">
+                        Presentations
+                    </a>
+                
+            </div>
+            
+            <!-- Mobile menu button -->
+            <div class="md:hidden">
+                <button type="button" 
+                        class="mobile-menu-button text-vs-fg hover:text-logo-glow focus:outline-none focus:ring-2 focus:ring-inset focus:ring-logo-blue"
+                        aria-controls="mobile-menu" 
+                        aria-expanded="false">
+                    <span class="sr-only">Open main menu</span>
+                    <!-- Icon when menu is closed -->
+                    <svg class="block h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                    </svg>
+                    <!-- Icon when menu is open -->
+                    <svg class="hidden h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                    </svg>
+                </button>
+            </div>
+        </div>
+        
+        <!-- Mobile menu -->
+        <div id="mobile-menu" class="md:hidden hidden">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3 border-t border-logo-circuit">
+                <!-- Work in Progress Badge - Mobile -->
+                
+                
+                
+                    <a href="/" 
+                       class="block px-3 py-2 hover:text-logo-glow transition-colors duration-200 text-vs-fg">
+                        Home
+                    </a>
+                
+                    <a href="/about/" 
+                       class="block px-3 py-2 hover:text-logo-glow transition-colors duration-200 text-vs-fg">
+                        About
+                    </a>
+                
+                    <a href="/contact/" 
+                       class="block px-3 py-2 hover:text-logo-glow transition-colors duration-200 text-vs-fg">
+                        Contact
+                    </a>
+                
+                    <a href="/blog/" 
+                       class="block px-3 py-2 hover:text-logo-glow transition-colors duration-200 text-logo-blue font-semibold">
+                        Blog
+                    </a>
+                
+                    <a href="/talks/" 
+                       class="block px-3 py-2 hover:text-logo-glow transition-colors duration-200 text-vs-fg">
+                        Presentations
+                    </a>
+                
+            </div>
+        </div>
+    </div>
+</nav>
+
+<script>
+  // Mobile menu toggle functionality
+  document.addEventListener('DOMContentLoaded', function() {
+    const mobileMenuButton = document.querySelector('.mobile-menu-button');
+    const mobileMenu = document.getElementById('mobile-menu');
+    
+    if (mobileMenuButton && mobileMenu) {
+      mobileMenuButton.addEventListener('click', function() {
+        const isExpanded = mobileMenuButton.getAttribute('aria-expanded') === 'true';
+        
+        // Toggle menu visibility
+        mobileMenu.classList.toggle('hidden');
+        
+        // Update button state
+        mobileMenuButton.setAttribute('aria-expanded', !isExpanded);
+        
+        // Toggle icon
+        const icons = mobileMenuButton.querySelectorAll('svg');
+        icons.forEach(icon => icon.classList.toggle('hidden'));
+      });
+    }
+  });
+</script> 
+
+    <!-- Main Content -->
+    <main>
+        
+<!-- Hero Section -->
+<section class="relative bg-gradient-to-br from-logo-navy via-logo-steel to-logo-navy py-16">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center">
+            <div class="mb-10">
+                <h1 class="text-4xl md:text-6xl font-bold text-vs-fg mb-4">
+                    The Developing Apologist <span class="text-logo-blue">Blog</span>
+                </h1>
+                <p class="text-xl md:text-2xl text-vs-fg/80 mb-4 max-w-3xl mx-auto">
+                    Equipping Christian software developers to defend their faith through logical, systematic apologetics
+                </p>
+                <p class="text-lg text-vs-fg/90 mb-10 max-w-2xl mx-auto">
+                    Welcome to our blog! Here you'll find deep-dive articles that explore apologetic topics using developer analogies, 
+                    logical frameworks, and systematic analysis.
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Pinned Articles Section -->
+
+
+  
+    
+  
+
+  
+    
+  
+
+  
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+
+<section class="py-12 bg-logo-navy mt-12">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-12">
+            <h2 class="text-2xl md:text-3xl font-bold text-vs-orange mb-2">📌 Pinned Articles</h2>
+            <p class="text-vs-fg/80 max-w-2xl mx-auto">Featured or important posts, hand-picked for you.</p>
+        </div>
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mt-8">
+            
+            <article class="card hover:shadow-2xl transition-all duration-300 post-card p-8 bg-gradient-to-br from-darcula-900/80 to-darcula-800/80 border border-logo-circuit/30 backdrop-blur-sm pinned-duplicate" 
+                     data-tags="welcome,introduction,mission" 
+                     data-category="foundation"
+                     data-title="welcome to the developing apologist blog"
+                     data-description="an introduction to our mission of equipping christian software developers with apologetics tools and resources."
+                     data-pinned="true"
+                     data-original-url="/blog/welcome-to-the-blog/">
+                <div class="mb-4">
+                    <h2 class="text-xl font-bold text-logo-blue/90 mb-3 hover:text-logo-glow transition-colors duration-200">
+                        <a href="/blog/welcome-to-the-blog/">
+                            Welcome to The Developing Apologist Blog
+                        </a>
+                    </h2>
+                    
+                    <p class="text-text-secondary mb-4 line-clamp-3">
+                        An introduction to our mission of equipping Christian software developers with apologetics tools and resources.
+                    </p>
+                    
+                </div>
+                <div class="flex items-center justify-between text-sm text-text-muted mb-4">
+                    <time datetime="2025-07-10T00:00:00.000Z">
+                        July 10, 2025
+                    </time>
+                    
+                </div>
+
+                <!-- Tags section with divider for pinned posts -->
+                
+                <div class="border-t border-logo-circuit/30 pt-4">
+                    <div class="flex flex-wrap gap-2">
+                        
+                            
+                            <button type="button" class="tag-filter-btn bg-logo-blue/20 text-logo-blue px-3 py-1.5 rounded-full text-xs font-medium border border-logo-blue/30 hover:bg-logo-blue/30 hover:border-logo-blue/50 transition-all duration-200 cursor-pointer" data-tag="welcome">
+                                welcome
+                            </button>
+                            
+                        
+                            
+                            <button type="button" class="tag-filter-btn bg-logo-blue/20 text-logo-blue px-3 py-1.5 rounded-full text-xs font-medium border border-logo-blue/30 hover:bg-logo-blue/30 hover:border-logo-blue/50 transition-all duration-200 cursor-pointer" data-tag="introduction">
+                                introduction
+                            </button>
+                            
+                        
+                            
+                            <button type="button" class="tag-filter-btn bg-logo-blue/20 text-logo-blue px-3 py-1.5 rounded-full text-xs font-medium border border-logo-blue/30 hover:bg-logo-blue/30 hover:border-logo-blue/50 transition-all duration-200 cursor-pointer" data-tag="mission">
+                                mission
+                            </button>
+                            
+                        
+                        
+                    </div>
+                </div>
+                
+            </article>
+            
+            <article class="card hover:shadow-2xl transition-all duration-300 post-card p-8 bg-gradient-to-br from-darcula-900/80 to-darcula-800/80 border border-logo-circuit/30 backdrop-blur-sm pinned-duplicate" 
+                     data-tags="hello-world-series,series-intro" 
+                     data-category="series"
+                     data-title="hello world - the foundation of christian apologetics"
+                     data-description="a series exploring the foundational principles of christian apologetics, using developer analogies to show how defending your faith starts with the basics - just like every developer&#39;s first program."
+                     data-pinned="true"
+                     data-original-url="/blog/hello-world-series/">
+                <div class="mb-4">
+                    <h2 class="text-xl font-bold text-logo-blue/90 mb-3 hover:text-logo-glow transition-colors duration-200">
+                        <a href="/blog/hello-world-series/">
+                            Hello World - The Foundation of Christian Apologetics
+                        </a>
+                    </h2>
+                    
+                    <p class="text-text-secondary mb-4 line-clamp-3">
+                        A series exploring the foundational principles of Christian apologetics, using developer analogies to show how defending your faith starts with the basics - just like every developer&#39;s first program.
+                    </p>
+                    
+                </div>
+                <div class="flex items-center justify-between text-sm text-text-muted mb-4">
+                    <time datetime="2025-07-12T00:00:00.000Z">
+                        July 12, 2025
+                    </time>
+                    
+                </div>
+
+                <!-- Tags section with divider for pinned posts -->
+                
+                <div class="border-t border-logo-circuit/30 pt-4">
+                    <div class="flex flex-wrap gap-2">
+                        
+                            
+                            <button type="button" class="tag-filter-btn bg-logo-blue/20 text-logo-blue px-3 py-1.5 rounded-full text-xs font-medium border border-logo-blue/30 hover:bg-logo-blue/30 hover:border-logo-blue/50 transition-all duration-200 cursor-pointer" data-tag="hello-world-series">
+                                hello-world-series
+                            </button>
+                            
+                        
+                            
+                            <button type="button" class="tag-filter-btn bg-logo-blue/20 text-logo-blue px-3 py-1.5 rounded-full text-xs font-medium border border-logo-blue/30 hover:bg-logo-blue/30 hover:border-logo-blue/50 transition-all duration-200 cursor-pointer" data-tag="series-intro">
+                                series-intro
+                            </button>
+                            
+                        
+                        
+                    </div>
+                </div>
+                
+            </article>
+            
+            <article class="card hover:shadow-2xl transition-all duration-300 post-card p-8 bg-gradient-to-br from-darcula-900/80 to-darcula-800/80 border border-logo-circuit/30 backdrop-blur-sm pinned-duplicate" 
+                     data-tags="faith-isnt-syntax-error,series-intro" 
+                     data-category="series"
+                     data-title="faith isn&#39;t a syntax error - a developer&#39;s guide to faith and reason"
+                     data-description="a series exploring how faith and logic work together, using developer analogies to show that christianity doesn&#39;t demand blind belief but invites reasoned trust based on evidence."
+                     data-pinned="true"
+                     data-original-url="/blog/faith-isnt-syntax-error-series/">
+                <div class="mb-4">
+                    <h2 class="text-xl font-bold text-logo-blue/90 mb-3 hover:text-logo-glow transition-colors duration-200">
+                        <a href="/blog/faith-isnt-syntax-error-series/">
+                            Faith Isn&#39;t a Syntax Error - A Developer&#39;s Guide to Faith and Reason
+                        </a>
+                    </h2>
+                    
+                    <p class="text-text-secondary mb-4 line-clamp-3">
+                        A series exploring how faith and logic work together, using developer analogies to show that Christianity doesn&#39;t demand blind belief but invites reasoned trust based on evidence.
+                    </p>
+                    
+                </div>
+                <div class="flex items-center justify-between text-sm text-text-muted mb-4">
+                    <time datetime="2025-09-26T00:00:00.000Z">
+                        September 26, 2025
+                    </time>
+                    
+                </div>
+
+                <!-- Tags section with divider for pinned posts -->
+                
+                <div class="border-t border-logo-circuit/30 pt-4">
+                    <div class="flex flex-wrap gap-2">
+                        
+                            
+                            <button type="button" class="tag-filter-btn bg-logo-blue/20 text-logo-blue px-3 py-1.5 rounded-full text-xs font-medium border border-logo-blue/30 hover:bg-logo-blue/30 hover:border-logo-blue/50 transition-all duration-200 cursor-pointer" data-tag="faith-isnt-syntax-error">
+                                faith-isnt-syntax-error
+                            </button>
+                            
+                        
+                            
+                            <button type="button" class="tag-filter-btn bg-logo-blue/20 text-logo-blue px-3 py-1.5 rounded-full text-xs font-medium border border-logo-blue/30 hover:bg-logo-blue/30 hover:border-logo-blue/50 transition-all duration-200 cursor-pointer" data-tag="series-intro">
+                                series-intro
+                            </button>
+                            
+                        
+                        
+                    </div>
+                </div>
+                
+            </article>
+            
+        </div>
+    </div>
+</section>
+
+
+<!-- Blog Topic Filter and Posts Grid -->
+<section class="py-16 bg-logo-steel">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-6">
+            <h2 class="text-3xl font-bold text-vs-fg mb-3">Latest Articles</h2>
+            <p class="text-vs-fg/80 max-w-2xl mx-auto">
+                Filter by topic to find content that matches your interests and current questions about faith and apologetics.
+            </p>
+        </div>
+
+        <!-- Content Discovery -->
+        <div class="mb-8 mt-4">
+            <!-- Search Bar -->
+            <div class="max-w-2xl mx-auto mb-4">
+                <!-- Reusable Search Input Component -->
+<div class="search-container">
+    <input 
+        type="text" 
+        class="search-input search-input-enhanced" 
+        placeholder="Search articles..." 
+        id="search-input"
+        data-search-target=".post-card"
+    />
+</div>
+
+            </div>
+
+        <!-- Category Filter -->
+        <div class="max-w-5xl mx-auto px-4 py-3">
+            <div class="flex flex-wrap gap-4 justify-center">
+                <button type="button" class="category-btn active" data-category="all">
+                    <span class="category-icon">📚</span>
+                    <span class="category-label">All Posts</span>
+                </button>
+                <button type="button" class="category-btn" data-category="series">
+                    <span class="category-icon">📖</span>
+                    <span class="category-label">Series</span>
+                </button>
+                <button type="button" class="category-btn" data-category="foundation">
+                    <span class="category-icon">🏗️</span>
+                    <span class="category-label">Foundation</span>
+                </button>
+            </div>
+        </div>
+
+        <!-- Active Tag Filter Indicator -->
+        <div id="active-tag-filter" class="max-w-5xl mx-auto px-4 py-2" style="display: none;">
+            <div class="flex items-center justify-center gap-3">
+                <span class="text-sm text-gray-400">Filtering by tag:</span>
+                <span id="active-tag-name" class="bg-blue-500/30 text-blue-300 px-3 py-1.5 rounded-full text-sm font-medium border border-blue-500/50"></span>
+                <button type="button" id="clear-tag-filter" class="text-gray-400 hover:text-white transition-colors duration-200 p-1 rounded-full hover:bg-gray-600/20" title="Clear tag filter">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        </div>
+
+        <!-- Posts Grid -->
+        <div id="posts-grid" class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-8 pt-4">
+            
+                
+                
+                    
+                
+                    
+                
+                    
+                
+                <article class="card hover:shadow-2xl transition-all duration-300 post-card bg-gradient-to-br from-darcula-900/80 to-darcula-800/80 border border-logo-circuit/30 backdrop-blur-sm" 
+                         data-tags="scripture,faith-isnt-syntax-error" 
+                         data-category="series"
+                         data-title="what scripture actually says"
+                         data-description="faith in scripture is never presented as blind or irrational. explore what the bible actually says about thinking, reasoning, and believing."
+                         data-pinned="false">
+                    <div class="mb-4">
+                        <h2 class="text-xl font-bold text-logo-blue/90 mb-3 hover:text-logo-glow transition-colors duration-200">
+                            <a href="/blog/what-scripture-actually-says/">
+                                What Scripture Actually Says
+                            </a>
+                        </h2>
+                        
+                        
+                        <p class="text-text-secondary mb-4 line-clamp-3">
+                            Faith in Scripture is never presented as blind or irrational. Explore what the Bible actually says about thinking, reasoning, and believing.
+                        </p>
+                        
+                    </div>
+
+                    <div class="flex items-center justify-between text-sm text-text-muted mb-4">
+                        <time datetime="2025-10-10T00:00:00.000Z">
+                            October 10, 2025
+                        </time>
+                        <div class="flex items-center gap-3">
+                                
+                                <span class="text-xs font-medium text-logo-orange bg-logo-orange/10 px-2 py-1 rounded">
+                                    series
+                                </span>
+                                
+                            
+                        </div>
+                    </div>
+
+                    <!-- Tags section with divider -->
+                    
+                    <div class="border-t border-logo-circuit/30 pt-4">
+                        <div class="flex flex-wrap gap-2">
+                            
+                                
+                                <button type="button" class="tag-filter-btn bg-logo-blue/20 text-logo-blue px-3 py-1.5 rounded-full text-xs font-medium border border-logo-blue/30 hover:bg-logo-blue/30 hover:border-logo-blue/50 transition-all duration-200 cursor-pointer" data-tag="scripture">
+                                    scripture
+                                </button>
+                                
+                            
+                                
+                                <button type="button" class="tag-filter-btn bg-logo-blue/20 text-logo-blue px-3 py-1.5 rounded-full text-xs font-medium border border-logo-blue/30 hover:bg-logo-blue/30 hover:border-logo-blue/50 transition-all duration-200 cursor-pointer" data-tag="faith-isnt-syntax-error">
+                                    faith-isnt-syntax-error
+                                </button>
+                                
+                            
+                            
+                        </div>
+                    </div>
+                    
+                </article>
+            
+                
+                
+                    
+                
+                    
+                
+                    
+                
+                <article class="card hover:shadow-2xl transition-all duration-300 post-card bg-gradient-to-br from-darcula-900/80 to-darcula-800/80 border border-logo-circuit/30 backdrop-blur-sm" 
+                         data-tags="dev-analogy,faith-isnt-syntax-error" 
+                         data-category="series"
+                         data-title="the testing and deployment analogy"
+                         data-description="every developer knows the frustration of a syntax error. that&#39;s how many skeptics view faith—as though it&#39;s a logical mistake. but christian faith is more like deploying tested code than running untested scripts."
+                         data-pinned="false">
+                    <div class="mb-4">
+                        <h2 class="text-xl font-bold text-logo-blue/90 mb-3 hover:text-logo-glow transition-colors duration-200">
+                            <a href="/blog/testing-deployment-analogy/">
+                                The Testing and Deployment Analogy
+                            </a>
+                        </h2>
+                        
+                        
+                        <p class="text-text-secondary mb-4 line-clamp-3">
+                            Every developer knows the frustration of a syntax error. That&#39;s how many skeptics view faith—as though it&#39;s a logical mistake. But Christian faith is more like deploying tested code than running untested scripts.
+                        </p>
+                        
+                    </div>
+
+                    <div class="flex items-center justify-between text-sm text-text-muted mb-4">
+                        <time datetime="2025-10-03T00:00:00.000Z">
+                            October 3, 2025
+                        </time>
+                        <div class="flex items-center gap-3">
+                                
+                                <span class="text-xs font-medium text-logo-orange bg-logo-orange/10 px-2 py-1 rounded">
+                                    series
+                                </span>
+                                
+                            
+                        </div>
+                    </div>
+
+                    <!-- Tags section with divider -->
+                    
+                    <div class="border-t border-logo-circuit/30 pt-4">
+                        <div class="flex flex-wrap gap-2">
+                            
+                                
+                                <button type="button" class="tag-filter-btn bg-logo-blue/20 text-logo-blue px-3 py-1.5 rounded-full text-xs font-medium border border-logo-blue/30 hover:bg-logo-blue/30 hover:border-logo-blue/50 transition-all duration-200 cursor-pointer" data-tag="dev-analogy">
+                                    dev-analogy
+                                </button>
+                                
+                            
+                                
+                                <button type="button" class="tag-filter-btn bg-logo-blue/20 text-logo-blue px-3 py-1.5 rounded-full text-xs font-medium border border-logo-blue/30 hover:bg-logo-blue/30 hover:border-logo-blue/50 transition-all duration-200 cursor-pointer" data-tag="faith-isnt-syntax-error">
+                                    faith-isnt-syntax-error
+                                </button>
+                                
+                            
+                            
+                        </div>
+                    </div>
+                    
+                </article>
+            
+                
+                
+                    
+                
+                    
+                
+                    
+                        
+                    
+                
+                <article class="card hover:shadow-2xl transition-all duration-300 post-card bg-gradient-to-br from-darcula-900/80 to-darcula-800/80 border border-logo-circuit/30 backdrop-blur-sm" 
+                         data-tags="faith-isnt-syntax-error,series-intro" 
+                         data-category="series"
+                         data-title="faith isn&#39;t a syntax error - a developer&#39;s guide to faith and reason"
+                         data-description="a series exploring how faith and logic work together, using developer analogies to show that christianity doesn&#39;t demand blind belief but invites reasoned trust based on evidence."
+                         data-pinned="true">
+                    <div class="mb-4">
+                        <h2 class="text-xl font-bold text-logo-blue/90 mb-3 hover:text-logo-glow transition-colors duration-200">
+                            <a href="/blog/faith-isnt-syntax-error-series/">
+                                Faith Isn&#39;t a Syntax Error - A Developer&#39;s Guide to Faith and Reason
+                            </a>
+                        </h2>
+                        
+                        
+                        <p class="text-text-secondary mb-4 line-clamp-3">
+                            A series exploring how faith and logic work together, using developer analogies to show that Christianity doesn&#39;t demand blind belief but invites reasoned trust based on evidence.
+                        </p>
+                        
+                    </div>
+
+                    <div class="flex items-center justify-between text-sm text-text-muted mb-4">
+                        <time datetime="2025-09-26T00:00:00.000Z">
+                            September 26, 2025
+                        </time>
+                        <div class="flex items-center gap-3">
+                                
+                                <span class="text-xs font-medium text-logo-orange bg-logo-orange/10 px-2 py-1 rounded">
+                                    series
+                                </span>
+                                
+                            
+                        </div>
+                    </div>
+
+                    <!-- Tags section with divider -->
+                    
+                    <div class="border-t border-logo-circuit/30 pt-4">
+                        <div class="flex flex-wrap gap-2">
+                            
+                                
+                                <button type="button" class="tag-filter-btn bg-logo-blue/20 text-logo-blue px-3 py-1.5 rounded-full text-xs font-medium border border-logo-blue/30 hover:bg-logo-blue/30 hover:border-logo-blue/50 transition-all duration-200 cursor-pointer" data-tag="faith-isnt-syntax-error">
+                                    faith-isnt-syntax-error
+                                </button>
+                                
+                            
+                                
+                                <button type="button" class="tag-filter-btn bg-logo-blue/20 text-logo-blue px-3 py-1.5 rounded-full text-xs font-medium border border-logo-blue/30 hover:bg-logo-blue/30 hover:border-logo-blue/50 transition-all duration-200 cursor-pointer" data-tag="series-intro">
+                                    series-intro
+                                </button>
+                                
+                            
+                            
+                        </div>
+                    </div>
+                    
+                </article>
+            
+                
+                
+                    
+                
+                    
+                
+                    
+                
+                <article class="card hover:shadow-2xl transition-all duration-300 post-card bg-gradient-to-br from-darcula-900/80 to-darcula-800/80 border border-logo-circuit/30 backdrop-blur-sm" 
+                         data-tags="concept,faith-isnt-syntax-error" 
+                         data-category="series"
+                         data-title="why faith and logic aren&#39;t enemies"
+                         data-description="faith and logic aren&#39;t at odds. learn how christianity doesn&#39;t demand blind belief but invites reasoned trust based on evidence—similar to how developers trust in systems they can&#39;t fully see but know are real."
+                         data-pinned="false">
+                    <div class="mb-4">
+                        <h2 class="text-xl font-bold text-logo-blue/90 mb-3 hover:text-logo-glow transition-colors duration-200">
+                            <a href="/blog/why-faith-logic-arent-enemies/">
+                                Why Faith and Logic Aren&#39;t Enemies
+                            </a>
+                        </h2>
+                        
+                        
+                        <p class="text-text-secondary mb-4 line-clamp-3">
+                            Faith and logic aren&#39;t at odds. Learn how Christianity doesn&#39;t demand blind belief but invites reasoned trust based on evidence—similar to how developers trust in systems they can&#39;t fully see but know are real.
+                        </p>
+                        
+                    </div>
+
+                    <div class="flex items-center justify-between text-sm text-text-muted mb-4">
+                        <time datetime="2025-09-26T00:00:00.000Z">
+                            September 26, 2025
+                        </time>
+                        <div class="flex items-center gap-3">
+                                
+                                <span class="text-xs font-medium text-logo-orange bg-logo-orange/10 px-2 py-1 rounded">
+                                    series
+                                </span>
+                                
+                            
+                        </div>
+                    </div>
+
+                    <!-- Tags section with divider -->
+                    
+                    <div class="border-t border-logo-circuit/30 pt-4">
+                        <div class="flex flex-wrap gap-2">
+                            
+                                
+                                <button type="button" class="tag-filter-btn bg-logo-blue/20 text-logo-blue px-3 py-1.5 rounded-full text-xs font-medium border border-logo-blue/30 hover:bg-logo-blue/30 hover:border-logo-blue/50 transition-all duration-200 cursor-pointer" data-tag="concept">
+                                    concept
+                                </button>
+                                
+                            
+                                
+                                <button type="button" class="tag-filter-btn bg-logo-blue/20 text-logo-blue px-3 py-1.5 rounded-full text-xs font-medium border border-logo-blue/30 hover:bg-logo-blue/30 hover:border-logo-blue/50 transition-all duration-200 cursor-pointer" data-tag="faith-isnt-syntax-error">
+                                    faith-isnt-syntax-error
+                                </button>
+                                
+                            
+                            
+                        </div>
+                    </div>
+                    
+                </article>
+            
+                
+                
+                    
+                
+                    
+                
+                    
+                
+                <article class="card hover:shadow-2xl transition-all duration-300 post-card bg-gradient-to-br from-darcula-900/80 to-darcula-800/80 border border-logo-circuit/30 backdrop-blur-sm" 
+                         data-tags="warnings,hello-world-series" 
+                         data-category="series"
+                         data-title="apologetics warnings - pitfalls to avoid"
+                         data-description="important warnings and pitfalls to avoid in christian apologetics - from pride and arrogance to misplaced pressure and responsibility."
+                         data-pinned="false">
+                    <div class="mb-4">
+                        <h2 class="text-xl font-bold text-logo-blue/90 mb-3 hover:text-logo-glow transition-colors duration-200">
+                            <a href="/blog/apologetics-warnings/">
+                                Apologetics Warnings - Pitfalls to Avoid
+                            </a>
+                        </h2>
+                        
+                        
+                        <p class="text-text-secondary mb-4 line-clamp-3">
+                            Important warnings and pitfalls to avoid in Christian apologetics - from pride and arrogance to misplaced pressure and responsibility.
+                        </p>
+                        
+                    </div>
+
+                    <div class="flex items-center justify-between text-sm text-text-muted mb-4">
+                        <time datetime="2025-08-30T00:00:00.000Z">
+                            August 30, 2025
+                        </time>
+                        <div class="flex items-center gap-3">
+                                
+                                <span class="text-xs font-medium text-logo-orange bg-logo-orange/10 px-2 py-1 rounded">
+                                    series
+                                </span>
+                                
+                            
+                        </div>
+                    </div>
+
+                    <!-- Tags section with divider -->
+                    
+                    <div class="border-t border-logo-circuit/30 pt-4">
+                        <div class="flex flex-wrap gap-2">
+                            
+                                
+                                <button type="button" class="tag-filter-btn bg-logo-blue/20 text-logo-blue px-3 py-1.5 rounded-full text-xs font-medium border border-logo-blue/30 hover:bg-logo-blue/30 hover:border-logo-blue/50 transition-all duration-200 cursor-pointer" data-tag="warnings">
+                                    warnings
+                                </button>
+                                
+                            
+                                
+                                <button type="button" class="tag-filter-btn bg-logo-blue/20 text-logo-blue px-3 py-1.5 rounded-full text-xs font-medium border border-logo-blue/30 hover:bg-logo-blue/30 hover:border-logo-blue/50 transition-all duration-200 cursor-pointer" data-tag="hello-world-series">
+                                    hello-world-series
+                                </button>
+                                
+                            
+                            
+                        </div>
+                    </div>
+                    
+                </article>
+            
+                
+                
+                    
+                
+                    
+                
+                    
+                
+                <article class="card hover:shadow-2xl transition-all duration-300 post-card bg-gradient-to-br from-darcula-900/80 to-darcula-800/80 border border-logo-circuit/30 backdrop-blur-sm" 
+                         data-tags="notes,hello-world-series" 
+                         data-category="series"
+                         data-title="apologetics notes - key insights for faithful defense"
+                         data-description="important notes and insights for effective christian apologetics - from the art and discipline of defending faith to the power of humble engagement."
+                         data-pinned="false">
+                    <div class="mb-4">
+                        <h2 class="text-xl font-bold text-logo-blue/90 mb-3 hover:text-logo-glow transition-colors duration-200">
+                            <a href="/blog/apologetics-notes/">
+                                Apologetics Notes - Key Insights for Faithful Defense
+                            </a>
+                        </h2>
+                        
+                        
+                        <p class="text-text-secondary mb-4 line-clamp-3">
+                            Important notes and insights for effective Christian apologetics - from the art and discipline of defending faith to the power of humble engagement.
+                        </p>
+                        
+                    </div>
+
+                    <div class="flex items-center justify-between text-sm text-text-muted mb-4">
+                        <time datetime="2025-08-23T00:00:00.000Z">
+                            August 23, 2025
+                        </time>
+                        <div class="flex items-center gap-3">
+                                
+                                <span class="text-xs font-medium text-logo-orange bg-logo-orange/10 px-2 py-1 rounded">
+                                    series
+                                </span>
+                                
+                            
+                        </div>
+                    </div>
+
+                    <!-- Tags section with divider -->
+                    
+                    <div class="border-t border-logo-circuit/30 pt-4">
+                        <div class="flex flex-wrap gap-2">
+                            
+                                
+                                <button type="button" class="tag-filter-btn bg-logo-blue/20 text-logo-blue px-3 py-1.5 rounded-full text-xs font-medium border border-logo-blue/30 hover:bg-logo-blue/30 hover:border-logo-blue/50 transition-all duration-200 cursor-pointer" data-tag="notes">
+                                    notes
+                                </button>
+                                
+                            
+                                
+                                <button type="button" class="tag-filter-btn bg-logo-blue/20 text-logo-blue px-3 py-1.5 rounded-full text-xs font-medium border border-logo-blue/30 hover:bg-logo-blue/30 hover:border-logo-blue/50 transition-all duration-200 cursor-pointer" data-tag="hello-world-series">
+                                    hello-world-series
+                                </button>
+                                
+                            
+                            
+                        </div>
+                    </div>
+                    
+                </article>
+            
+                
+                
+                    
+                
+                    
+                
+                    
+                
+                <article class="card hover:shadow-2xl transition-all duration-300 post-card bg-gradient-to-br from-darcula-900/80 to-darcula-800/80 border border-logo-circuit/30 backdrop-blur-sm" 
+                         data-tags="exercises,hello-world-series" 
+                         data-category="series"
+                         data-title="practical exercises for apologetics readiness"
+                         data-description="hands-on exercises to help you develop your apologetics skills - from writing your testimony to practicing conversations."
+                         data-pinned="false">
+                    <div class="mb-4">
+                        <h2 class="text-xl font-bold text-logo-blue/90 mb-3 hover:text-logo-glow transition-colors duration-200">
+                            <a href="/blog/apologetics-practice-exercises/">
+                                Practical Exercises for Apologetics Readiness
+                            </a>
+                        </h2>
+                        
+                        
+                        <p class="text-text-secondary mb-4 line-clamp-3">
+                            Hands-on exercises to help you develop your apologetics skills - from writing your testimony to practicing conversations.
+                        </p>
+                        
+                    </div>
+
+                    <div class="flex items-center justify-between text-sm text-text-muted mb-4">
+                        <time datetime="2025-08-16T00:00:00.000Z">
+                            August 16, 2025
+                        </time>
+                        <div class="flex items-center gap-3">
+                                
+                                <span class="text-xs font-medium text-logo-orange bg-logo-orange/10 px-2 py-1 rounded">
+                                    series
+                                </span>
+                                
+                            
+                        </div>
+                    </div>
+
+                    <!-- Tags section with divider -->
+                    
+                    <div class="border-t border-logo-circuit/30 pt-4">
+                        <div class="flex flex-wrap gap-2">
+                            
+                                
+                                <button type="button" class="tag-filter-btn bg-logo-blue/20 text-logo-blue px-3 py-1.5 rounded-full text-xs font-medium border border-logo-blue/30 hover:bg-logo-blue/30 hover:border-logo-blue/50 transition-all duration-200 cursor-pointer" data-tag="exercises">
+                                    exercises
+                                </button>
+                                
+                            
+                                
+                                <button type="button" class="tag-filter-btn bg-logo-blue/20 text-logo-blue px-3 py-1.5 rounded-full text-xs font-medium border border-logo-blue/30 hover:bg-logo-blue/30 hover:border-logo-blue/50 transition-all duration-200 cursor-pointer" data-tag="hello-world-series">
+                                    hello-world-series
+                                </button>
+                                
+                            
+                            
+                        </div>
+                    </div>
+                    
+                </article>
+            
+                
+                
+                    
+                
+                    
+                
+                    
+                
+                <article class="card hover:shadow-2xl transition-all duration-300 post-card bg-gradient-to-br from-darcula-900/80 to-darcula-800/80 border border-logo-circuit/30 backdrop-blur-sm" 
+                         data-tags="common-errors,hello-world-series" 
+                         data-category="series"
+                         data-title="common apologetics errors (and how to fix them)"
+                         data-description="debugging the most common mistakes in christian apologetics - from logical bugs to theological flaws that can derail your witness."
+                         data-pinned="false">
+                    <div class="mb-4">
+                        <h2 class="text-xl font-bold text-logo-blue/90 mb-3 hover:text-logo-glow transition-colors duration-200">
+                            <a href="/blog/common-apologetics-errors/">
+                                Common Apologetics Errors (And How to Fix Them)
+                            </a>
+                        </h2>
+                        
+                        
+                        <p class="text-text-secondary mb-4 line-clamp-3">
+                            Debugging the most common mistakes in Christian apologetics - from logical bugs to theological flaws that can derail your witness.
+                        </p>
+                        
+                    </div>
+
+                    <div class="flex items-center justify-between text-sm text-text-muted mb-4">
+                        <time datetime="2025-08-09T00:00:00.000Z">
+                            August 9, 2025
+                        </time>
+                        <div class="flex items-center gap-3">
+                                
+                                <span class="text-xs font-medium text-logo-orange bg-logo-orange/10 px-2 py-1 rounded">
+                                    series
+                                </span>
+                                
+                            
+                        </div>
+                    </div>
+
+                    <!-- Tags section with divider -->
+                    
+                    <div class="border-t border-logo-circuit/30 pt-4">
+                        <div class="flex flex-wrap gap-2">
+                            
+                                
+                                <button type="button" class="tag-filter-btn bg-logo-blue/20 text-logo-blue px-3 py-1.5 rounded-full text-xs font-medium border border-logo-blue/30 hover:bg-logo-blue/30 hover:border-logo-blue/50 transition-all duration-200 cursor-pointer" data-tag="common-errors">
+                                    common-errors
+                                </button>
+                                
+                            
+                                
+                                <button type="button" class="tag-filter-btn bg-logo-blue/20 text-logo-blue px-3 py-1.5 rounded-full text-xs font-medium border border-logo-blue/30 hover:bg-logo-blue/30 hover:border-logo-blue/50 transition-all duration-200 cursor-pointer" data-tag="hello-world-series">
+                                    hello-world-series
+                                </button>
+                                
+                            
+                            
+                        </div>
+                    </div>
+                    
+                </article>
+            
+                
+                
+                    
+                
+                    
+                
+                    
+                
+                <article class="card hover:shadow-2xl transition-all duration-300 post-card bg-gradient-to-br from-darcula-900/80 to-darcula-800/80 border border-logo-circuit/30 backdrop-blur-sm" 
+                         data-tags="scripture,hello-world-series" 
+                         data-category="series"
+                         data-title="1 peter 3:15 - the cornerstone of christian apologetics"
+                         data-description="a deep dive into 1 peter 3:15, the foundational verse for christian apologetics, breaking down each phrase and its practical implications."
+                         data-pinned="false">
+                    <div class="mb-4">
+                        <h2 class="text-xl font-bold text-logo-blue/90 mb-3 hover:text-logo-glow transition-colors duration-200">
+                            <a href="/blog/1-peter-3-15-deep-dive/">
+                                1 Peter 3:15 - The Cornerstone of Christian Apologetics
+                            </a>
+                        </h2>
+                        
+                        
+                        <p class="text-text-secondary mb-4 line-clamp-3">
+                            A deep dive into 1 Peter 3:15, the foundational verse for Christian apologetics, breaking down each phrase and its practical implications.
+                        </p>
+                        
+                    </div>
+
+                    <div class="flex items-center justify-between text-sm text-text-muted mb-4">
+                        <time datetime="2025-08-02T00:00:00.000Z">
+                            August 2, 2025
+                        </time>
+                        <div class="flex items-center gap-3">
+                                
+                                <span class="text-xs font-medium text-logo-orange bg-logo-orange/10 px-2 py-1 rounded">
+                                    series
+                                </span>
+                                
+                            
+                        </div>
+                    </div>
+
+                    <!-- Tags section with divider -->
+                    
+                    <div class="border-t border-logo-circuit/30 pt-4">
+                        <div class="flex flex-wrap gap-2">
+                            
+                                
+                                <button type="button" class="tag-filter-btn bg-logo-blue/20 text-logo-blue px-3 py-1.5 rounded-full text-xs font-medium border border-logo-blue/30 hover:bg-logo-blue/30 hover:border-logo-blue/50 transition-all duration-200 cursor-pointer" data-tag="scripture">
+                                    scripture
+                                </button>
+                                
+                            
+                                
+                                <button type="button" class="tag-filter-btn bg-logo-blue/20 text-logo-blue px-3 py-1.5 rounded-full text-xs font-medium border border-logo-blue/30 hover:bg-logo-blue/30 hover:border-logo-blue/50 transition-all duration-200 cursor-pointer" data-tag="hello-world-series">
+                                    hello-world-series
+                                </button>
+                                
+                            
+                            
+                        </div>
+                    </div>
+                    
+                </article>
+            
+                
+                
+                    
+                
+                    
+                
+                    
+                
+                <article class="card hover:shadow-2xl transition-all duration-300 post-card bg-gradient-to-br from-darcula-900/80 to-darcula-800/80 border border-logo-circuit/30 backdrop-blur-sm" 
+                         data-tags="dev-analogy,hello-world-series" 
+                         data-category="series"
+                         data-title="the &quot;hello world&quot; of apologetics"
+                         data-description="how apologetics works like a developer&#39;s first program - starting with proper configuration before building anything meaningful."
+                         data-pinned="false">
+                    <div class="mb-4">
+                        <h2 class="text-xl font-bold text-logo-blue/90 mb-3 hover:text-logo-glow transition-colors duration-200">
+                            <a href="/blog/hello-world-dev-analogy/">
+                                The &quot;Hello World&quot; of Apologetics
+                            </a>
+                        </h2>
+                        
+                        
+                        <p class="text-text-secondary mb-4 line-clamp-3">
+                            How apologetics works like a developer&#39;s first program - starting with proper configuration before building anything meaningful.
+                        </p>
+                        
+                    </div>
+
+                    <div class="flex items-center justify-between text-sm text-text-muted mb-4">
+                        <time datetime="2025-07-26T00:00:00.000Z">
+                            July 26, 2025
+                        </time>
+                        <div class="flex items-center gap-3">
+                                
+                                <span class="text-xs font-medium text-logo-orange bg-logo-orange/10 px-2 py-1 rounded">
+                                    series
+                                </span>
+                                
+                            
+                        </div>
+                    </div>
+
+                    <!-- Tags section with divider -->
+                    
+                    <div class="border-t border-logo-circuit/30 pt-4">
+                        <div class="flex flex-wrap gap-2">
+                            
+                                
+                                <button type="button" class="tag-filter-btn bg-logo-blue/20 text-logo-blue px-3 py-1.5 rounded-full text-xs font-medium border border-logo-blue/30 hover:bg-logo-blue/30 hover:border-logo-blue/50 transition-all duration-200 cursor-pointer" data-tag="dev-analogy">
+                                    dev-analogy
+                                </button>
+                                
+                            
+                                
+                                <button type="button" class="tag-filter-btn bg-logo-blue/20 text-logo-blue px-3 py-1.5 rounded-full text-xs font-medium border border-logo-blue/30 hover:bg-logo-blue/30 hover:border-logo-blue/50 transition-all duration-200 cursor-pointer" data-tag="hello-world-series">
+                                    hello-world-series
+                                </button>
+                                
+                            
+                            
+                        </div>
+                    </div>
+                    
+                </article>
+            
+                
+                
+                    
+                
+                    
+                
+                    
+                
+                <article class="card hover:shadow-2xl transition-all duration-300 post-card bg-gradient-to-br from-darcula-900/80 to-darcula-800/80 border border-logo-circuit/30 backdrop-blur-sm" 
+                         data-tags="concept,hello-world-series" 
+                         data-category="series"
+                         data-title="what is christian apologetics?"
+                         data-description="understanding the foundational concept of christian apologetics - giving a reasoned defense for your faith with clarity, not cleverness."
+                         data-pinned="false">
+                    <div class="mb-4">
+                        <h2 class="text-xl font-bold text-logo-blue/90 mb-3 hover:text-logo-glow transition-colors duration-200">
+                            <a href="/blog/what-is-christian-apologetics/">
+                                What Is Christian Apologetics?
+                            </a>
+                        </h2>
+                        
+                        
+                        <p class="text-text-secondary mb-4 line-clamp-3">
+                            Understanding the foundational concept of Christian apologetics - giving a reasoned defense for your faith with clarity, not cleverness.
+                        </p>
+                        
+                    </div>
+
+                    <div class="flex items-center justify-between text-sm text-text-muted mb-4">
+                        <time datetime="2025-07-19T00:00:00.000Z">
+                            July 19, 2025
+                        </time>
+                        <div class="flex items-center gap-3">
+                                
+                                <span class="text-xs font-medium text-logo-orange bg-logo-orange/10 px-2 py-1 rounded">
+                                    series
+                                </span>
+                                
+                            
+                        </div>
+                    </div>
+
+                    <!-- Tags section with divider -->
+                    
+                    <div class="border-t border-logo-circuit/30 pt-4">
+                        <div class="flex flex-wrap gap-2">
+                            
+                                
+                                <button type="button" class="tag-filter-btn bg-logo-blue/20 text-logo-blue px-3 py-1.5 rounded-full text-xs font-medium border border-logo-blue/30 hover:bg-logo-blue/30 hover:border-logo-blue/50 transition-all duration-200 cursor-pointer" data-tag="concept">
+                                    concept
+                                </button>
+                                
+                            
+                                
+                                <button type="button" class="tag-filter-btn bg-logo-blue/20 text-logo-blue px-3 py-1.5 rounded-full text-xs font-medium border border-logo-blue/30 hover:bg-logo-blue/30 hover:border-logo-blue/50 transition-all duration-200 cursor-pointer" data-tag="hello-world-series">
+                                    hello-world-series
+                                </button>
+                                
+                            
+                            
+                        </div>
+                    </div>
+                    
+                </article>
+            
+                
+                
+                    
+                
+                    
+                        
+                    
+                
+                    
+                
+                <article class="card hover:shadow-2xl transition-all duration-300 post-card bg-gradient-to-br from-darcula-900/80 to-darcula-800/80 border border-logo-circuit/30 backdrop-blur-sm" 
+                         data-tags="hello-world-series,series-intro" 
+                         data-category="series"
+                         data-title="hello world - the foundation of christian apologetics"
+                         data-description="a series exploring the foundational principles of christian apologetics, using developer analogies to show how defending your faith starts with the basics - just like every developer&#39;s first program."
+                         data-pinned="true">
+                    <div class="mb-4">
+                        <h2 class="text-xl font-bold text-logo-blue/90 mb-3 hover:text-logo-glow transition-colors duration-200">
+                            <a href="/blog/hello-world-series/">
+                                Hello World - The Foundation of Christian Apologetics
+                            </a>
+                        </h2>
+                        
+                        
+                        <p class="text-text-secondary mb-4 line-clamp-3">
+                            A series exploring the foundational principles of Christian apologetics, using developer analogies to show how defending your faith starts with the basics - just like every developer&#39;s first program.
+                        </p>
+                        
+                    </div>
+
+                    <div class="flex items-center justify-between text-sm text-text-muted mb-4">
+                        <time datetime="2025-07-12T00:00:00.000Z">
+                            July 12, 2025
+                        </time>
+                        <div class="flex items-center gap-3">
+                                
+                                <span class="text-xs font-medium text-logo-orange bg-logo-orange/10 px-2 py-1 rounded">
+                                    series
+                                </span>
+                                
+                            
+                        </div>
+                    </div>
+
+                    <!-- Tags section with divider -->
+                    
+                    <div class="border-t border-logo-circuit/30 pt-4">
+                        <div class="flex flex-wrap gap-2">
+                            
+                                
+                                <button type="button" class="tag-filter-btn bg-logo-blue/20 text-logo-blue px-3 py-1.5 rounded-full text-xs font-medium border border-logo-blue/30 hover:bg-logo-blue/30 hover:border-logo-blue/50 transition-all duration-200 cursor-pointer" data-tag="hello-world-series">
+                                    hello-world-series
+                                </button>
+                                
+                            
+                                
+                                <button type="button" class="tag-filter-btn bg-logo-blue/20 text-logo-blue px-3 py-1.5 rounded-full text-xs font-medium border border-logo-blue/30 hover:bg-logo-blue/30 hover:border-logo-blue/50 transition-all duration-200 cursor-pointer" data-tag="series-intro">
+                                    series-intro
+                                </button>
+                                
+                            
+                            
+                        </div>
+                    </div>
+                    
+                </article>
+            
+                
+                
+                    
+                        
+                    
+                
+                    
+                
+                    
+                
+                <article class="card hover:shadow-2xl transition-all duration-300 post-card bg-gradient-to-br from-darcula-900/80 to-darcula-800/80 border border-logo-circuit/30 backdrop-blur-sm" 
+                         data-tags="welcome,introduction,mission" 
+                         data-category="foundation"
+                         data-title="welcome to the developing apologist blog"
+                         data-description="an introduction to our mission of equipping christian software developers with apologetics tools and resources."
+                         data-pinned="true">
+                    <div class="mb-4">
+                        <h2 class="text-xl font-bold text-logo-blue/90 mb-3 hover:text-logo-glow transition-colors duration-200">
+                            <a href="/blog/welcome-to-the-blog/">
+                                Welcome to The Developing Apologist Blog
+                            </a>
+                        </h2>
+                        
+                        
+                        <p class="text-text-secondary mb-4 line-clamp-3">
+                            An introduction to our mission of equipping Christian software developers with apologetics tools and resources.
+                        </p>
+                        
+                    </div>
+
+                    <div class="flex items-center justify-between text-sm text-text-muted mb-4">
+                        <time datetime="2025-07-10T00:00:00.000Z">
+                            July 10, 2025
+                        </time>
+                        <div class="flex items-center gap-3">
+                                
+                                <span class="text-xs font-medium text-logo-orange bg-logo-orange/10 px-2 py-1 rounded">
+                                    foundation
+                                </span>
+                                
+                            
+                        </div>
+                    </div>
+
+                    <!-- Tags section with divider -->
+                    
+                    <div class="border-t border-logo-circuit/30 pt-4">
+                        <div class="flex flex-wrap gap-2">
+                            
+                                
+                                <button type="button" class="tag-filter-btn bg-logo-blue/20 text-logo-blue px-3 py-1.5 rounded-full text-xs font-medium border border-logo-blue/30 hover:bg-logo-blue/30 hover:border-logo-blue/50 transition-all duration-200 cursor-pointer" data-tag="welcome">
+                                    welcome
+                                </button>
+                                
+                            
+                                
+                                <button type="button" class="tag-filter-btn bg-logo-blue/20 text-logo-blue px-3 py-1.5 rounded-full text-xs font-medium border border-logo-blue/30 hover:bg-logo-blue/30 hover:border-logo-blue/50 transition-all duration-200 cursor-pointer" data-tag="introduction">
+                                    introduction
+                                </button>
+                                
+                            
+                                
+                                <button type="button" class="tag-filter-btn bg-logo-blue/20 text-logo-blue px-3 py-1.5 rounded-full text-xs font-medium border border-logo-blue/30 hover:bg-logo-blue/30 hover:border-logo-blue/50 transition-all duration-200 cursor-pointer" data-tag="mission">
+                                    mission
+                                </button>
+                                
+                            
+                            
+                        </div>
+                    </div>
+                    
+                </article>
+            
+        </div>
+    </div>
+</section>
+
+<!-- Call to Action -->
+<section class="bg-logo-circuit py-16 px-4 sm:px-6 lg:px-8">
+    <div class="max-w-4xl mx-auto text-center">
+        <h2 class="text-3xl font-bold text-text-primary mb-4">Ready to Deepen Your Faith?</h2>
+        <p class="text-xl text-gray-300 mb-8">
+            Explore more resources and join the conversation on our main site.
+        </p>
+        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+            <a href="https://developingapologist.com" class="btn-primary">
+                Visit Main Site
+            </a>
+            <a href="/talks" class="btn-secondary">
+                Watch Our Presentations
+            </a>
+        </div>
+    </div>
+</section>
+
+<script>
+// Enhanced content discovery system - wrapped to prevent redeclaration errors
+(function() {
+  'use strict';
+  
+  // Check if already initialized to prevent duplicate execution
+  if (window.blogFilterInitialized) {
+    return;
+  }
+  window.blogFilterInitialized = true;
+  
+  const searchInput = document.getElementById('search-input');
+  const categoryBtns = document.querySelectorAll('.category-btn');
+  const postCards = document.querySelectorAll('.post-card');
+  const tagFilterBtns = document.querySelectorAll('.tag-filter-btn');
+  const expandTagsBtns = document.querySelectorAll('.expand-tags-btn');
+  const activeTagFilter = document.getElementById('active-tag-filter');
+  const activeTagName = document.getElementById('active-tag-name');
+  const clearTagFilter = document.getElementById('clear-tag-filter');
+
+  let currentCategory = 'all';
+  let currentSearch = '';
+  let currentTag = '';
+
+  // Category filtering
+  categoryBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      // Update active state
+      categoryBtns.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      
+      // Update current category
+      currentCategory = btn.getAttribute('data-category');
+      
+      // Apply filters
+      filterPosts();
+    });
+  });
+
+  // Tag filtering
+  tagFilterBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      const tag = btn.getAttribute('data-tag');
+      
+      // Toggle tag filter
+      if (currentTag === tag) {
+        // If clicking the same tag, clear it
+        console.log('Clearing tag filter');
+        currentTag = '';
+        hideActiveTagFilter();
+      } else {
+        // Set new tag filter
+        console.log('Setting tag filter to:', tag);
+        currentTag = tag;
+        showActiveTagFilter(tag);
+      }
+      
+      // Update tag button states
+      updateTagButtonStates();
+      
+      // Apply filters
+      filterPosts();
+    });
+  });
+
+  // Clear tag filter
+  if (clearTagFilter) {
+    clearTagFilter.addEventListener('click', (e) => {
+      e.preventDefault();
+      e.stopPropagation();
+      console.log('Clear tag filter clicked');
+      currentTag = '';
+      hideActiveTagFilter();
+      updateTagButtonStates();
+      filterPosts();
+    });
+  }
+
+  // Expand tags functionality
+  expandTagsBtns.forEach(btn => {
+    btn.addEventListener('click', (e) => {
+      e.preventDefault();
+      e.stopPropagation();
+      console.log('Expand tags clicked');
+      
+      const postCard = btn.closest('.post-card');
+      console.log('Post card found:', postCard);
+      
+      if (postCard) {
+        const hiddenTags = postCard.querySelectorAll('.hidden-tag');
+        console.log('Hidden tags found:', hiddenTags.length);
+        
+        if (hiddenTags.length > 0) {
+          // Show hidden tags
+          hiddenTags.forEach(tag => {
+            tag.classList.remove('hidden-tag');
+            tag.style.display = 'inline-flex';
+          });
+          
+          // Hide the expand button
+          btn.style.display = 'none';
+          console.log('Tags expanded successfully');
+        }
+      }
+    });
+  });
+
+  // Debounced search for better performance
+  let searchTimeout;
+  if (searchInput) {
+    searchInput.addEventListener('input', (e) => {
+      clearTimeout(searchTimeout);
+      searchTimeout = setTimeout(() => {
+        currentSearch = e.target.value.toLowerCase().trim();
+        filterPosts();
+      }, 150);
+    });
+  }
+
+  function filterPosts() {
+    let visibleCount = 0;
+    
+    postCards.forEach(card => {
+      // Skip pinned duplicates - they should always be visible
+      if (card.classList.contains('pinned-duplicate')) {
+        return;
+      }
+      
+      const category = card.getAttribute('data-category') || '';
+      const title = card.getAttribute('data-title') || '';
+      const description = card.getAttribute('data-description') || '';
+      const tags = (card.getAttribute('data-tags') || '').toLowerCase();
+      
+      // Apply all filters to all posts in Latest Articles section
+      const categoryMatch = currentCategory === 'all' || category === currentCategory;
+      const tagMatch = currentTag === '' || tags.includes(currentTag.toLowerCase());
+      const searchMatch = currentSearch === '' || 
+        title.includes(currentSearch) || 
+        description.includes(currentSearch) || 
+        tags.includes(currentSearch);
+      
+      if (categoryMatch && tagMatch && searchMatch) {
+        card.classList.remove('hidden');
+        visibleCount++;
+        
+        // Auto-expand tags if current tag filter is hidden
+        if (currentTag !== '') {
+          autoExpandTagIfHidden(card, currentTag);
+        }
+      } else {
+        card.classList.add('hidden');
+      }
+    });
+    
+    // Update results count and show feedback
+    updateResultsCount(visibleCount);
+  }
+
+  function updateResultsCount(visibleCount) {
+    const totalCards = document.querySelectorAll('.post-card');
+    
+    // Create or update results counter
+    let resultsCounter = document.getElementById('results-counter');
+    if (!resultsCounter) {
+      resultsCounter = document.createElement('div');
+      resultsCounter.id = 'results-counter';
+      resultsCounter.className = 'text-center text-sm text-gray-400 mb-4';
+      document.getElementById('posts-grid').parentNode.insertBefore(resultsCounter, document.getElementById('posts-grid'));
+    }
+    
+    // Update counter text
+    if (currentSearch || currentCategory !== 'all' || currentTag !== '') {
+      resultsCounter.textContent = `Showing ${visibleCount} of ${totalCards.length} posts`;
+      resultsCounter.style.display = 'block';
+    } else {
+      resultsCounter.style.display = 'none';
+    }
+    
+    console.log(`Showing ${visibleCount} of ${totalCards.length} posts`);
+  }
+
+  function showActiveTagFilter(tag) {
+    console.log('Showing active tag filter for:', tag);
+    
+    // Only show if we have a valid tag
+    if (tag && tag.trim() !== '') {
+      if (activeTagName) {
+        activeTagName.textContent = tag;
+      }
+      if (activeTagFilter) {
+        activeTagFilter.classList.add('show');
+        console.log('Active tag filter should now be visible');
+      }
+    } else {
+      // Hide if no valid tag
+      hideActiveTagFilter();
+    }
+  }
+
+  function hideActiveTagFilter() {
+    if (activeTagFilter) {
+      activeTagFilter.classList.remove('show');
+    }
+  }
+
+  function updateTagButtonStates() {
+    tagFilterBtns.forEach(btn => {
+      const tag = btn.getAttribute('data-tag');
+      if (currentTag === tag) {
+        btn.classList.add('active-tag');
+        btn.style.background = 'linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%)';
+        btn.style.borderColor = '#60a5fa';
+        btn.style.color = '#ffffff';
+      } else {
+        btn.classList.remove('active-tag');
+        btn.style.background = '';
+        btn.style.borderColor = '';
+        btn.style.color = '';
+      }
+    });
+  }
+
+  function autoExpandTagIfHidden(card, targetTag) {
+    const hiddenTags = card.querySelectorAll('.hidden-tag');
+    const expandBtn = card.querySelector('.expand-tags-btn');
+    
+    // Check if the target tag is among the hidden tags
+    let targetTagFound = false;
+    hiddenTags.forEach(tag => {
+      if (tag.getAttribute('data-tag') === targetTag) {
+        targetTagFound = true;
+      }
+    });
+    
+    // If the target tag is hidden, expand all tags
+    if (targetTagFound && hiddenTags.length > 0) {
+      console.log('Auto-expanding tags for filtered tag:', targetTag);
+      
+      // Show all hidden tags
+      hiddenTags.forEach(tag => {
+        tag.classList.remove('hidden-tag');
+        tag.style.display = 'inline-flex';
+      });
+      
+      // Hide the expand button
+      if (expandBtn) {
+        expandBtn.style.display = 'none';
+      }
+    }
+  }
+
+  // Initialize
+  hideActiveTagFilter(); // Ensure filter indicator is hidden initially
+  filterPosts();
+})(); // End of IIFE
+</script>
+
+<!-- Include reusable search script -->
+<script>
+// Reusable Search Function
+function initializeSearch(options = {}) {
+    const {
+        inputId = 'search-input',
+        searchTarget = '.post-card',
+        titleAttribute = 'data-title',
+        descriptionAttribute = 'data-description',
+        tagsAttribute = 'data-tags',
+        onSearch = null
+    } = options;
+
+    const searchInput = document.getElementById(inputId);
+    if (!searchInput) return;
+
+    let searchTimeout;
+
+    const normalize = (value = '') => {
+        if (!value) return '';
+        return value
+            .toLowerCase()
+            .normalize('NFKD')
+            .replace(/[\u2014\u2013]/g, '-')
+            .replace(/[^a-z0-9\s-]/g, ' ')
+            .replace(/['’]/g, '')
+            .replace(/\s+/g, ' ')
+            .trim();
+    };
+
+    searchInput.addEventListener('input', function() {
+        clearTimeout(searchTimeout);
+        searchTimeout = setTimeout(() => {
+            const searchTermRaw = this.value.toLowerCase();
+            const searchTermNormalized = normalize(this.value);
+            const cards = document.querySelectorAll(searchTarget);
+            let visibleCount = 0;
+
+            cards.forEach(card => {
+                const title = card.getAttribute(titleAttribute) || '';
+                const description = card.getAttribute(descriptionAttribute) || '';
+                const tags = card.getAttribute(tagsAttribute) || '';
+                const normalizedAttr = card.getAttribute('data-normalized-text') || '';
+
+                const titleRaw = title.toLowerCase();
+                const descriptionRaw = description.toLowerCase();
+                const tagsRaw = tags.toLowerCase();
+
+                const combinedNormalized = [title, description, tags, normalizedAttr]
+                    .map(normalize)
+                    .join(' ');
+
+                const hasSearchTerm = searchTermRaw === '' ||
+                    titleRaw.includes(searchTermRaw) ||
+                    descriptionRaw.includes(searchTermRaw) ||
+                    tagsRaw.includes(searchTermRaw) ||
+                    (searchTermNormalized !== '' && combinedNormalized.includes(searchTermNormalized));
+
+                if (hasSearchTerm) {
+                    card.classList.remove('hidden');
+                    visibleCount++;
+                } else {
+                    card.classList.add('hidden');
+                }
+            });
+
+            // Call custom callback if provided
+            if (onSearch && typeof onSearch === 'function') {
+                onSearch(visibleCount, cards.length);
+            }
+        }, 150);
+    });
+}
+
+// Auto-initialize if search input exists
+document.addEventListener('DOMContentLoaded', function() {
+    if (document.getElementById('search-input')) {
+        initializeSearch();
+    }
+});
+</script>
+
+
+    </main>
+
+    <!-- Footer -->
+    <!-- Set variables for footer component -->
+    
+    
+    
+    
+    
+    
+    <!-- Footer -->
+<footer class="bg-logo-steel border-t border-logo-circuit py-12">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid md:grid-cols-4 gap-8">
+            <!-- Brand -->
+            <div class="md:col-span-2">
+                <div class="flex items-center space-x-3 mb-4">
+                    
+                        <img src="/assets/developing-apologist-logo-v2.png" alt="The Developing Apologist" class="w-8 h-8">
+                    
+                    <span class="text-xl font-bold text-vs-fg">The Developing Apologist</span>
+                </div>
+                
+                <p class="text-vs-fg/80 mb-4">
+                    Equipping Christian software developers to defend their faith through logical, systematic apologetics that bridges faith and reason.
+                </p>
+                
+                
+            </div>
+            
+            <!-- Quick Links -->
+            
+            <div>
+                <h3 class="text-lg font-semibold text-vs-fg mb-4">Quick Links</h3>
+                <ul class="space-y-2">
+                    
+                    <li><a href="/" class="text-vs-fg/80 hover:text-logo-glow transition-colors duration-200">Home</a></li>
+                    
+                    <li><a href="/about/" class="text-vs-fg/80 hover:text-logo-glow transition-colors duration-200">About</a></li>
+                    
+                    <li><a href="/contact/" class="text-vs-fg/80 hover:text-logo-glow transition-colors duration-200">Contact</a></li>
+                    
+                    <li><a href="/blog/" class="text-vs-fg/80 hover:text-logo-glow transition-colors duration-200">Blog</a></li>
+                    
+                    <li><a href="/talks/" class="text-vs-fg/80 hover:text-logo-glow transition-colors duration-200">Presentations</a></li>
+                    
+                    <li><a href="/feed.xml" class="text-vs-fg/80 hover:text-logo-glow transition-colors duration-200">RSS Feed</a></li>
+                </ul>
+            </div>
+            
+            
+            <!-- External Resources -->
+            
+        </div>
+        
+        <div class="border-t border-logo-circuit mt-8 pt-8 text-center">
+            <p class="text-vs-fg/60">
+                © 2025 The Developing Apologist. All rights reserved.
+            </p>
+        </div>
+    </div>
+</footer> 
+
+</body>
+</html> 

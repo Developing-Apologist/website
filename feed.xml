@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>The Developing Apologist Blog</title>
+    <description>A blog exploring the intersection of Christian apologetics and software development, equipping developers to defend their faith through logical, systematic reasoning.</description>
+    <link>https://developingapologist.com</link>
+    <atom:link href="https://developingapologist.com/feed.xml" rel="self" type="application/rss+xml"/>
+    <language>en-US</language>
+    <lastBuildDate>2025-07-10T00:00:00.000Z</lastBuildDate>
+    <image>
+      <url>https://developingapologist.com/assets/developing-apologist-logo-v2.png</url>
+      <title>The Developing Apologist Blog</title>
+      <link>https://developingapologist.com</link>
+    </image>
+    
+    
+    
+    <item>
+      <title>Welcome to The Developing Apologist Blog</title>
+      <description>An introduction to our mission of equipping Christian software developers with apologetics tools and resources.</description>
+      <link>https://developingapologist.com/blog/welcome-to-the-blog/</link>
+      <guid>https://developingapologist.com/blog/welcome-to-the-blog/</guid>
+      <pubDate>2025-07-10T00:00:00.000Z</pubDate>
+      
+      <category>welcome, introduction, mission</category>
+      
+    </item>
+    
+    
+    
+    <item>
+      <title>Hello World - The Foundation of Christian Apologetics</title>
+      <description>A series exploring the foundational principles of Christian apologetics, using developer analogies to show how defending your faith starts with the basics - just like every developer&#39;s first program.</description>
+      <link>https://developingapologist.com/blog/hello-world-series/</link>
+      <guid>https://developingapologist.com/blog/hello-world-series/</guid>
+      <pubDate>2025-07-12T00:00:00.000Z</pubDate>
+      
+      <category>hello-world-series, series-intro</category>
+      
+    </item>
+    
+    
+    
+    <item>
+      <title>Faith Isn&#39;t a Syntax Error - A Developer&#39;s Guide to Faith and Reason</title>
+      <description>A series exploring how faith and logic work together, using developer analogies to show that Christianity doesn&#39;t demand blind belief but invites reasoned trust based on evidence.</description>
+      <link>https://developingapologist.com/blog/faith-isnt-syntax-error-series/</link>
+      <guid>https://developingapologist.com/blog/faith-isnt-syntax-error-series/</guid>
+      <pubDate>2025-09-26T00:00:00.000Z</pubDate>
+      
+      <category>faith-isnt-syntax-error, series-intro</category>
+      
+    </item>
+    
+    
+    
+    <item>
+      <title>What Scripture Actually Says</title>
+      <description>Faith in Scripture is never presented as blind or irrational. Explore what the Bible actually says about thinking, reasoning, and believing.</description>
+      <link>https://developingapologist.com/blog/what-scripture-actually-says/</link>
+      <guid>https://developingapologist.com/blog/what-scripture-actually-says/</guid>
+      <pubDate>2025-10-10T00:00:00.000Z</pubDate>
+      
+      <category>scripture, faith-isnt-syntax-error</category>
+      
+    </item>
+    
+    
+    
+    <item>
+      <title>The Testing and Deployment Analogy</title>
+      <description>Every developer knows the frustration of a syntax error. That&#39;s how many skeptics view faith—as though it&#39;s a logical mistake. But Christian faith is more like deploying tested code than running untested scripts.</description>
+      <link>https://developingapologist.com/blog/testing-deployment-analogy/</link>
+      <guid>https://developingapologist.com/blog/testing-deployment-analogy/</guid>
+      <pubDate>2025-10-03T00:00:00.000Z</pubDate>
+      
+      <category>dev-analogy, faith-isnt-syntax-error</category>
+      
+    </item>
+    
+    
+    
+    <item>
+      <title>Why Faith and Logic Aren&#39;t Enemies</title>
+      <description>Faith and logic aren&#39;t at odds. Learn how Christianity doesn&#39;t demand blind belief but invites reasoned trust based on evidence—similar to how developers trust in systems they can&#39;t fully see but know are real.</description>
+      <link>https://developingapologist.com/blog/why-faith-logic-arent-enemies/</link>
+      <guid>https://developingapologist.com/blog/why-faith-logic-arent-enemies/</guid>
+      <pubDate>2025-09-26T00:00:00.000Z</pubDate>
+      
+      <category>concept, faith-isnt-syntax-error</category>
+      
+    </item>
+    
+    
+    
+    <item>
+      <title>Apologetics Warnings - Pitfalls to Avoid</title>
+      <description>Important warnings and pitfalls to avoid in Christian apologetics - from pride and arrogance to misplaced pressure and responsibility.</description>
+      <link>https://developingapologist.com/blog/apologetics-warnings/</link>
+      <guid>https://developingapologist.com/blog/apologetics-warnings/</guid>
+      <pubDate>2025-08-30T00:00:00.000Z</pubDate>
+      
+      <category>warnings, hello-world-series</category>
+      
+    </item>
+    
+    
+    
+    <item>
+      <title>Apologetics Notes - Key Insights for Faithful Defense</title>
+      <description>Important notes and insights for effective Christian apologetics - from the art and discipline of defending faith to the power of humble engagement.</description>
+      <link>https://developingapologist.com/blog/apologetics-notes/</link>
+      <guid>https://developingapologist.com/blog/apologetics-notes/</guid>
+      <pubDate>2025-08-23T00:00:00.000Z</pubDate>
+      
+      <category>notes, hello-world-series</category>
+      
+    </item>
+    
+    
+    
+    <item>
+      <title>Practical Exercises for Apologetics Readiness</title>
+      <description>Hands-on exercises to help you develop your apologetics skills - from writing your testimony to practicing conversations.</description>
+      <link>https://developingapologist.com/blog/apologetics-practice-exercises/</link>
+      <guid>https://developingapologist.com/blog/apologetics-practice-exercises/</guid>
+      <pubDate>2025-08-16T00:00:00.000Z</pubDate>
+      
+      <category>exercises, hello-world-series</category>
+      
+    </item>
+    
+    
+    
+    <item>
+      <title>Common Apologetics Errors (And How to Fix Them)</title>
+      <description>Debugging the most common mistakes in Christian apologetics - from logical bugs to theological flaws that can derail your witness.</description>
+      <link>https://developingapologist.com/blog/common-apologetics-errors/</link>
+      <guid>https://developingapologist.com/blog/common-apologetics-errors/</guid>
+      <pubDate>2025-08-09T00:00:00.000Z</pubDate>
+      
+      <category>common-errors, hello-world-series</category>
+      
+    </item>
+    
+    
+    
+    <item>
+      <title>1 Peter 3:15 - The Cornerstone of Christian Apologetics</title>
+      <description>A deep dive into 1 Peter 3:15, the foundational verse for Christian apologetics, breaking down each phrase and its practical implications.</description>
+      <link>https://developingapologist.com/blog/1-peter-3-15-deep-dive/</link>
+      <guid>https://developingapologist.com/blog/1-peter-3-15-deep-dive/</guid>
+      <pubDate>2025-08-02T00:00:00.000Z</pubDate>
+      
+      <category>scripture, hello-world-series</category>
+      
+    </item>
+    
+    
+    
+    <item>
+      <title>The &quot;Hello World&quot; of Apologetics</title>
+      <description>How apologetics works like a developer&#39;s first program - starting with proper configuration before building anything meaningful.</description>
+      <link>https://developingapologist.com/blog/hello-world-dev-analogy/</link>
+      <guid>https://developingapologist.com/blog/hello-world-dev-analogy/</guid>
+      <pubDate>2025-07-26T00:00:00.000Z</pubDate>
+      
+      <category>dev-analogy, hello-world-series</category>
+      
+    </item>
+    
+    
+    
+    <item>
+      <title>What Is Christian Apologetics?</title>
+      <description>Understanding the foundational concept of Christian apologetics - giving a reasoned defense for your faith with clarity, not cleverness.</description>
+      <link>https://developingapologist.com/blog/what-is-christian-apologetics/</link>
+      <guid>https://developingapologist.com/blog/what-is-christian-apologetics/</guid>
+      <pubDate>2025-07-19T00:00:00.000Z</pubDate>
+      
+      <category>concept, hello-world-series</category>
+      
+    </item>
+    
+    
+  </channel>
+</rss> 

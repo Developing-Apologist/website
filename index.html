@@ -73,12 +73,12 @@
                         Contact
                     </a>
                 
-                    <a href="https://blog.developingapologist.com" 
+                    <a href="/blog/" 
                        class="hover:text-logo-glow transition-colors duration-200 text-vs-fg">
                         Blog
                     </a>
                 
-                    <a href="https://talks.developingapologist.com" 
+                    <a href="/talks/" 
                        class="hover:text-logo-glow transition-colors duration-200 text-vs-fg">
                         Presentations
                     </a>
@@ -126,12 +126,12 @@
                         Contact
                     </a>
                 
-                    <a href="https://blog.developingapologist.com" 
+                    <a href="/blog/" 
                        class="block px-3 py-2 hover:text-logo-glow transition-colors duration-200 text-vs-fg">
                         Blog
                     </a>
                 
-                    <a href="https://talks.developingapologist.com" 
+                    <a href="/talks/" 
                        class="block px-3 py-2 hover:text-logo-glow transition-colors duration-200 text-vs-fg">
                         Presentations
                     </a>
@@ -186,7 +186,7 @@
                     <a href="/about" class="btn-primary">
                         Learn More
                     </a>
-                    <a href="https://blog.developingapologist.com" class="btn-secondary">
+                    <a href="/blog" class="btn-secondary">
                         Read the Blog
                     </a>
                 </div>
@@ -222,7 +222,7 @@
 <section class="py-16 bg-darcula-900">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="text-center mb-12">
-            <h2 class="text-3xl font-bold text-vs-fg mb-4">Why Apologetics for Developers?</h2>
+            <h2 class="text-3xl font-bold text-vs-fg mb-4" data-testid="home-why-heading">Why Apologetics for Developers?</h2>
             <p class="text-vs-fg/80 max-w-2xl mx-auto">
                 As a software engineer, you already think logically and systematically. You debug problems, 
                 trace through execution paths, and build systems that work reliably. These same skills are 
@@ -277,7 +277,7 @@
 <section class="py-16 bg-darcula-800">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="text-center mb-12">
-            <h2 class="text-3xl font-bold text-vs-fg mb-4">Developer-Focused Content</h2>
+            <h2 class="text-3xl font-bold text-vs-fg mb-4" data-testid="home-developer-heading">Developer-Focused Content</h2>
             <p class="text-vs-fg/80 max-w-2xl mx-auto">
                 We create training content that speaks your language. Think of it as a developer's guide to apologetics.
             </p>
@@ -297,7 +297,7 @@
                     Deep-dive articles that explore apologetic topics using developer analogies, 
                     logical frameworks, and systematic analysis.
                 </p>
-                <a href="https://blog.developingapologist.com" class="btn-primary">
+                <a href="/blog" class="btn-primary">
                     Read the Blog
                 </a>
             </div>
@@ -315,7 +315,7 @@
                     Technical talks and workshops designed for Christian developers, 
                     covering everything from basic apologetics to advanced topics.
                 </p>
-                <a href="https://talks.developingapologist.com" class="btn-primary">
+                <a href="/talks" class="btn-primary">
                     Watch Presentations
                 </a>
             </div>
@@ -340,12 +340,128 @@
             <a href="/about" class="btn-primary">
                 Learn More About Our Vision
             </a>
-            <a href="https://blog.developingapologist.com" class="btn-secondary">
+            <a href="/blog" class="btn-secondary">
                 Check Out Our Blog
             </a>
         </div>
     </div>
 </section> 
+
+<!-- Footer -->
+<footer class="bg-logo-steel border-t border-logo-circuit py-12">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid md:grid-cols-4 gap-8">
+            <!-- Brand -->
+            <div class="md:col-span-2">
+                <div class="flex items-center space-x-3 mb-4">
+                    
+                        <!-- Default logo placeholder -->
+                        <svg class="w-8 h-8 text-logo-blue" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                        </svg>
+                    
+                    <span class="text-xl font-bold text-vs-fg">Site Title</span>
+                </div>
+                
+                
+            </div>
+            
+            <!-- Quick Links -->
+            
+            
+            <!-- External Resources -->
+            
+        </div>
+        
+        <div class="border-t border-logo-circuit mt-8 pt-8 text-center">
+            <p class="text-vs-fg/60">
+                © 2025 Site Title. All rights reserved.
+            </p>
+        </div>
+    </div>
+</footer> 
+
+<script>
+// Reusable Search Function
+function initializeSearch(options = {}) {
+    const {
+        inputId = 'search-input',
+        searchTarget = '.post-card',
+        titleAttribute = 'data-title',
+        descriptionAttribute = 'data-description',
+        tagsAttribute = 'data-tags',
+        onSearch = null
+    } = options;
+
+    const searchInput = document.getElementById(inputId);
+    if (!searchInput) return;
+
+    let searchTimeout;
+
+    const normalize = (value = '') => {
+        if (!value) return '';
+        return value
+            .toLowerCase()
+            .normalize('NFKD')
+            .replace(/[\u2014\u2013]/g, '-')
+            .replace(/[^a-z0-9\s-]/g, ' ')
+            .replace(/['’]/g, '')
+            .replace(/\s+/g, ' ')
+            .trim();
+    };
+
+    searchInput.addEventListener('input', function() {
+        clearTimeout(searchTimeout);
+        searchTimeout = setTimeout(() => {
+            const searchTermRaw = this.value.toLowerCase();
+            const searchTermNormalized = normalize(this.value);
+            const cards = document.querySelectorAll(searchTarget);
+            let visibleCount = 0;
+
+            cards.forEach(card => {
+                const title = card.getAttribute(titleAttribute) || '';
+                const description = card.getAttribute(descriptionAttribute) || '';
+                const tags = card.getAttribute(tagsAttribute) || '';
+                const normalizedAttr = card.getAttribute('data-normalized-text') || '';
+
+                const titleRaw = title.toLowerCase();
+                const descriptionRaw = description.toLowerCase();
+                const tagsRaw = tags.toLowerCase();
+
+                const combinedNormalized = [title, description, tags, normalizedAttr]
+                    .map(normalize)
+                    .join(' ');
+
+                const hasSearchTerm = searchTermRaw === '' ||
+                    titleRaw.includes(searchTermRaw) ||
+                    descriptionRaw.includes(searchTermRaw) ||
+                    tagsRaw.includes(searchTermRaw) ||
+                    (searchTermNormalized !== '' && combinedNormalized.includes(searchTermNormalized));
+
+                if (hasSearchTerm) {
+                    card.classList.remove('hidden');
+                    visibleCount++;
+                } else {
+                    card.classList.add('hidden');
+                }
+            });
+
+            // Call custom callback if provided
+            if (onSearch && typeof onSearch === 'function') {
+                onSearch(visibleCount, cards.length);
+            }
+        }, 150);
+    });
+}
+
+// Auto-initialize if search input exists
+document.addEventListener('DOMContentLoaded', function() {
+    if (document.getElementById('search-input')) {
+        initializeSearch();
+    }
+});
+</script>
+ 
     </main>
 
     <!-- Footer -->
@@ -388,10 +504,11 @@
                     
                     <li><a href="/contact/" class="text-vs-fg/80 hover:text-logo-glow transition-colors duration-200">Contact</a></li>
                     
-                    <li><a href="https://blog.developingapologist.com" class="text-vs-fg/80 hover:text-logo-glow transition-colors duration-200">Blog</a></li>
+                    <li><a href="/blog/" class="text-vs-fg/80 hover:text-logo-glow transition-colors duration-200">Blog</a></li>
                     
-                    <li><a href="https://talks.developingapologist.com" class="text-vs-fg/80 hover:text-logo-glow transition-colors duration-200">Presentations</a></li>
+                    <li><a href="/talks/" class="text-vs-fg/80 hover:text-logo-glow transition-colors duration-200">Presentations</a></li>
                     
+                    <li><a href="/feed.xml" class="text-vs-fg/80 hover:text-logo-glow transition-colors duration-200">RSS Feed</a></li>
                 </ul>
             </div>
             
