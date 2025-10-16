@@ -1,0 +1,20 @@
+# Copy this file to terraform.tfvars and fill in your values
+# NOTE: For Terraform Cloud, set these as workspace variables instead
+
+# Cloudflare API token (create at https://dash.cloudflare.com/profile/api-tokens)
+# Required permissions: Zone:Read, Zone:Edit, Account:Cloudflare Pages:Edit
+cloudflare_api_token = "your-cloudflare-api-token-here"
+
+# Your Cloudflare account ID (found in the right sidebar of your Cloudflare dashboard)
+cloudflare_account_id = "your-cloudflare-account-id-here"
+
+# Optional: Override default values
+# github_repository = "developing-apologist/website"
+# project_name = "developing-apologist"
+# custom_domain = "developingapologist.com"
+
+# Firebase configuration (for future integration)
+# Uncomment and configure these when integrating Firebase
+# firebase_api_key = "your-firebase-api-key"
+# firebase_auth_domain = "your-project.firebaseapp.com"
+# firebase_project_id = "your-firebase-project-id"
